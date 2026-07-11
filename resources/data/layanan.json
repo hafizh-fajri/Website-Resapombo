@@ -1,0 +1,14 @@
+[
+  {
+    "nama": "KTP",
+    "syarat": ["Fotokopi KK", "Surat Pengantar RT/RW", "Pas Foto 3x4"],
+    "prosedur": "Datang ke kantor desa, isi formulir, tunggu proses verifikasi.",
+    "biaya": "Gratis"
+  },
+  {
+    "nama": "Kartu Keluarga (KK)",
+    "syarat": ["Fotokopi Buku Nikah", "Fotokopi KTP", "Surat Pengantar RT/RW"],
+    "prosedur": "Ajukan ke kantor desa dengan membawa berkas lengkap.",
+    "biaya": "Gratis"
+  }
+]
