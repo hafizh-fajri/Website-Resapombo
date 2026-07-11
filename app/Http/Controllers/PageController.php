@@ -26,17 +26,7 @@ class PageController extends Controller
         return view('pages.struktur', compact('perangkat'));
     }
 
-    public function potensi()
-    {
-        $potensi = json_decode(
-            file_get_contents(resource_path('data/potensi.json')),
-            true
-        );
-
-        return view('pages.potensi', compact('potensi'));
-    }
-
-    public function layanan()
+       public function layanan()
     {
         $layanan = json_decode(
             file_get_contents(resource_path('data/layanan.json')),

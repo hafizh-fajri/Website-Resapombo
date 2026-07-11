@@ -4,11 +4,15 @@
 
 @section('content')
     <h1>Potensi Desa</h1>
-    @foreach ($potensi as $item)
+    @forelse ($potensi as $item)
         <div class="card">
-            <img src="{{ asset('images/potensi/' . $item['gambar']) }}" alt="{{ $item['nama'] }}">
-            <h3>{{ $item['nama'] }}</h3>
-            <p>{{ $item['deskripsi'] }}</p>
+            @if ($item->gambar)
+                <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->nama }}">
+            @endif
+            <h3>{{ $item->nama }}</h3>
+            <p>{{ $item->deskripsi }}</p>
         </div>
-    @endforeach
+    @empty
+        <p>Belum ada data potensi desa.</p>
+    @endforelse
 @endsection
