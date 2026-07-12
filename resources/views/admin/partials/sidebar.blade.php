@@ -10,6 +10,12 @@
         <a href="{{ route('admin.potensi.index') }}" class="{{ request()->routeIs('admin.potensi.*') ? 'active' : '' }}">
             Potensi Desa
         </a>
+        <a href="{{ route('admin.artikel.index') }}" class="{{ request()->routeIs('admin.artikel.*') ? 'active' : '' }}">
+            Artikel
+        </a>
+        <a href="{{ route('admin.galeri.index') }}" class="{{ request()->routeIs('admin.galeri.*') ? 'active' : '' }}">
+            Galeri
+        </a>
     </nav>
 
     <div class="sidebar-footer">

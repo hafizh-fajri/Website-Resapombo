@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PotensiController;
+use App\Http\Controllers\Admin\ArtikelController;
+use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\AuthController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -14,6 +16,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware('admin')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('potensi', PotensiController::class);
+        Route::resource('artikel', ArtikelController::class);
+        Route::resource('galeri', GaleriController::class);
     });
 
 });

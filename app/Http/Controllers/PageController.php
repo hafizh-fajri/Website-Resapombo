@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Artikel;
+use App\Models\Galeri;
 
 class PageController extends Controller
 {
     public function home()
     {
-        return view('pages.home');
+        $artikel = Artikel::latest()->take(3)->get();
+        $galeri = Galeri::latest()->take(6)->get();
+
+        return view('pages.home', compact('artikel', 'galeri'));
     }
 
     public function profil()
@@ -26,7 +30,7 @@ class PageController extends Controller
         return view('pages.struktur', compact('perangkat'));
     }
 
-       public function layanan()
+    public function layanan()
     {
         $layanan = json_decode(
             file_get_contents(resource_path('data/layanan.json')),
