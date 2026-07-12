@@ -1,2 +1,8 @@
-<h1>Dashboard Admin</h1>
-<p>Halaman ini akan dikembangkan lebih lanjut.</p>
+@extends('layouts.admin')
+
+@section('title', 'Dashboard')
+
+@section('content')
+    <h1>Selamat Datang di Dashboard Admin</h1>
+    <p>Ringkasan statistik & aktivitas akan ditampilkan di sini.</p>
+@endsection

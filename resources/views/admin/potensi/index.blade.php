@@ -1,5 +1,7 @@
 <h1>Kelola Potensi Desa</h1>
 
+@extends('layouts.admin')
+
 @if (session('success'))
     <p style="color: green;">{{ session('success') }}</p>
 @endif
