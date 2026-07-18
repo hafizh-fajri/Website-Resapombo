@@ -1,10 +1,16 @@
-<h1>Tambah Potensi Desa</h1>
+@extends('layouts.admin')
 
-<form action="{{ route('admin.potensi.store') }}" method="POST" enctype="multipart/form-data">
+@section('title', 'Tambah BUMDes')
+
+@section('content')
+
+<h1>Tambah BUMDes</h1>
+
+<form action="{{ route('admin.bumdes.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div>
-        <label>Nama Potensi</label><br>
+        <label>Nama</label><br>
         <input type="text" name="nama" value="{{ old('nama') }}">
     </div>
 
@@ -27,5 +33,7 @@
     @endif
 
     <button type="submit">Simpan</button>
-    <a href="{{ route('admin.potensi.index') }}">Batal</a>
+    <a href="{{ route('admin.bumdes.index') }}">Batal</a>
 </form>
+
+@endsection

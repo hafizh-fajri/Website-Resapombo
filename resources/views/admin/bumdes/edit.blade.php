@@ -1,23 +1,29 @@
-<h1>Edit Potensi Desa</h1>
+@extends('layouts.admin')
 
-<form action="{{ route('admin.potensi.update', $potensi->id) }}" method="POST" enctype="multipart/form-data">
+@section('title', 'Edit BUMDes')
+
+@section('content')
+
+<h1>Edit BUMDes</h1>
+
+<form action="{{ route('admin.bumdes.update', $bumdes->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
     <div>
-        <label>Nama Potensi</label><br>
-        <input type="text" name="nama" value="{{ old('nama', $potensi->nama) }}">
+        <label>Nama</label><br>
+        <input type="text" name="nama" value="{{ old('nama', $bumdes->nama) }}">
     </div>
 
     <div>
         <label>Deskripsi</label><br>
-        <textarea name="deskripsi" rows="4">{{ old('deskripsi', $potensi->deskripsi) }}</textarea>
+        <textarea name="deskripsi" rows="4">{{ old('deskripsi', $bumdes->deskripsi) }}</textarea>
     </div>
 
     <div>
         <label>Gambar Saat Ini</label><br>
-        @if ($potensi->gambar)
-            <img src="{{ asset('storage/' . $potensi->gambar) }}" width="100"><br>
+        @if ($bumdes->gambar)
+            <img src="{{ asset('storage/' . $bumdes->gambar) }}" width="100"><br>
         @else
             <p>Belum ada gambar</p>
         @endif
@@ -37,5 +43,7 @@
     @endif
 
     <button type="submit">Update</button>
-    <a href="{{ route('admin.potensi.index') }}">Batal</a>
+    <a href="{{ route('admin.bumdes.index') }}">Batal</a>
 </form>
+
+@endsection

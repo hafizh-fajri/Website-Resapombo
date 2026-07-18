@@ -7,8 +7,8 @@
         <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
             Beranda
         </a>
-        <a href="{{ route('admin.potensi.index') }}" class="{{ request()->routeIs('admin.potensi.*') ? 'active' : '' }}">
-            Potensi Desa
+        <a href="{{ route('admin.bumdes.index') }}" class="{{ request()->routeIs('admin.bumdes.*') ? 'active' : '' }}">
+            BUMDes
         </a>
         <a href="{{ route('admin.artikel.index') }}" class="{{ request()->routeIs('admin.artikel.*') ? 'active' : '' }}">
             Artikel
