@@ -6,19 +6,24 @@
     <h1>Selamat Datang di Desa Contoh</h1>
     <p>Sambutan singkat dari Kepala Desa akan ditampilkan di sini.</p>
 
-    <hr>
-
     <section>
-        <h2>Galeri Foto</h2>
-
-        @forelse ($galeri as $item)
-            <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->judul }}" width="150" style="margin: 5px;">
-        @empty
-            <p>Belum ada foto di galeri.</p>
-        @endforelse
+        <div class="card">
+            <p>{{ number_format($informasi->jumlah_penduduk) }}</p>
+            <p>PENDUDUK</p>
+        </div>
+        <div class="card">
+            <p>{{ $informasi->luas_wilayah }} Ha</p>
+            <p>LUAS WILAYAH</p>
+        </div>
+        <div class="card">
+            <p>{{ $informasi->jumlah_dusun }}</p>
+            <p>DUSUN</p>
+        </div>
+        <div class="card">
+            <p>{{ $informasi->jumlah_rt }} / {{ $informasi->jumlah_rw }}</p>
+            <p>RT/RW</p>
+        </div>
     </section>
-
-    <hr>
 
     <section>
         <h2>Artikel Terbaru</h2>

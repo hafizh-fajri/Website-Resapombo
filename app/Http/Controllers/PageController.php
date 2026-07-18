@@ -3,16 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artikel;
-use App\Models\Galeri;
+use App\Models\InformasiDesa;
 
 class PageController extends Controller
 {
     public function home()
     {
         $artikel = Artikel::latest()->take(3)->get();
-        $galeri = Galeri::latest()->take(6)->get();
+        $informasi = InformasiDesa::first();
 
-        return view('pages.home', compact('artikel', 'galeri'));
+    // Kalau belum ada data sama sekali, buat default dulu biar nggak error di view
+        if (!$informasi) {
+            $informasi = InformasiDesa::create([
+                'jumlah_penduduk' => 0,
+                'luas_wilayah' => 0,
+                'jumlah_dusun' => 0,
+                'jumlah_rt' => 0,
+                'jumlah_rw' => 0,
+            ]);
+        }
+
+        return view('pages.home', compact('artikel', 'informasi'));
     }
 
     public function profil()
