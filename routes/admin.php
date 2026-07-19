@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\BumdesController;
 use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\PotensiController;
+use App\Http\Controllers\Admin\ProfilController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
@@ -20,6 +21,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('/informasi-desa', [DashboardController::class, 'updateInformasi'])->name('informasi.update');
         Route::resource('potensi', PotensiController::class);
         Route::put('/fakta-singkat', [DashboardController::class, 'updateFakta'])->name('fakta.update');
+        Route::prefix('profil')->name('profil.')->group(function () {
+            Route::get('/', [ProfilController::class, 'index'])->name('index');
+            Route::put('/visi', [ProfilController::class, 'updateVisi'])->name('visi.update');
+            Route::post('/misi', [ProfilController::class, 'storeMisi'])->name('misi.store');
+            Route::put('/misi/{misi}', [ProfilController::class, 'updateMisi'])->name('misi.update');
+            Route::delete('/misi/{misi}', [ProfilController::class, 'destroyMisi'])->name('misi.destroy');
+        });
     });
 
 });

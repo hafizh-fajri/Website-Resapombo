@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Artikel;
 use App\Models\InformasiDesa;
+use App\Models\Visi;
+use App\Models\Misi;
 
 class PageController extends Controller
 {
@@ -28,7 +30,11 @@ class PageController extends Controller
 
     public function profil()
     {
-        return view('pages.profil');
+        $informasi = InformasiDesa::first();
+        $visi = Visi::first();
+        $misi = Misi::latest()->get();
+
+        return view('pages.profil', compact('informasi', 'visi', 'misi'));
     }
 
     public function struktur()
