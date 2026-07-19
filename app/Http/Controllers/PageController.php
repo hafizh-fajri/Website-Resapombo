@@ -8,12 +8,12 @@ class PageController extends Controller
 {
     public function home()
     {
-        return view('pages.home');
+        return view('pages.landingpage');
     }
 
     public function profil()
     {
-        return view('pages.profil');
+        return view('pages.profildesa');
     }
 
     public function struktur()
@@ -24,6 +24,11 @@ class PageController extends Controller
         );
 
         return view('pages.struktur', compact('perangkat'));
+    }
+
+    public function pemerintahan()
+    {
+        return view('pages.pemerintahan');
     }
 
        public function layanan()

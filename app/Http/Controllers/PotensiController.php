@@ -10,6 +10,6 @@ class PotensiController extends Controller
     {
         $potensi = Potensi::latest()->get();
 
-        return view('pages.potensi', compact('potensi'));
+        return view('pages.potensi1', compact('potensi'));
     }
 }
