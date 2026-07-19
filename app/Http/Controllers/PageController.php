@@ -40,4 +40,11 @@ class PageController extends Controller
 
         return view('pages.layanan', compact('layanan'));
     }
+
+    public function bumdes()
+    {
+        
+
+        return view('pages.bumdes');
+    }
 }

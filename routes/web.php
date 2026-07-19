@@ -10,5 +10,6 @@ Route::get('/struktur-organisasi', [PageController::class, 'struktur'])->name('s
 Route::get('/layanan', [PageController::class, 'layanan'])->name('layanan');
 Route::get('/pemerintahan', [PageController::class, 'pemerintahan'])->name('pemerintahan');
 Route::get('/potensi', [PotensiController::class, 'index'])->name('potensi');
+Route::get('/bumdes', [PageController::class, 'bumdes'])->name('bumdes');
 
 require __DIR__.'/admin.php';

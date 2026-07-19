@@ -14,8 +14,9 @@
                 
                 <a href="{{ route('potensi') }}" class="{{ request()->routeIs('potensi') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">Potensi</a>
                 
-                <a href="#" class="text-gray-500 hover:text-[#1a5624] font-medium transition">BUMDes</a>
+                <a href="{{ route('bumdes') }}" class="{{ request()->routeIs('bumdes') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">BUMDes</a>
                 <a href="#" class="text-gray-500 hover:text-[#1a5624] font-medium transition">Berita</a>
+                <a href="#" class="text-gray-500 hover:text-[#1a5624] font-medium transition">FAQ</a>
             </div>
 
             <div class="flex items-center md:hidden">
@@ -37,6 +38,12 @@
             <a href="{{ route('pemerintahan') }}" class="block px-3 py-2 rounded-md {{ request()->routeIs('struktur') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Pemerintahan</a>
             
             <a href="{{ route('potensi') }}" class="block px-3 py-2 rounded-md {{ request()->routeIs('potensi') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Potensi</a>
+
+            <a href="{{ route('bumdes') }}" class="block px-3 py-2 rounded-md {{ request()->routeIs('bumdes') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">BUMDes</a>
+
+            <a href="{{ route('potensi') }}" class="block px-3 py-2 rounded-md {{ request()->routeIs('potensi') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Berita</a>
+
+            <a href="{{ route('potensi') }}" class="block px-3 py-2 rounded-md {{ request()->routeIs('potensi') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">FAQ</a>
         </div>
     </div>
 </nav>
