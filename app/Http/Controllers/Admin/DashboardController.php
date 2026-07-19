@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\InformasiDesa;
+use App\Models\FaktaSingkat;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -11,7 +12,6 @@ class DashboardController extends Controller
     public function index()
     {
         $informasi = InformasiDesa::first();
-
         if (!$informasi) {
             $informasi = InformasiDesa::create([
                 'jumlah_penduduk' => 0,
@@ -22,7 +22,16 @@ class DashboardController extends Controller
             ]);
         }
 
-        return view('admin.dashboard', compact('informasi'));
+        $fakta = FaktaSingkat::first();
+        if (!$fakta) {
+            $fakta = FaktaSingkat::create([
+                'luas_lahan_baku' => 0,
+                'kelompok_tani' => 0,
+                'produksi_padi' => 0,
+            ]);
+        }
+
+        return view('admin.dashboard', compact('informasi', 'fakta'));
     }
 
     public function updateInformasi(Request $request)
@@ -35,9 +44,21 @@ class DashboardController extends Controller
             'jumlah_rw' => 'required|integer|min:0',
         ]);
 
-        $informasi = InformasiDesa::first();
-        $informasi->update($validated);
+        InformasiDesa::first()->update($validated);
 
         return redirect()->route('admin.dashboard')->with('success', 'Informasi desa berhasil diperbarui.');
+    }
+
+    public function updateFakta(Request $request)
+    {
+        $validated = $request->validate([
+            'luas_lahan_baku' => 'required|numeric|min:0',
+            'kelompok_tani' => 'required|integer|min:0',
+            'produksi_padi' => 'required|numeric|min:0',
+        ]);
+
+        FaktaSingkat::first()->update($validated);
+
+        return redirect()->route('admin.dashboard')->with('success', 'Fakta singkat berhasil diperbarui.');
     }
 }

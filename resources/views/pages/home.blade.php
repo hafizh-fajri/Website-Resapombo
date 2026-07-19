@@ -51,19 +51,19 @@
         <p>Menjelajahi beragam sektor yang menjadi pilar ekonomi dan kesejahteraan masyarakat desa kami.</p>
 
         <div class="kekayaan-grid">
-            <a href="{{ route('potensi') }}" class="item-besar">
+            <a href="{{ route('kekayaan') }}" class="item-besar">
                 <img src="{{ asset('images/kekayaan/pertanian.jpg') }}" alt="Pertanian">
                 <span class="label">Pertanian</span>
             </a>
-            <a href="{{ route('potensi') }}" class="item-lebar">
+            <a href="{{ route('kekayaan') }}" class="item-lebar">
                 <img src="{{ asset('images/kekayaan/perkebunan.jpg') }}" alt="Perkebunan">
                 <span class="label">Perkebunan</span>
             </a>
-            <a href="{{ route('potensi') }}" class="item-kecil">
+            <a href="{{ route('kekayaan') }}" class="item-kecil">
                 <img src="{{ asset('images/kekayaan/pariwisata.jpg') }}" alt="Pariwisata">
                 <span class="label">Pariwisata</span>
             </a>
-            <a href="{{ route('potensi') }}" class="item-kecil">
+            <a href="{{ route('kekayaan') }}" class="item-kecil">
                 <img src="{{ asset('images/kekayaan/umkm.jpg') }}" alt="UMKM">
                 <span class="label">UMKM</span>
             </a>

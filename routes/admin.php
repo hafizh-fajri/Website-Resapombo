@@ -19,6 +19,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('artikel', ArtikelController::class);
         Route::put('/informasi-desa', [DashboardController::class, 'updateInformasi'])->name('informasi.update');
         Route::resource('potensi', PotensiController::class);
+        Route::put('/fakta-singkat', [DashboardController::class, 'updateFakta'])->name('fakta.update');
     });
 
 });

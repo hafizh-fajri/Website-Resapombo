@@ -15,8 +15,15 @@
     </div>
 
     <div>
-        <label>Kategori (contoh: Wisata Alam & Edukasi)</label><br>
-        <input type="text" name="kategori" value="{{ old('kategori') }}">
+        <label>Kategori</label><br>
+        <select name="kategori">
+            <option value="">-- Pilih Kategori --</option>
+            <option value="Pertanian" {{ old('kategori') == 'Pertanian' ? 'selected' : '' }}>Pertanian</option>
+            <option value="Perkebunan" {{ old('kategori') == 'Perkebunan' ? 'selected' : '' }}>Perkebunan</option>
+            <option value="Peternakan" {{ old('kategori') == 'Peternakan' ? 'selected' : '' }}>Peternakan</option>
+            <option value="Pariwisata" {{ old('kategori') == 'Pariwisata' ? 'selected' : '' }}>Pariwisata</option>
+            <option value="UMKM" {{ old('kategori') == 'UMKM' ? 'selected' : '' }}>UMKM</option>
+        </select>
     </div>
 
     <div>

@@ -1,15 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 
 use App\Models\Potensi;
 
 class PotensiController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $potensi = Potensi::latest()->get();
+        $kategori = $request->query('kategori');
 
-        return view('pages.potensi', compact('potensi'));
+        $potensi = Potensi::when($kategori, function ($query) use ($kategori) {
+                return $query->where('kategori', $kategori);
+            })
+            ->latest()
+            ->get();
+
+        return view('pages.kekayaan', compact('potensi', 'kategori'));
     }
 }

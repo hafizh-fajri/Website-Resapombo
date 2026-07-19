@@ -17,7 +17,12 @@
 
     <div>
         <label>Kategori</label><br>
-        <input type="text" name="kategori" value="{{ old('kategori', $potensi->kategori) }}">
+        <select name="kategori">
+            <option value="">-- Pilih Kategori --</option>
+            @foreach (['Pertanian', 'Perkebunan', 'Peternakan', 'Pariwisata', 'UMKM'] as $kat)
+                <option value="{{ $kat }}" {{ old('kategori', $potensi->kategori) == $kat ? 'selected' : '' }}>{{ $kat }}</option>
+            @endforeach
+        </select>
     </div>
 
     <div>
