@@ -8,10 +8,10 @@
             Home
         </a>
         <a href="{{ route('admin.profil.index') }}" class="{{ request()->routeIs('admin.profil.*') ? 'active' : '' }}">
-            Profil Desa
+            Profile
         </a>
         <a href="{{ route('admin.potensi.index') }}" class="{{ request()->routeIs('admin.potensi.*') ? 'active' : '' }}">
-            Potensi Desa
+            Potensi
         </a>
         <a href="{{ route('admin.bumdes.index') }}" class="{{ request()->routeIs('admin.bumdes.*') ? 'active' : '' }}">
             BUMDes

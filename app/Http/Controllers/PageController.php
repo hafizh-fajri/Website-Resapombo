@@ -6,6 +6,8 @@ use App\Models\Artikel;
 use App\Models\InformasiDesa;
 use App\Models\Visi;
 use App\Models\Misi;
+use App\Models\Dokumen;
+use App\Models\KepalaDesa;
 
 class PageController extends Controller
 {
@@ -33,8 +35,10 @@ class PageController extends Controller
         $informasi = InformasiDesa::first();
         $visi = Visi::first();
         $misi = Misi::latest()->get();
+        $dokumen = Dokumen::latest()->get();
+        $kepalaDesa = KepalaDesa::oldest()->get();
 
-        return view('pages.profil', compact('informasi', 'visi', 'misi'));
+        return view('pages.profil', compact('informasi', 'visi', 'misi', 'dokumen', 'kepalaDesa'));
     }
 
     public function struktur()

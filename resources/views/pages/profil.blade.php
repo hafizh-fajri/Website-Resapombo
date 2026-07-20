@@ -76,15 +76,38 @@
 
             <div class="card">
                 <h3>Dokumen Publik</h3>
-                <p style="color: #999;">Belum ada dokumen (akan dibuat dinamis di tahap berikutnya)</p>
+                @forelse ($dokumen as $item)
+                    <div style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                        <a href="{{ asset('storage/' . $item->file) }}" target="_blank">
+                            📄 {{ $item->nama }}
+                        </a>
+                    </div>
+                @empty
+                    <p style="color: #999;">Belum ada dokumen tersedia.</p>
+                @endforelse
             </div>
         </div>
     </section>
 
-    {{-- KEPALA DESA SEBELUMNYA (sementara statis, dinamis di Tahap 4) --}}
+    {{-- KEPALA DESA SEBELUMNYA (dinamis, scroll horizontal) --}}
     <section>
         <h2>Kepala Desa Sebelumnya</h2>
-        <p style="color: #999;">(Akan dibuat dinamis dengan scroll horizontal di tahap berikutnya)</p>
+
+        <div class="kepala-desa-scroll">
+            @forelse ($kepalaDesa as $item)
+                <div class="kepala-desa-card">
+                    @if ($item->foto)
+                        <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->nama }}">
+                    @else
+                        <div class="kepala-desa-placeholder">Tidak ada foto</div>
+                    @endif
+                    <h4>{{ $item->nama }}</h4>
+                    <p>{{ $item->masa_jabatan }}</p>
+                </div>
+            @empty
+                <p style="color: #999;">Belum ada data kepala desa.</p>
+            @endforelse
+        </div>
     </section>
 
 @endsection

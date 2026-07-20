@@ -27,6 +27,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::post('/misi', [ProfilController::class, 'storeMisi'])->name('misi.store');
             Route::put('/misi/{misi}', [ProfilController::class, 'updateMisi'])->name('misi.update');
             Route::delete('/misi/{misi}', [ProfilController::class, 'destroyMisi'])->name('misi.destroy');
+            Route::post('/dokumen', [ProfilController::class, 'storeDokumen'])->name('dokumen.store');
+            Route::delete('/dokumen/{dokumen}', [ProfilController::class, 'destroyDokumen'])->name('dokumen.destroy');
+            Route::post('/kepala-desa', [ProfilController::class, 'storeKepalaDesa'])->name('kepala-desa.store');
+            Route::delete('/kepala-desa/{kepalaDesa}', [ProfilController::class, 'destroyKepalaDesa'])->name('kepala-desa.destroy');
         });
     });
 

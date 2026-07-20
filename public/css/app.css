@@ -174,3 +174,51 @@
     color: #666;
     margin: 0;
 }
+
+
+.kepala-desa-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 15px 0;
+}
+
+.kepala-desa-card {
+    flex: 0 0 auto;
+    width: 160px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.kepala-desa-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.kepala-desa-placeholder {
+    width: 100%;
+    height: 160px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    color: #999;
+    font-size: 0.85em;
+}
+
+.kepala-desa-card h4 {
+    margin: 5px 0 0;
+}
+
+.kepala-desa-card p {
+    margin: 0;
+    font-size: 0.85em;
+    color: #666;
+}
