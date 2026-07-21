@@ -8,5 +8,5 @@ class Bumdes extends Model
 {
     protected $table = 'bumdes'; // eksplisit, karena auto-pluralize bisa aneh untuk kata ini
 
-    protected $fillable = ['nama', 'deskripsi', 'gambar'];
+    protected $fillable = ['nama', 'kategori', 'deskripsi', 'gambar'];
 }

@@ -51,4 +51,36 @@
     </tbody>
 </table>
 
+<hr>
+
+<h2>Kontak BUMDes</h2>
+
+<form action="{{ route('admin.bumdes.kontak.update') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    @method('PUT')
+
+    <div>
+        <label>Nomor WhatsApp BUMDes</label><br>
+        <input type="text" name="no_wa" value="{{ old('no_wa', $kontak->no_wa) }}" placeholder="Contoh: 6281234567890">
+    </div>
+
+    <div>
+        <label>File Profil BUMDes (PDF)</label><br>
+        @if ($kontak->file_profil)
+            <p><a href="{{ asset('storage/' . $kontak->file_profil) }}" target="_blank">Lihat file saat ini</a></p>
+        @endif
+        <input type="file" name="file_profil" accept="application/pdf">
+    </div>
+
+    @if ($errors->any())
+        <ul style="color: red;">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+
+    <button type="submit">Simpan Kontak BUMDes</button>
+</form>
+
 @endsection

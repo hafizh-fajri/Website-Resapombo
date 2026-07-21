@@ -36,6 +36,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         });
         Route::resource('jabatan', JabatanController::class);
         Route::resource('perangkat', PerangkatController::class);
+        Route::put('/bumdes-kontak', [BumdesController::class, 'updateKontak'])->name('bumdes.kontak.update');
     });
 
 });

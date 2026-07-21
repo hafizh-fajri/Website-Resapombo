@@ -15,6 +15,14 @@
     </div>
 
     <div>
+        <label>Kategori</label><br>
+        <select name="kategori">
+            <option value="Unit Usaha" {{ old('kategori') == 'Unit Usaha' ? 'selected' : '' }}>Unit Usaha</option>
+            <option value="Mitra Lokal" {{ old('kategori') == 'Mitra Lokal' ? 'selected' : '' }}>Mitra Lokal</option>
+        </select>
+    </div>
+
+    <div>
         <label>Deskripsi</label><br>
         <textarea name="deskripsi" rows="4">{{ old('deskripsi') }}</textarea>
     </div>
