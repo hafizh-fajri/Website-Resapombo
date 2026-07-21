@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\PotensiController;
 use App\Http\Controllers\Admin\ProfilController;
+use App\Http\Controllers\Admin\JabatanController;
+use App\Http\Controllers\Admin\PerangkatController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
@@ -32,6 +34,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::post('/kepala-desa', [ProfilController::class, 'storeKepalaDesa'])->name('kepala-desa.store');
             Route::delete('/kepala-desa/{kepalaDesa}', [ProfilController::class, 'destroyKepalaDesa'])->name('kepala-desa.destroy');
         });
+        Route::resource('jabatan', JabatanController::class);
+        Route::resource('perangkat', PerangkatController::class);
     });
 
 });

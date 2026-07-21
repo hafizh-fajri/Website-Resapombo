@@ -40,17 +40,7 @@ class PageController extends Controller
 
         return view('pages.profil', compact('informasi', 'visi', 'misi', 'dokumen', 'kepalaDesa'));
     }
-
-    public function struktur()
-    {
-        $perangkat = json_decode(
-            file_get_contents(resource_path('data/perangkat.json')),
-            true
-        );
-
-        return view('pages.struktur', compact('perangkat'));
-    }
-
+    
     public function layanan()
     {
         $layanan = json_decode(

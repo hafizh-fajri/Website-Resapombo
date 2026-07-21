@@ -10,6 +10,12 @@
         <a href="{{ route('admin.profil.index') }}" class="{{ request()->routeIs('admin.profil.*') ? 'active' : '' }}">
             Profile
         </a>
+        <a href="{{ route('admin.jabatan.index') }}" class="{{ request()->routeIs('admin.jabatan.*') ? 'active' : '' }}">
+            Jabatan
+        </a>
+        <a href="{{ route('admin.perangkat.index') }}" class="{{ request()->routeIs('admin.perangkat.*') ? 'active' : '' }}">
+            Perangkat
+        </a>
         <a href="{{ route('admin.potensi.index') }}" class="{{ request()->routeIs('admin.potensi.*') ? 'active' : '' }}">
             Potensi
         </a>
