@@ -14,6 +14,7 @@ Route::get('/layanan', [PageController::class, 'layanan'])->name('layanan');
 Route::get('/bumdes', [BumdesController::class, 'index'])->name('bumdes');
 Route::get('/kekayaan-desa', [PotensiController::class, 'index'])->name('kekayaan');
 Route::get('/berita', [ArtikelController::class, 'index'])->name('berita');
+Route::get('/berita/{artikel}', [ArtikelController::class, 'show'])->name('berita.show');
 Route::get('/potensi', [PotensiDesaController::class, 'index'])->name('potensi');
 Route::get('/pemerintahan', [PemerintahanController::class, 'index'])->name('pemerintahan');
 

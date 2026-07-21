@@ -22,8 +22,8 @@
         <a href="{{ route('admin.bumdes.index') }}" class="{{ request()->routeIs('admin.bumdes.*') ? 'active' : '' }}">
             BUMDes
         </a>
-        <a href="{{ route('admin.artikel.index') }}" class="{{ request()->routeIs('admin.artikel.*') ? 'active' : '' }}">
-            Artikel
+        <a href="{{ route('admin.artikel.index') }}" class="{{ request()->routeIs('admin.artikel.*') || request()->routeIs('admin.kategori-berita.*') ? 'active' : '' }}">
+            Berita
         </a>
     </nav>
 

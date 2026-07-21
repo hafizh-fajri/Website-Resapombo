@@ -1,17 +1,27 @@
 @extends('layouts.admin')
 
-@section('title', 'Tambah Artikel')
+@section('title', 'Tambah Berita')
 
 @section('content')
 
-<h1>Tambah Artikel</h1>
+<h1>Tambah Berita</h1>
 
 <form action="{{ route('admin.artikel.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div>
-        <label>Judul Artikel</label><br>
+        <label>Judul Berita</label><br>
         <input type="text" name="judul" value="{{ old('judul') }}">
+    </div>
+
+    <div>
+        <label>Kategori</label><br>
+        <select name="kategori_berita_id">
+            <option value="">-- Tanpa Kategori --</option>
+            @foreach ($kategori as $kat)
+                <option value="{{ $kat->id }}" {{ old('kategori_berita_id') == $kat->id ? 'selected' : '' }}>{{ $kat->nama }}</option>
+            @endforeach
+        </select>
     </div>
 
     <div>
@@ -20,13 +30,32 @@
     </div>
 
     <div>
-        <label>Isi Artikel</label><br>
-        <textarea name="isi" rows="6">{{ old('isi') }}</textarea>
+        <label>Penulis</label><br>
+        <input type="text" name="penulis" value="{{ old('penulis', 'Tim Redaksi Desa') }}">
+    </div>
+
+    <div>
+        <label>Sinopsis (ringkasan singkat)</label><br>
+        <textarea name="sinopsis" rows="3">{{ old('sinopsis') }}</textarea>
     </div>
 
     <div>
         <label>Gambar</label><br>
         <input type="file" name="gambar">
+    </div>
+
+    <hr>
+
+    <p><strong>Pilih salah satu:</strong> tulis isi berita sendiri, ATAU isi link berita dari sumber lain.</p>
+
+    <div>
+        <label>Isi Berita (kosongkan jika menggunakan Link Eksternal di bawah)</label><br>
+        <textarea name="isi" rows="8">{{ old('isi') }}</textarea>
+    </div>
+
+    <div>
+        <label>Link Berita Eksternal (kosongkan jika menulis isi sendiri)</label><br>
+        <input type="url" name="link_eksternal" value="{{ old('link_eksternal') }}" placeholder="https://...">
     </div>
 
     @if ($errors->any())

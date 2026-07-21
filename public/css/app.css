@@ -264,3 +264,59 @@
     color: #1a6b2f;
     font-size: 0.9em;
 }
+
+
+.berita-utama {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.berita-utama-gambar {
+    position: relative;
+    flex: 1;
+}
+
+.berita-utama-gambar img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.berita-utama-konten {
+    flex: 1;
+}
+
+.berita-grid-kecil {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.berita-card-gambar {
+    position: relative;
+}
+
+.berita-card-gambar img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.tag-badge-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+}
+
+.berita-meta {
+    color: #666;
+    font-size: 0.85em;
+}

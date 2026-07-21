@@ -20,6 +20,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('bumdes', BumdesController::class);
         Route::resource('artikel', ArtikelController::class);
+        Route::post('/kategori-berita', [ArtikelController::class, 'storeKategori'])->name('kategori-berita.store');
+        Route::delete('/kategori-berita/{kategori}', [ArtikelController::class, 'destroyKategori'])->name('kategori-berita.destroy');
         Route::put('/informasi-desa', [DashboardController::class, 'updateInformasi'])->name('informasi.update');
         Route::resource('potensi', PotensiController::class);
         Route::put('/fakta-singkat', [DashboardController::class, 'updateFakta'])->name('fakta.update');

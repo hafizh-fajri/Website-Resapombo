@@ -13,7 +13,7 @@ class PageController extends Controller
 {
     public function home()
     {
-        $artikel = Artikel::latest()->take(3)->get();
+        $artikel = Artikel::latest('tanggal')->take(3)->get();
         $informasi = InformasiDesa::first();
 
     // Kalau belum ada data sama sekali, buat default dulu biar nggak error di view
