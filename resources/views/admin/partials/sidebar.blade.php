@@ -25,6 +25,9 @@
         <a href="{{ route('admin.artikel.index') }}" class="{{ request()->routeIs('admin.artikel.*') || request()->routeIs('admin.kategori-berita.*') ? 'active' : '' }}">
             Berita
         </a>
+        <a href="{{ route('admin.layanan.index') }}" class="{{ request()->routeIs('admin.layanan.*') ? 'active' : '' }}">
+            Pelayanan
+        </a>
     </nav>
 
     <div class="sidebar-footer">

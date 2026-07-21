@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\PotensiController;
 use App\Http\Controllers\Admin\ProfilController;
 use App\Http\Controllers\Admin\JabatanController;
 use App\Http\Controllers\Admin\PerangkatController;
+use App\Http\Controllers\Admin\LayananController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
@@ -39,6 +40,23 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('jabatan', JabatanController::class);
         Route::resource('perangkat', PerangkatController::class);
         Route::put('/bumdes-kontak', [BumdesController::class, 'updateKontak'])->name('bumdes.kontak.update');
+        Route::prefix('layanan')->name('layanan.')->group(function () {
+            Route::get('/', [LayananController::class, 'index'])->name('index');
+
+            Route::post('/kategori', [LayananController::class, 'storeKategori'])->name('kategori.store');
+            Route::delete('/kategori/{kategori}', [LayananController::class, 'destroyKategori'])->name('kategori.destroy');
+
+            Route::get('/tambah', [LayananController::class, 'createLayanan'])->name('create');
+            Route::post('/', [LayananController::class, 'storeLayanan'])->name('store');
+            Route::get('/{layanan}/edit', [LayananController::class, 'editLayanan'])->name('edit');
+            Route::put('/{layanan}', [LayananController::class, 'updateLayanan'])->name('update');
+            Route::delete('/{layanan}', [LayananController::class, 'destroyLayanan'])->name('destroy');
+
+            Route::put('/kontak/update', [LayananController::class, 'updateKontak'])->name('kontak.update');
+
+            Route::post('/jam', [LayananController::class, 'storeJam'])->name('jam.store');
+            Route::delete('/jam/{jam}', [LayananController::class, 'destroyJam'])->name('jam.destroy');
+        });
     });
 
 });
