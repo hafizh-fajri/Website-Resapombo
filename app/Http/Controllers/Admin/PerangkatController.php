@@ -9,18 +9,6 @@ use Illuminate\Http\Request;
 
 class PerangkatController extends Controller
 {
-    public function index()
-    {
-        $perangkat = Perangkat::with('jabatan')->latest()->get();
-        return view('admin.perangkat.index', compact('perangkat'));
-    }
-
-    public function create()
-    {
-        $jabatan = Jabatan::orderBy('tingkat')->get();
-        return view('admin.perangkat.create', compact('jabatan'));
-    }
-
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -37,7 +25,7 @@ class PerangkatController extends Controller
 
         Perangkat::create($validated);
 
-        return redirect()->route('admin.perangkat.index')->with('success', 'Data perangkat berhasil ditambahkan.');
+        return redirect()->route('admin.pemerintahan.index')->with('success', 'Data perangkat berhasil ditambahkan.');
     }
 
     public function edit(Perangkat $perangkat)
@@ -62,13 +50,13 @@ class PerangkatController extends Controller
 
         $perangkat->update($validated);
 
-        return redirect()->route('admin.perangkat.index')->with('success', 'Data perangkat berhasil diperbarui.');
+        return redirect()->route('admin.pemerintahan.index')->with('success', 'Data perangkat berhasil diperbarui.');
     }
 
     public function destroy(Perangkat $perangkat)
     {
         $perangkat->delete();
 
-        return redirect()->route('admin.perangkat.index')->with('success', 'Data perangkat berhasil dihapus.');
+        return redirect()->route('admin.pemerintahan.index')->with('success', 'Data perangkat berhasil dihapus.');
     }
 }

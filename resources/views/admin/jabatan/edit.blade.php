@@ -29,7 +29,7 @@
     @endif
 
     <button type="submit">Update</button>
-    <a href="{{ route('admin.jabatan.index') }}">Batal</a>
+    <a href="{{ route('admin.pemerintahan.index') }}">Batal</a>
 </form>
 
 @endsection

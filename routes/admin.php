@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProfilController;
 use App\Http\Controllers\Admin\JabatanController;
 use App\Http\Controllers\Admin\PerangkatController;
 use App\Http\Controllers\Admin\LayananController;
+use App\Http\Controllers\Admin\PemerintahanController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
@@ -57,6 +58,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::post('/jam', [LayananController::class, 'storeJam'])->name('jam.store');
             Route::delete('/jam/{jam}', [LayananController::class, 'destroyJam'])->name('jam.destroy');
         });
+        Route::get('/pemerintahan', [PemerintahanController::class, 'index'])->name('pemerintahan.index');
+
+        Route::resource('jabatan', JabatanController::class)->only(['store', 'edit', 'update', 'destroy']);
+        Route::resource('perangkat', PerangkatController::class)->only(['store', 'edit', 'update', 'destroy']);
     });
 
 });
