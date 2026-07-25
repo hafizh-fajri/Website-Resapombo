@@ -47,4 +47,34 @@ class PageController extends Controller
 
         return view('pages.bumdes');
     }
+
+    public function potensi()
+    {
+        return view('pages.potensi');
+    }
+
+    public function berita()
+    {
+        return view('pages.berita');
+    }
+
+    public function faq()
+    {
+        return view('pages.faq');
+    }
+
+    public function adminlogin()
+    {
+        return view('pages.admin.login');
+    }
+
+    public function admindashboard()
+    {
+        return view('pages.admin.dashboard');
+    }
+
+    public function kekayaan()
+    {
+        return view('pages.kekayaan');
+    }
 }
