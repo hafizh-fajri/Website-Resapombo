@@ -2,8 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\PotensiController;
+use App\Http\Controllers\Admin\BumdesController;
+use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\PotensiController;
+use App\Http\Controllers\Admin\ProfilController;
+use App\Http\Controllers\Admin\JabatanController;
+use App\Http\Controllers\Admin\PerangkatController;
+use App\Http\Controllers\Admin\LayananController;
+use App\Http\Controllers\Admin\PemerintahanController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
@@ -13,7 +20,48 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::middleware('admin')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::resource('bumdes', BumdesController::class);
+        Route::resource('artikel', ArtikelController::class);
+        Route::post('/kategori-berita', [ArtikelController::class, 'storeKategori'])->name('kategori-berita.store');
+        Route::delete('/kategori-berita/{kategori}', [ArtikelController::class, 'destroyKategori'])->name('kategori-berita.destroy');
+        Route::put('/informasi-desa', [DashboardController::class, 'updateInformasi'])->name('informasi.update');
         Route::resource('potensi', PotensiController::class);
+        Route::put('/fakta-singkat', [DashboardController::class, 'updateFakta'])->name('fakta.update');
+        Route::prefix('profil')->name('profil.')->group(function () {
+            Route::get('/', [ProfilController::class, 'index'])->name('index');
+            Route::put('/visi', [ProfilController::class, 'updateVisi'])->name('visi.update');
+            Route::post('/misi', [ProfilController::class, 'storeMisi'])->name('misi.store');
+            Route::put('/misi/{misi}', [ProfilController::class, 'updateMisi'])->name('misi.update');
+            Route::delete('/misi/{misi}', [ProfilController::class, 'destroyMisi'])->name('misi.destroy');
+            Route::post('/dokumen', [ProfilController::class, 'storeDokumen'])->name('dokumen.store');
+            Route::delete('/dokumen/{dokumen}', [ProfilController::class, 'destroyDokumen'])->name('dokumen.destroy');
+            Route::post('/kepala-desa', [ProfilController::class, 'storeKepalaDesa'])->name('kepala-desa.store');
+            Route::delete('/kepala-desa/{kepalaDesa}', [ProfilController::class, 'destroyKepalaDesa'])->name('kepala-desa.destroy');
+        });
+        Route::resource('jabatan', JabatanController::class);
+        Route::resource('perangkat', PerangkatController::class);
+        Route::put('/bumdes-kontak', [BumdesController::class, 'updateKontak'])->name('bumdes.kontak.update');
+        Route::prefix('layanan')->name('layanan.')->group(function () {
+            Route::get('/', [LayananController::class, 'index'])->name('index');
+
+            Route::post('/kategori', [LayananController::class, 'storeKategori'])->name('kategori.store');
+            Route::delete('/kategori/{kategori}', [LayananController::class, 'destroyKategori'])->name('kategori.destroy');
+
+            Route::get('/tambah', [LayananController::class, 'createLayanan'])->name('create');
+            Route::post('/', [LayananController::class, 'storeLayanan'])->name('store');
+            Route::get('/{layanan}/edit', [LayananController::class, 'editLayanan'])->name('edit');
+            Route::put('/{layanan}', [LayananController::class, 'updateLayanan'])->name('update');
+            Route::delete('/{layanan}', [LayananController::class, 'destroyLayanan'])->name('destroy');
+
+            Route::put('/kontak/update', [LayananController::class, 'updateKontak'])->name('kontak.update');
+
+            Route::post('/jam', [LayananController::class, 'storeJam'])->name('jam.store');
+            Route::delete('/jam/{jam}', [LayananController::class, 'destroyJam'])->name('jam.destroy');
+        });
+        Route::get('/pemerintahan', [PemerintahanController::class, 'index'])->name('pemerintahan.index');
+
+        Route::resource('jabatan', JabatanController::class)->only(['store', 'edit', 'update', 'destroy']);
+        Route::resource('perangkat', PerangkatController::class)->only(['store', 'edit', 'update', 'destroy']);
     });
 
 });

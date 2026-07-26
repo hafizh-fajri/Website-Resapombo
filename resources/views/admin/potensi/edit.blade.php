@@ -1,3 +1,9 @@
+@extends('layouts.admin')
+
+@section('title', 'Edit Potensi Desa')
+
+@section('content')
+
 <h1>Edit Potensi Desa</h1>
 
 <form action="{{ route('admin.potensi.update', $potensi->id) }}" method="POST" enctype="multipart/form-data">
@@ -5,8 +11,18 @@
     @method('PUT')
 
     <div>
-        <label>Nama Potensi</label><br>
+        <label>Nama</label><br>
         <input type="text" name="nama" value="{{ old('nama', $potensi->nama) }}">
+    </div>
+
+    <div>
+        <label>Kategori</label><br>
+        <select name="kategori">
+            <option value="">-- Pilih Kategori --</option>
+            @foreach (['Pertanian', 'Perkebunan', 'Peternakan', 'Pariwisata', 'UMKM'] as $kat)
+                <option value="{{ $kat }}" {{ old('kategori', $potensi->kategori) == $kat ? 'selected' : '' }}>{{ $kat }}</option>
+            @endforeach
+        </select>
     </div>
 
     <div>
@@ -39,3 +55,5 @@
     <button type="submit">Update</button>
     <a href="{{ route('admin.potensi.index') }}">Batal</a>
 </form>
+
+@endsection

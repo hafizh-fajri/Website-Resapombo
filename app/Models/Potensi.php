@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Potensi extends Model
 {
-    protected $fillable = ['nama', 'deskripsi', 'gambar'];
+    protected $fillable = ['nama', 'deskripsi', 'gambar', 'kategori'];
 }

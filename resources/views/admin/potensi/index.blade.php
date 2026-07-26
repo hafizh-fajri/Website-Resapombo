@@ -1,6 +1,10 @@
-<h1>Kelola Potensi Desa</h1>
-
 @extends('layouts.admin')
+
+@section('title', 'Kelola Potensi Desa')
+
+@section('content')
+
+<h1>Kelola Potensi Desa</h1>
 
 @if (session('success'))
     <p style="color: green;">{{ session('success') }}</p>
@@ -13,6 +17,7 @@
         <tr>
             <th>Gambar</th>
             <th>Nama</th>
+            <th>Kategori</th>
             <th>Deskripsi</th>
             <th>Aksi</th>
         </tr>
@@ -28,6 +33,7 @@
                     @endif
                 </td>
                 <td>{{ $item->nama }}</td>
+                <td>{{ $item->kategori ?? '-' }}</td>
                 <td>{{ Str::limit($item->deskripsi, 50) }}</td>
                 <td>
                     <a href="{{ route('admin.potensi.edit', $item->id) }}">Edit</a>
@@ -41,8 +47,10 @@
             </tr>
         @empty
             <tr>
-                <td colspan="4">Belum ada data potensi desa.</td>
+                <td colspan="5">Belum ada data potensi desa.</td>
             </tr>
         @endforelse
     </tbody>
 </table>
+
+@endsection

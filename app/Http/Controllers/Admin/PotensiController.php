@@ -24,12 +24,12 @@ class PotensiController extends Controller
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
             'deskripsi' => 'required|string',
+            'kategori' => 'nullable|string|max:255',
             'gambar' => 'nullable|image|max:2048',
         ]);
 
         if ($request->hasFile('gambar')) {
-            $path = $request->file('gambar')->store('potensi', 'public');
-            $validated['gambar'] = $path;
+            $validated['gambar'] = $request->file('gambar')->store('potensi', 'public');
         }
 
         Potensi::create($validated);
@@ -47,12 +47,12 @@ class PotensiController extends Controller
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
             'deskripsi' => 'required|string',
+            'kategori' => 'nullable|string|max:255',
             'gambar' => 'nullable|image|max:2048',
         ]);
 
         if ($request->hasFile('gambar')) {
-            $path = $request->file('gambar')->store('potensi', 'public');
-            $validated['gambar'] = $path;
+            $validated['gambar'] = $request->file('gambar')->store('potensi', 'public');
         }
 
         $potensi->update($validated);
