@@ -20,4 +20,4 @@ Route::get('/potensi', [PotensiDesaController::class, 'index'])->name('potensi')
 Route::get('/pemerintahan', [PemerintahanController::class, 'index'])->name('pemerintahan');
 Route::get('/layanan', [LayananController::class, 'index'])->name('layanan');
 
-require __DIR__.'/admin.php';
+//require __DIR__.'/admin.php';
