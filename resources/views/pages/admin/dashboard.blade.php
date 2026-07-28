@@ -109,8 +109,6 @@
                             </button>
                         </div>
 
-                        
-
                         <!-- Data Statistik -->
                         <div class="bg-white rounded-lg shadow-sm p-6">
                             <h3 class="font-semibold text-lg mb-4 border-b pb-2 text-gray-800">Data Statistik</h3>
@@ -277,14 +275,15 @@
                                 <div class="space-y-2">
                                     @forelse ($dokumen as $item)
                                         <div class="flex justify-between items-center p-3 border rounded-lg hover:bg-gray-50 transition bg-white">
-                                            <div class="flex items-center gap-3">
-                                                <div class="bg-red-50 p-2 rounded-md text-red-600 border border-red-100">
+                                            <div class="flex items-center gap-3 min-w-0">
+                                                <div class="bg-red-50 p-2 rounded-md text-red-600 border border-red-100 shrink-0">
                                                     <i data-lucide="file-type-2" class="w-5 h-5"></i>
                                                 </div>
-                                                <div>
+                                                <div class="min-w-0">
                                                     <a href="{{ route('admin.profil.dokumen.lihat', $item->id) }}"
                                                         target="_blank"
-                                                        class="text-sm font-medium text-gray-800 hover:text-green-700 hover:underline">
+                                                        class="text-sm font-medium text-gray-800 hover:text-green-700 hover:underline block truncate"
+                                                        title="{{ $item->nama }}">
                                                         {{ $item->nama }}
                                                     </a>
                                                     <p class="text-xs text-gray-500">Berkas PDF</p>
@@ -295,7 +294,7 @@
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit"
-                                                    class="text-red-500 hover:text-red-700 p-2 transition bg-white rounded-md hover:bg-red-50"
+                                                    class="text-red-500 hover:text-red-700 p-2 transition bg-white rounded-md hover:bg-red-50 shrink-0"
                                                     title="Hapus Dokumen">
                                                     <i data-lucide="trash-2" class="w-4 h-4"></i>
                                                 </button>
@@ -352,7 +351,7 @@
                             <div class="col-span-1 lg:col-span-2">
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     @forelse ($kepalaDesa as $item)
-                                        <div class="flex gap-4 items-center p-4 border rounded-lg hover:bg-gray-50 transition bg-white shadow-sm">
+                                        <div class="flex gap-4 items-center p-4 border rounded-lg hover:bg-gray-50 transition bg-white shadow-sm min-w-0">
                                             <div class="w-16 h-16 rounded-full overflow-hidden bg-gray-100 border border-gray-200 flex-shrink-0 flex justify-center items-center">
                                                 @if ($item->foto)
                                                     <img src="{{ asset($item->foto) }}" alt="{{ $item->nama }}"
@@ -361,9 +360,9 @@
                                                     <i data-lucide="user" class="w-8 h-8 text-gray-400"></i>
                                                 @endif
                                             </div>
-                                            <div class="flex-1">
-                                                <p class="text-sm font-semibold text-gray-900">{{ $item->nama }}</p>
-                                                <p class="text-xs text-gray-600 mb-2">Periode: {{ $item->masa_jabatan }}</p>
+                                            <div class="flex-1 min-w-0">
+                                                <p class="text-sm font-semibold text-gray-900 truncate" title="{{ $item->nama }}">{{ $item->nama }}</p>
+                                                <p class="text-xs text-gray-600 mb-2 truncate">Periode: {{ $item->masa_jabatan }}</p>
                                                 <form action="{{ route('admin.profil.kepala-desa.destroy', $item->id) }}"
                                                     method="POST" onsubmit="return confirm('Yakin mau hapus riwayat kepala desa ini?')">
                                                     @csrf
@@ -427,20 +426,21 @@
                                 </span>
                             </h3>
 
+                            <!-- TABEL 1: POTENSI DESA -->
                             <div class="overflow-x-auto">
-                                <table class="min-w-full divide-y divide-gray-200">
+                                <table class="w-full table-fixed divide-y divide-gray-200">
                                     <thead class="bg-gray-50">
                                         <tr>
-                                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Gambar</th>
-                                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Info Potensi</th>
-                                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Kategori</th>
-                                            <th class="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase">Aksi</th>
+                                            <th class="w-20 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase whitespace-nowrap">Gambar</th>
+                                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase whitespace-nowrap">Info Potensi</th>
+                                            <th class="w-32 px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase whitespace-nowrap">Kategori</th>
+                                            <th class="w-24 px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase whitespace-nowrap">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody class="divide-y divide-gray-200 text-sm">
                                         @forelse ($potensi as $item)
                                             <tr class="hover:bg-gray-50 transition">
-                                                <td class="px-4 py-3">
+                                                <td class="px-4 py-3 whitespace-nowrap">
                                                     @if ($item->gambar)
                                                         <img src="{{ asset($item->gambar) }}" alt="{{ $item->nama }}" class="w-14 h-14 object-cover rounded-md border">
                                                     @else
@@ -449,13 +449,13 @@
                                                         </div>
                                                     @endif
                                                 </td>
-                                                <td class="px-4 py-3">
-                                                    <p class="font-medium text-gray-900">{{ $item->nama }}</p>
-                                                    <p class="text-xs text-gray-500 mt-1 max-w-xs truncate" title="{{ $item->deskripsi }}">
-                                                        {{ Str::limit($item->deskripsi, 50) }}
+                                                <td class="px-4 py-3 truncate">
+                                                    <p class="font-medium text-gray-900 truncate" title="{{ $item->nama }}">{{ $item->nama }}</p>
+                                                    <p class="text-xs text-gray-500 mt-1 truncate" title="{{ $item->deskripsi }}">
+                                                        {{ $item->deskripsi }}
                                                     </p>
                                                 </td>
-                                                <td class="px-4 py-3">
+                                                <td class="px-4 py-3 whitespace-nowrap">
                                                     @php
                                                         $color = match ($item->kategori) {
                                                             'Pertanian' => 'bg-green-100 text-green-800',
@@ -466,11 +466,11 @@
                                                             default => 'bg-gray-100 text-gray-800'
                                                         };
                                                     @endphp
-                                                    <span class="{{ $color }} text-xs px-2.5 py-1 rounded-full font-medium whitespace-nowrap">
+                                                    <span class="{{ $color }} text-xs px-2.5 py-1 rounded-full font-medium whitespace-nowrap inline-block truncate max-w-full">
                                                         {{ $item->kategori ?? '-' }}
                                                     </span>
                                                 </td>
-                                                <td class="px-4 py-3 text-right space-x-2 whitespace-nowrap">
+                                                <td class="px-4 py-3 text-right space-x-1 whitespace-nowrap">
                                                     <button onclick="openModal('editModal{{ $item->id }}')" class="text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-1.5 rounded transition" title="Edit">
                                                         <i data-lucide="edit-3" class="w-4 h-4 inline"></i>
                                                     </button>
@@ -578,26 +578,26 @@
                         <h3 class="font-semibold text-lg mb-4 border-b border-gray-100 pb-2">Kepala Desa Aktif</h3>
                         @if($kades)
                             <div class="flex items-center gap-6">
-                                <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden border-2 border-[#166534]">
+                                <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden border-2 border-[#166534] shrink-0">
                                     @if($kades->foto)
                                         <img src="{{ asset($kades->foto) }}" alt="Foto Kades" class="w-full h-full object-cover">
                                     @else
                                         <i data-lucide="user" class="text-gray-400 w-12 h-12"></i>
                                     @endif
                                 </div>
-                                <div class="flex-1 space-y-3">
+                                <div class="flex-1 space-y-3 min-w-0">
                                     <div>
                                         <label class="text-xs text-gray-500 font-bold uppercase tracking-wider">Nama Lengkap</label>
-                                        <div class="text-lg font-semibold text-gray-900 mt-1">{{ $kades->nama }}</div>
+                                        <div class="text-lg font-semibold text-gray-900 mt-1 truncate" title="{{ $kades->nama }}">{{ $kades->nama }}</div>
                                     </div>
                                     <div class="flex gap-8">
                                         <div>
                                             <label class="text-xs text-gray-500 font-bold uppercase tracking-wider">Jabatan</label>
-                                            <div class="text-sm text-gray-700 mt-1">{{ $kades->jabatan->nama ?? '-' }}</div>
+                                            <div class="text-sm text-gray-700 mt-1 truncate">{{ $kades->jabatan->nama ?? '-' }}</div>
                                         </div>
                                         <div>
                                             <label class="text-xs text-gray-500 font-bold uppercase tracking-wider">No. WhatsApp</label>
-                                            <div class="text-sm text-gray-700 mt-1">{{ $kades->no_wa ?? '-' }}</div>
+                                            <div class="text-sm text-gray-700 mt-1 truncate">{{ $kades->no_wa ?? '-' }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -607,8 +607,8 @@
                         @endif
                     </div>
 
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <div class="lg:col-span-1 bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-7 gap-6">
+                        <div class="lg:col-span-2 bg-white rounded-lg shadow-sm border border-gray-100 p-6">
                             <h3 class="font-semibold text-lg mb-4 border-b border-gray-100 pb-2">Kelola Jabatan</h3>
 
                             <form action="{{ route('admin.jabatan.store') }}" method="POST" class="mb-6 space-y-3">
@@ -624,21 +624,22 @@
                                 <button type="submit" class="w-full bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-lg text-sm shadow-sm transition">Tambah Jabatan</button>
                             </form>
 
+                            <!-- TABEL 2: JABATAN -->
                             <div class="overflow-x-auto rounded-lg border border-gray-200">
-                                <table class="w-full text-sm text-left text-gray-600">
+                                <table class="w-full table-fixed text-sm text-left text-gray-600">
                                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b border-gray-200">
                                         <tr>
-                                            <th class="px-4 py-3 text-center w-12">Tk.</th>
-                                            <th class="px-4 py-3">Nama Jabatan</th>
-                                            <th class="px-4 py-3 text-center">Aksi</th>
+                                            <th class="px-4 py-3 text-center w-12 whitespace-nowrap">Tk.</th>
+                                            <th class="px-4 py-3 whitespace-nowrap">Nama Jabatan</th>
+                                            <th class="px-4 py-3 text-center w-16 whitespace-nowrap">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @forelse ($jabatan as $item)
                                             <tr class="border-b border-gray-100 hover:bg-gray-50 transition">
-                                                <td class="px-4 py-3 text-center font-medium">{{ $item->tingkat }}</td>
-                                                <td class="px-4 py-3">{{ $item->nama }}</td>
-                                                <td class="px-4 py-3 text-center">
+                                                <td class="px-4 py-3 text-center font-medium truncate">{{ $item->tingkat }}</td>
+                                                <td class="px-4 py-3 truncate" title="{{ $item->nama }}">{{ $item->nama }}</td>
+                                                <td class="px-4 py-3 text-center whitespace-nowrap">
                                                     <form action="{{ route('admin.jabatan.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin mau hapus jabatan ini? Semua perangkat dengan jabatan ini juga akan terhapus!')">
                                                         @csrf
                                                         @method('DELETE')
@@ -658,25 +659,26 @@
                             </div>
                         </div>
 
-                        <div class="lg:col-span-2 bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+                        <div class="lg:col-span-5 bg-white rounded-lg shadow-sm border border-gray-100 p-6">
                             <h3 class="font-semibold text-lg mb-4 border-b border-gray-100 pb-2">Daftar Perangkat Desa</h3>
 
+                            <!-- TABEL 3: PERANGKAT DESA -->
                             <div class="overflow-x-auto">
-                                <table class="w-full text-sm text-left text-gray-600">
+                                <table class="w-full table-fixed text-sm text-left text-gray-600">
                                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-y border-gray-200">
                                         <tr>
-                                            <th class="px-4 py-3 w-16">Foto</th>
-                                            <th class="px-4 py-3">Nama</th>
-                                            <th class="px-4 py-3">Jabatan</th>
-                                            <th class="px-4 py-3">No WA</th>
-                                            <th class="px-4 py-3">Detail</th>
-                                            <th class="px-4 py-3 text-center">Aksi</th>
+                                            <th class="px-4 py-3 w-16 whitespace-nowrap">Foto</th>
+                                            <th class="px-4 py-3 w-1/4 whitespace-nowrap">Nama</th>
+                                            <th class="px-4 py-3 w-1/5 whitespace-nowrap">Jabatan</th>
+                                            <th class="px-4 py-3 w-28 whitespace-nowrap">No WA</th>
+                                            <th class="px-4 py-3 whitespace-nowrap">Detail</th>
+                                            <th class="px-4 py-3 text-center w-24 whitespace-nowrap">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @forelse ($perangkat as $item)
                                             <tr class="border-b border-gray-100 hover:bg-gray-50 transition">
-                                                <td class="px-4 py-3">
+                                                <td class="px-4 py-3 whitespace-nowrap">
                                                     <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
                                                         @if ($item->foto)
                                                             <img src="{{ asset($item->foto) }}" class="w-full h-full object-cover">
@@ -687,24 +689,24 @@
                                                         @endif
                                                     </div>
                                                 </td>
-                                                <td class="px-4 py-3 font-medium text-gray-900">{{ $item->nama }}</td>
-                                                <td class="px-4 py-3">
-                                                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                                <td class="px-4 py-3 font-medium text-gray-900 truncate" title="{{ $item->nama }}">{{ $item->nama }}</td>
+                                                <td class="px-4 py-3 truncate">
+                                                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full inline-block truncate max-w-full">
                                                         {{ $item->jabatan->nama ?? '-' }}
                                                     </span>
                                                 </td>
-                                                <td class="px-4 py-3">{{ $item->no_wa ?? '-' }}</td>
-                                                <td class="px-4 py-3 max-w-xs truncate" title="{{ $item->kata_sambutan }}">
+                                                <td class="px-4 py-3 truncate">{{ $item->no_wa ?? '-' }}</td>
+                                                <td class="px-4 py-3 truncate" title="{{ $item->kata_sambutan }}">
                                                     {{ $item->kata_sambutan ?? '-' }}
                                                 </td>
-                                                <td class="px-4 py-3 text-center space-x-2">
-                                                    <button onclick="openModal('editPerangkatModal{{ $item->id }}')" class="text-blue-600 hover:text-blue-800 transition" title="Edit">
+                                                <td class="px-4 py-3 text-center space-x-1 whitespace-nowrap">
+                                                    <button onclick="openModal('editPerangkatModal{{ $item->id }}')" class="text-blue-600 hover:text-blue-800 transition p-1" title="Edit">
                                                         <i data-lucide="edit" class="w-4 h-4 inline"></i>
                                                     </button>
                                                     <form action="{{ route('admin.perangkat.destroy', $item->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Yakin mau hapus data ini?')">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="text-red-500 hover:text-red-700 transition" title="Hapus">
+                                                        <button type="submit" class="text-red-500 hover:text-red-700 transition p-1" title="Hapus">
                                                             <i data-lucide="trash-2" class="w-4 h-4 inline"></i>
                                                         </button>
                                                     </form>
@@ -753,42 +755,45 @@
                     <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
                         <div class="lg:col-span-3">
                             <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                                <!-- TABEL 4: BUMDES -->
                                 <div class="overflow-x-auto">
-                                    <table class="w-full text-left text-sm text-gray-600">
+                                    <table class="w-full table-fixed text-left text-sm text-gray-600">
                                         <thead class="bg-gray-50 text-gray-900 border-b border-gray-100">
                                             <tr>
-                                                <th class="p-4 font-semibold whitespace-nowrap">Gambar</th>
-                                                <th class="p-4 font-semibold whitespace-nowrap">Nama</th>
-                                                <th class="p-4 font-semibold">Deskripsi</th>
-                                                <th class="p-4 font-semibold text-center whitespace-nowrap">Aksi</th>
+                                                <th class="p-4 font-semibold w-24 whitespace-nowrap">Gambar</th>
+                                                <th class="p-4 font-semibold w-1/3 whitespace-nowrap">Nama</th>
+                                                <th class="p-4 font-semibold whitespace-nowrap">Deskripsi</th>
+                                                <th class="p-4 font-semibold text-center w-28 whitespace-nowrap">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-100">
                                             @forelse ($bumdes as $item)
                                                 <tr class="hover:bg-gray-50 transition">
-                                                    <td class="p-4">
+                                                    <td class="p-4 whitespace-nowrap">
                                                         @if ($item->gambar)
                                                             <img src="{{ asset($item->gambar) }}" alt="{{ $item->nama }}" class="w-16 h-16 object-cover rounded-md border border-gray-200 shadow-sm">
                                                         @else
                                                             <div class="w-16 h-16 bg-gray-100 rounded-md border border-gray-200 flex items-center justify-center text-gray-400 text-xs italic">-</div>
                                                         @endif
                                                     </td>
-                                                    <td class="p-4 font-medium text-gray-900 whitespace-nowrap">{{ $item->nama }}</td>
-                                                    <td class="p-4 text-xs leading-relaxed text-gray-500">{{ Str::limit($item->deskripsi, 50) }}</td>
-                                                    <td class="p-4 flex items-center justify-center space-x-3 mt-3">
-                                                        <button type="button" onclick="openModal('editBumdesModal{{ $item->id }}')" class="text-blue-600 hover:text-blue-800 font-medium text-xs transition">
-                                                            Edit
-                                                        </button>
-                                                        <form action="{{ route('admin.bumdes.destroy', $item->id) }}" method="POST" class="inline-block m-0 p-0" onsubmit="return confirm('Yakin mau hapus data ini?')">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="text-red-600 hover:text-red-800 font-medium text-xs transition">Hapus</button>
-                                                        </form>
+                                                    <td class="p-4 font-medium text-gray-900 truncate" title="{{ $item->nama }}">{{ $item->nama }}</td>
+                                                    <td class="p-4 text-xs text-gray-500 truncate" title="{{ $item->deskripsi }}">{{ $item->deskripsi }}</td>
+                                                    <td class="p-4 whitespace-nowrap text-center">
+                                                        <div class="flex items-center justify-center space-x-2">
+                                                            <button type="button" onclick="openModal('editBumdesModal{{ $item->id }}')" class="text-blue-600 hover:text-blue-800 font-medium text-xs transition">
+                                                                Edit
+                                                            </button>
+                                                            <form action="{{ route('admin.bumdes.destroy', $item->id) }}" method="POST" class="inline-block m-0 p-0" onsubmit="return confirm('Yakin mau hapus data ini?')">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="text-red-600 hover:text-red-800 font-medium text-xs transition">Hapus</button>
+                                                            </form>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             @empty
                                                 <tr>
-                                                    <td colspan="4" class="p-8 text-center text-gray-500 text-sm">Belum ada data BUMDes.</td>
+                                                    <td colspan="4" class="p-8 text-center text-gray-500 text-sm italic">Belum ada data BUMDes.</td>
                                                 </tr>
                                             @endforelse
                                         </tbody>
@@ -821,9 +826,9 @@
                                             <label class="text-xs text-gray-500 block mb-1">File Profil BUMDes (PDF)</label>
                                             <input type="file" name="file_profil" accept="application/pdf" class="w-full text-sm text-gray-900 border border-gray-300 rounded cursor-pointer bg-gray-50 focus:outline-none file:mr-4 file:py-1 file:px-4 file:rounded-l file:border-0 file:text-sm file:font-semibold file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200">
                                             @if(isset($KontakBumdes) && $KontakBumdes->file_profil)
-                                                <p class="text-xs text-green-600 mt-2 flex items-center">
-                                                    <i data-lucide="check-circle" class="w-3 h-3 mr-1 inline"></i>
-                                                    <a href="{{ asset($KontakBumdes->file_profil) }}" target="_blank" class="hover:underline">Lihat file profil saat ini</a>
+                                                <p class="text-xs text-green-600 mt-2 flex items-center truncate">
+                                                    <i data-lucide="check-circle" class="w-3 h-3 mr-1 inline shrink-0"></i>
+                                                    <a href="{{ asset($KontakBumdes->file_profil) }}" target="_blank" class="hover:underline truncate">Lihat file profil saat ini</a>
                                                 </p>
                                             @endif
                                         </div>
@@ -886,17 +891,17 @@
                         </div>
                     </div>
 
-                    <!-- Tabel Berita -->
+                    <!-- TABEL 5: BERITA -->
                     <div class="bg-white rounded-lg shadow-sm overflow-hidden">
                         <div class="overflow-x-auto">
-                            <table class="min-w-full divide-y divide-gray-200">
+                            <table class="w-full table-fixed divide-y divide-gray-200">
                                 <thead class="bg-gray-50">
                                     <tr>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Judul Artikel</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tipe</th>
-                                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-2/5 whitespace-nowrap">Judul Artikel</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/5 whitespace-nowrap">Kategori</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-28 whitespace-nowrap">Tanggal</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-32 whitespace-nowrap">Tipe</th>
+                                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider w-28 whitespace-nowrap">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
@@ -915,21 +920,25 @@
                                             ];
                                         @endphp
                                         <tr>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <div class="text-sm font-medium text-gray-900">{{ $item->judul }}</div>
-                                                <div class="text-sm text-gray-500">Oleh: {{ $item->penulis }}</div>
+                                            <td class="px-6 py-4 truncate">
+                                                <div class="text-sm font-medium text-gray-900 truncate" title="{{ $item->judul }}">{{ $item->judul }}</div>
+                                                <div class="text-xs text-gray-500 truncate" title="Oleh: {{ $item->penulis }}">Oleh: {{ $item->penulis }}</div>
                                             </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">{{ $item->kategori->nama ?? 'Tanpa Kategori' }}</span>
+                                            <td class="px-6 py-4 truncate">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800 truncate max-w-full">
+                                                    {{ $item->kategori->nama ?? 'Tanpa Kategori' }}
+                                                </span>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                 {{ $item->tanggal ? $item->tanggal->format('d-m-Y') : '-' }}
                                             </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-[#166534]">{{ $item->link_eksternal ? 'Link Eksternal' : 'Tulisan Sendiri' }}</span>
+                                            <td class="px-6 py-4 truncate">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-[#166534] truncate max-w-full">
+                                                    {{ $item->link_eksternal ? 'Link Eksternal' : 'Tulisan Sendiri' }}
+                                                </span>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <button type="button" class="text-indigo-600 hover:text-indigo-900 mr-3" data-artikel='@json($artikelJs)' onclick="openEditBerita(this)">Edit</button>
+                                                <button type="button" class="text-indigo-600 hover:text-indigo-900 mr-2" data-artikel='@json($artikelJs)' onclick="openEditBerita(this)">Edit</button>
                                                 <form action="{{ route('admin.artikel.destroy', $item->id) }}" method="POST" class="inline" onsubmit="return confirm('Yakin mau hapus berita ini?')">
                                                     @csrf
                                                     @method('DELETE')
@@ -939,7 +948,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="5" class="px-6 py-4 text-center text-sm text-gray-400">Belum ada berita.</td>
+                                            <td colspan="5" class="px-6 py-4 text-center text-sm text-gray-400 italic">Belum ada berita.</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -997,16 +1006,16 @@
                         </div>
                     </div>
 
-                    <!-- Daftar Layanan -->
+                    <!-- TABEL 6: LAYANAN -->
                     <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-6">
                         <div class="overflow-x-auto">
-                            <table class="min-w-full divide-y divide-gray-200">
+                            <table class="w-full table-fixed divide-y divide-gray-200">
                                 <thead class="bg-gray-50">
                                     <tr>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Layanan</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">PDF Formulir</th>
-                                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-2/5 whitespace-nowrap">Nama Layanan</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/4 whitespace-nowrap">Kategori</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-32 whitespace-nowrap">PDF Formulir</th>
+                                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider w-28 whitespace-nowrap">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
@@ -1021,11 +1030,13 @@
                                             ];
                                         @endphp
                                         <tr>
-                                            <td class="px-6 py-4">
-                                                <div class="text-sm font-medium text-gray-900">{{ $item->nama }}</div>
+                                            <td class="px-6 py-4 truncate">
+                                                <div class="text-sm font-medium text-gray-900 truncate" title="{{ $item->nama }}">{{ $item->nama }}</div>
                                             </td>
-                                            <td class="px-6 py-4 whitespace-nowrap">
-                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">{{ $item->kategori->nama ?? 'Tanpa Kategori' }}</span>
+                                            <td class="px-6 py-4 truncate">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800 truncate max-w-full">
+                                                    {{ $item->kategori->nama ?? 'Tanpa Kategori' }}
+                                                </span>
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm">
                                                 @if ($item->file_pdf)
@@ -1035,7 +1046,7 @@
                                                 @endif
                                             </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <button type="button" class="text-indigo-600 hover:text-indigo-900 mr-3" data-layanan='@json($layananJs)' onclick="openEditLayanan(this)">Edit</button>
+                                                <button type="button" class="text-indigo-600 hover:text-indigo-900 mr-2" data-layanan='@json($layananJs)' onclick="openEditLayanan(this)">Edit</button>
                                                 <form action="{{ route('admin.layanan.destroy', $item->id) }}" method="POST" class="inline" onsubmit="return confirm('Yakin mau hapus layanan ini?')">
                                                     @csrf
                                                     @method('DELETE')
@@ -1045,7 +1056,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="4" class="px-6 py-4 text-center text-sm text-gray-400">Belum ada layanan.</td>
+                                            <td colspan="4" class="px-6 py-4 text-center text-sm text-gray-400 italic">Belum ada layanan.</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -1095,8 +1106,8 @@
                             <div class="divide-y divide-gray-100">
                                 @forelse ($jamOperasional as $item)
                                     <div class="flex items-center justify-between py-2 text-sm">
-                                        <span class="text-gray-700">{{ $item->hari }}</span>
-                                        <span class="text-gray-500">{{ $item->jam }}</span>
+                                        <span class="text-gray-700 truncate mr-2">{{ $item->hari }}</span>
+                                        <span class="text-gray-500 truncate mr-2">{{ $item->jam }}</span>
                                         <form action="{{ route('admin.layanan.jam.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Hapus baris ini?')">
                                             @csrf
                                             @method('DELETE')
@@ -1651,17 +1662,26 @@
         </div>
     </div>
 
-    <!-- ========================================================================= -->
-    <!-- JAVASCRIPT LOGIC DENGAN PENGELOLAAN MODAL & ROUTE KONTROL DENGAN OPTIMAL -->
-    <!-- ========================================================================= -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Inisialisasi Lucide Icons
+        // Inisialisasi Lucide Icons & Auto-load Halaman Terakhir
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
+
+            // AMBIL DATA HALAMAN TERAKHIR DARI LOCALSTORAGE
+            const savedPage = localStorage.getItem('activePage') || 'dashboard';
+
+            // Cari elemen menu (link <a>) yang memanggil fungsi switchPage
+            const activeMenu = document.querySelector(`a[onclick*="switchPage('${savedPage}'"]`);
+
+            // Panggil fungsi switchPage secara otomatis saat halaman dimuat
+            switchPage(savedPage, activeMenu);
         });
 
         // 1. Fungsionalitas Navigasi Halaman
         function switchPage(pageId, element) {
+            localStorage.setItem('activePage', pageId);
+
             // Sembunyikan semua halaman
             const pages = document.querySelectorAll('.page-content');
             pages.forEach(page => {
@@ -1690,7 +1710,7 @@
             }
         }
 
-        // 2. Fungsionalitas Buka-Tutup Modal Bebas Tumpang Tindih
+        // 2. Fungsionalitas Buka-Tutup Modal
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             if (!modal) return;
@@ -1698,7 +1718,6 @@
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             
-            // Animasi masuk halus
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 const box = modal.querySelector('.modal-box');
@@ -1720,7 +1739,6 @@
                 box.classList.add('scale-95');
             }
 
-            // Sembunyikan sepenuhnya setelah animasi selesai
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');

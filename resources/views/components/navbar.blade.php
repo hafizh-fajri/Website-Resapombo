@@ -14,7 +14,7 @@
                             Desa Resapombo
                         </span>
                         <!-- Tambahkan -mt-1 agar teks naik ke atas dan lebih mepet -->
-                        <span class="text-sm md:text-sm text-gray-700 font-medium leading-none -mt-1">
+                        <span class="text-sm md:text-sm text-gray-700 font-medium leading-none lg:-mt-1">
                             Kota Blitar
                         </span>
                     </div>
