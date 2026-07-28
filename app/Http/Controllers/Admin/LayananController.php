@@ -23,7 +23,7 @@ class LayananController extends Controller
 
         $jamOperasional = JamOperasional::orderBy('id')->get();
 
-        return view('admin.layanan.index', compact('kategori', 'layanan', 'kontak', 'jamOperasional'));
+        return view('admin.dashboard', compact('kategori', 'layanan', 'kontak', 'jamOperasional'));
     }
 
     // ==== KATEGORI ====
@@ -35,21 +35,21 @@ class LayananController extends Controller
 
         KategoriLayanan::create($validated);
 
-        return redirect()->route('admin.layanan.index')->with('success', 'Kategori berhasil ditambahkan.');
+        return redirect()->route('admin.dashboard')->with('success', 'Kategori berhasil ditambahkan.');
     }
 
     public function destroyKategori(KategoriLayanan $kategori)
     {
         $kategori->delete();
 
-        return redirect()->route('admin.layanan.index')->with('success', 'Kategori berhasil dihapus.');
+        return redirect()->route('admin.dashboard')->with('success', 'Kategori berhasil dihapus.');
     }
 
     // ==== LAYANAN ====
     public function createLayanan()
     {
         $kategori = KategoriLayanan::orderBy('nama')->get();
-        return view('admin.layanan.create', compact('kategori'));
+        return view('admin.dashboard', compact('kategori'));
     }
 
     public function storeLayanan(Request $request)

@@ -9,18 +9,11 @@ use Illuminate\Http\Request;
 
 class ArtikelController extends Controller
 {
-    public function index()
-    {
-        $artikel = Artikel::with('kategori')->latest('tanggal')->get();
-        $kategori = KategoriBerita::orderBy('nama')->get();
-
-        return view('admin.artikel.index', compact('artikel', 'kategori'));
-    }
 
     public function create()
     {
         $kategori = KategoriBerita::orderBy('nama')->get();
-        return view('admin.artikel.create', compact('kategori'));
+        return view('pages.admin.dashboard', compact('kategori'));
     }
 
     public function store(Request $request)
@@ -33,24 +26,35 @@ class ArtikelController extends Controller
             'kategori_berita_id' => 'nullable|exists:kategori_berita,id',
             'link_eksternal' => 'nullable|url',
             'isi' => 'required_without:link_eksternal|nullable|string',
-            'gambar' => 'nullable|image|max:2048',
         ]);
 
         $validated['isi'] = $validated['isi'] ?? '';
 
         if ($request->hasFile('gambar')) {
-            $validated['gambar'] = $request->file('gambar')->store('artikel', 'public');
+            $file = $request->file('gambar');
+            
+            // Membuat nama file yang unik agar tidak tertimpa jika ada nama file yang sama
+            $nama_file = time() . '_' . $file->getClientOriginalName();
+            
+            // Menentukan lokasi folder tujuan upload di dalam folder public
+            $tujuan_upload = public_path('uploads/images');
+            
+            // Memindahkan file gambar ke folder tujuan
+            $file->move($tujuan_upload, $nama_file);
+            
+            // Menyimpan rute/path file ke dalam array untuk disimpan ke database kolom 'gambar'
+            $validated['gambar'] = 'uploads/images/' . $nama_file;
         }
 
         Artikel::create($validated);
 
-        return redirect()->route('admin.artikel.index')->with('success', 'Artikel berhasil ditambahkan.');
+        return redirect()->route('admin.dashboard')->with('success', 'Artikel berhasil ditambahkan.');
     }
 
     public function edit(Artikel $artikel)
     {
         $kategori = KategoriBerita::orderBy('nama')->get();
-        return view('admin.artikel.edit', compact('artikel', 'kategori'));
+        return view('pages.admin.artikel.edit', compact('artikel', 'kategori'));
     }
 
     public function update(Request $request, Artikel $artikel)
@@ -63,25 +67,36 @@ class ArtikelController extends Controller
             'kategori_berita_id' => 'nullable|exists:kategori_berita,id',
             'link_eksternal' => 'nullable|url',
             'isi' => 'required_without:link_eksternal|nullable|string',
-            'gambar' => 'nullable|image|max:2048',
         ]);
 
         $validated['isi'] = $validated['isi'] ?? '';
 
         if ($request->hasFile('gambar')) {
-            $validated['gambar'] = $request->file('gambar')->store('artikel', 'public');
+            $file = $request->file('gambar');
+            
+            // Membuat nama file yang unik agar tidak tertimpa jika ada nama file yang sama
+            $nama_file = time() . '_' . $file->getClientOriginalName();
+            
+            // Menentukan lokasi folder tujuan upload di dalam folder public
+            $tujuan_upload = public_path('uploads/images');
+            
+            // Memindahkan file gambar ke folder tujuan
+            $file->move($tujuan_upload, $nama_file);
+            
+            // Menyimpan rute/path file ke dalam array untuk disimpan ke database kolom 'gambar'
+            $validated['gambar'] = 'uploads/images/' . $nama_file;
         }
 
         $artikel->update($validated);
 
-        return redirect()->route('admin.artikel.index')->with('success', 'Artikel berhasil diperbarui.');
+        return redirect()->route('admin.dashboard')->with('success', 'Artikel berhasil diperbarui.');
     }
 
     public function destroy(Artikel $artikel)
     {
         $artikel->delete();
 
-        return redirect()->route('admin.artikel.index')->with('success', 'Artikel berhasil dihapus.');
+        return redirect()->route('admin.dashboard')->with('success', 'Artikel berhasil dihapus.');
     }
 
     public function storeKategori(Request $request)
@@ -92,13 +107,13 @@ class ArtikelController extends Controller
 
         KategoriBerita::create($validated);
 
-        return redirect()->route('admin.artikel.index')->with('success', 'Kategori berhasil ditambahkan.');
+        return redirect()->route('admin.dashboard')->with('success', 'Kategori berhasil ditambahkan.');
     }
 
     public function destroyKategori(KategoriBerita $kategori)
     {
         $kategori->delete();
 
-        return redirect()->route('admin.artikel.index')->with('success', 'Kategori berhasil dihapus.');
+        return redirect()->route('admin.dashboard')->with('success', 'Kategori berhasil dihapus.');
     }
 }

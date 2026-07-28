@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Perangkat;
 
 class Jabatan extends Model
 {
@@ -10,6 +11,9 @@ class Jabatan extends Model
 
     public function perangkat()
     {
-        return $this->hasMany(Perangkat::class);
+        // Sesuaikan 'jabatan_id' jika nama kolom Anda berbeda
+        return $this->hasMany(Perangkat::class, 'jabatan_id'); 
     }
+
+    
 }

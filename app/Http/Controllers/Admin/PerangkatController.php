@@ -16,22 +16,33 @@ class PerangkatController extends Controller
             'jabatan_id' => 'required|exists:jabatans,id',
             'no_wa' => 'nullable|string|max:20',
             'kata_sambutan' => 'nullable|string',
-            'foto' => 'nullable|image|max:2048',
         ]);
 
         if ($request->hasFile('foto')) {
-            $validated['foto'] = $request->file('foto')->store('perangkat', 'public');
+            $file = $request->file('foto');
+            
+            // Membuat nama file yang unik agar tidak tertimpa jika ada nama file yang sama
+            $nama_file = time() . '_' . $file->getClientOriginalName();
+            
+            // Menentukan lokasi folder tujuan upload di dalam folder public
+            $tujuan_upload = public_path('uploads/images');
+            
+            // Memindahkan file gambar ke folder tujuan
+            $file->move($tujuan_upload, $nama_file);
+            
+            // Menyimpan rute/path file ke dalam array untuk disimpan ke database kolom 'foto'
+            $validated['foto'] = 'uploads/images/' . $nama_file;
         }
 
         Perangkat::create($validated);
 
-        return redirect()->route('admin.pemerintahan.index')->with('success', 'Data perangkat berhasil ditambahkan.');
+        return redirect()->route('admin.dashboard')->with('success', 'Data perangkat berhasil ditambahkan.');
     }
 
     public function edit(Perangkat $perangkat)
     {
         $jabatan = Jabatan::orderBy('tingkat')->get();
-        return view('admin.perangkat.edit', compact('perangkat', 'jabatan'));
+        return view('admin.dashboard', compact('perangkat', 'jabatan'));
     }
 
     public function update(Request $request, Perangkat $perangkat)
@@ -45,18 +56,30 @@ class PerangkatController extends Controller
         ]);
 
         if ($request->hasFile('foto')) {
-            $validated['foto'] = $request->file('foto')->store('perangkat', 'public');
+            $file = $request->file('foto');
+            
+            // Membuat nama file yang unik agar tidak tertimpa jika ada nama file yang sama
+            $nama_file = time() . '_' . $file->getClientOriginalName();
+            
+            // Menentukan lokasi folder tujuan upload di dalam folder public
+            $tujuan_upload = public_path('uploads/images');
+            
+            // Memindahkan file gambar ke folder tujuan
+            $file->move($tujuan_upload, $nama_file);
+            
+            // Menyimpan rute/path file ke dalam array untuk disimpan ke database kolom 'foto'
+            $validated['foto'] = 'uploads/images/' . $nama_file;
         }
 
         $perangkat->update($validated);
 
-        return redirect()->route('admin.pemerintahan.index')->with('success', 'Data perangkat berhasil diperbarui.');
+        return redirect()->route('admin.dashboard')->with('success', 'Data perangkat berhasil diperbarui.');
     }
 
     public function destroy(Perangkat $perangkat)
     {
         $perangkat->delete();
 
-        return redirect()->route('admin.pemerintahan.index')->with('success', 'Data perangkat berhasil dihapus.');
+        return redirect()->route('admin.dashboard')->with('success', 'Data perangkat berhasil dihapus.');
     }
 }

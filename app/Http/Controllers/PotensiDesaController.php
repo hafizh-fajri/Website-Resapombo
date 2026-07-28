@@ -10,6 +10,9 @@ class PotensiDesaController extends Controller
     {
         $fakta = FaktaSingkat::first();
 
-        return view('pages.potensi', compact('fakta'));
+        return view('pages.potensi1', compact('fakta'));
     }
+
+    
+
 }

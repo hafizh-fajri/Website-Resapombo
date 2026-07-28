@@ -4,16 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Models\Artikel;
 use App\Models\InformasiDesa;
+use App\Models\Jabatan;
+use App\Models\KategoriBerita;
 use App\Models\Visi;
 use App\Models\Misi;
 use App\Models\Dokumen;
 use App\Models\KepalaDesa;
+use App\Models\Potensi;
+use App\Models\FaktaSingkat;
+use App\Models\KontakBumdes;
+use App\Models\Perangkat;
+use App\Models\Bumdes;
+use App\Models\KategoriLayanan;
+use App\Models\Layanan;
+use App\Models\KontakLayanan;
+use App\Models\JamOperasional;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PageController extends Controller
 {
     public function home()
     {
-        $artikel = Artikel::latest('tanggal')->take(3)->get();
+        $artikels = Artikel::latest('tanggal')->take(3)->get();
         $informasi = InformasiDesa::first();
 
     // Kalau belum ada data sama sekali, buat default dulu biar nggak error di view
@@ -27,7 +41,7 @@ class PageController extends Controller
             ]);
         }
 
-        return view('pages.home', compact('artikel', 'informasi'));
+        return view('pages.landingpage', compact('artikels', 'informasi'));
     }
 
     public function profil()
@@ -37,7 +51,8 @@ class PageController extends Controller
         $misi = Misi::latest()->get();
         $dokumen = Dokumen::latest()->get();
         $kepalaDesa = KepalaDesa::oldest()->get();
-        return view('pages.profildesa');
+
+        return view('pages.profildesa', compact('informasi', 'visi', 'misi', 'dokumen', 'kepalaDesa'));
     }
 
     public function struktur()
@@ -74,7 +89,7 @@ class PageController extends Controller
 
     public function potensi()
     {
-        return view('pages.potensi');
+        return view('pages.potensi1');
     }
 
     public function berita()
@@ -92,10 +107,9 @@ class PageController extends Controller
         return view('pages.admin.login');
     }
 
-    public function admindashboard()
-    {
-        return view('pages.admin.dashboard');
-    }
+
+
+     
 
     public function kekayaan()
     {

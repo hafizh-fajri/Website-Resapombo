@@ -1,28 +1,52 @@
-<nav class="bg-white shadow-sm fixed w-full z-50">
+<nav class="bg-white shadow-md fixed w-full z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
             <div class="flex-shrink-0 flex items-center">
-                <a href="{{ url('/') }}" class="text-2xl font-bold text-brand-green">Desa Resapombo</a>
+                <a href="{{ url('/') }}" class="flex items-center gap-3 group">
+                    <!-- Gambar Logo -->
+                    <img src="{{ asset('images/landing/logoResapombo.png') }}" alt="Logo Desa Resapombo"
+                        class="h-8 md:h-10 w-auto group-hover:scale-105 transition-transform duration-300">
+
+                    <!-- Teks Logo -->
+                    <div class="flex flex-col justify-center">
+                        <!-- text-brand-green diasumsikan sudah ada di tailwind.config Anda -->
+                        <span class="text-xl md:text-xl font-bold text-brand-green leading-none">
+                            Desa Resapombo
+                        </span>
+                        <!-- Tambahkan -mt-1 agar teks naik ke atas dan lebih mepet -->
+                        <span class="text-sm md:text-sm text-gray-700 font-medium leading-none -mt-1">
+                            Kota Blitar
+                        </span>
+                    </div>
+                </a>
             </div>
-            
+
             <div class="hidden md:flex items-center space-x-8">
-                <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">Home</a>
-                
-                <a href="{{ route('profil') }}" class="{{ request()->routeIs('profil') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">Profil</a>
-                
-                <a href="{{ route('pemerintahan') }}" class="{{ request()->routeIs('pemerintahan') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">Pemerintahan</a>
-                
-                <a href="{{ route('potensi') }}" class="{{ request()->routeIs('potensi') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">Potensi</a>
-                
-                <a href="{{ route('bumdes') }}" class="{{ request()->routeIs('bumdes') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">BUMDes</a>
-                <a href="{{ route('berita') }}" class="{{ request()->routeIs('berita') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">Berita</a>
-                <a href="{{ route('faq') }}" class="{{ request()->routeIs('faq') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">FAQ</a>
+                <a href="{{ route('home') }}"
+                    class="{{ request()->routeIs('home') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">Home</a>
+
+                <a href="{{ route('profil') }}"
+                    class="{{ request()->routeIs('profil') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">Profil</a>
+
+                <a href="{{ route('pemerintahan') }}"
+                    class="{{ request()->routeIs('pemerintahan') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">Pemerintahan</a>
+
+                <a href="{{ route('potensi') }}"
+                    class="{{ request()->routeIs('potensi') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">Potensi</a>
+
+                <a href="{{ route('bumdes') }}"
+                    class="{{ request()->routeIs('bumdes') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">BUMDes</a>
+                <a href="{{ route('berita') }}"
+                    class="{{ request()->routeIs('berita') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">Berita</a>
+                <a href="{{ route('layanan') }}"
+                    class="{{ request()->routeIs('layanan') ? 'text-[#1a5624] font-semibold border-b-2 border-[#1a5624] pb-1' : 'text-gray-500 hover:text-[#1a5624] font-medium transition' }}">FAQ</a>
             </div>
 
             <div class="flex items-center md:hidden">
                 <button id="mobile-menu-button" class="text-gray-500 hover:text-[#1a5624] focus:outline-none">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
@@ -31,19 +55,26 @@
 
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="{{ route('home') }}" class="block px-3 py-2 rounded-md {{ request()->is('/') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Home</a>
-            
-            <a href="{{ route('profil') }}" class="block px-3 py-2 rounded-md {{ request()->routeIs('profil') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Profil</a>
-            
-            <a href="{{ route('pemerintahan') }}" class="block px-3 py-2 rounded-md {{ request()->routeIs('struktur') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Pemerintahan</a>
-            
-            <a href="{{ route('potensi') }}" class="block px-3 py-2 rounded-md {{ request()->routeIs('potensi') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Potensi</a>
+            <a href="{{ route('home') }}"
+                class="block px-3 py-2 rounded-md {{ request()->is('/') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Home</a>
 
-            <a href="{{ route('bumdes') }}" class="block px-3 py-2 rounded-md {{ request()->routeIs('bumdes') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">BUMDes</a>
+            <a href="{{ route('profil') }}"
+                class="block px-3 py-2 rounded-md {{ request()->routeIs('profil') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Profil</a>
 
-            <a href="{{ route('berita') }}" class="block px-3 py-2 rounded-md {{ request()->routeIs('berita') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Berita</a>
+            <a href="{{ route('pemerintahan') }}"
+                class="block px-3 py-2 rounded-md {{ request()->routeIs('struktur') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Pemerintahan</a>
 
-            <a href="{{ route('faq') }}" class="block px-3 py-2 rounded-md {{ request()->routeIs('faq') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">FAQ</a>
+            <a href="{{ route('potensi') }}"
+                class="block px-3 py-2 rounded-md {{ request()->routeIs('potensi') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Potensi</a>
+
+            <a href="{{ route('bumdes') }}"
+                class="block px-3 py-2 rounded-md {{ request()->routeIs('bumdes') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">BUMDes</a>
+
+            <a href="{{ route('berita') }}"
+                class="block px-3 py-2 rounded-md {{ request()->routeIs('berita') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">Berita</a>
+
+            <a href="{{ route('layanan') }}"
+                class="block px-3 py-2 rounded-md {{ request()->routeIs('layanan') ? 'text-brand-green font-semibold bg-green-50' : 'text-gray-500 hover:text-brand-green hover:bg-gray-50' }}">FAQ</a>
         </div>
     </div>
 </nav>

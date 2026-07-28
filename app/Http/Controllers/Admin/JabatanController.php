@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class JabatanController extends Controller
 {
+    
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -17,12 +18,12 @@ class JabatanController extends Controller
 
         Jabatan::create($validated);
 
-        return redirect()->route('admin.pemerintahan.index')->with('success', 'Jabatan berhasil ditambahkan.');
+        return redirect()->route('admin.dashboard')->with('success', 'Jabatan berhasil ditambahkan.');
     }
 
     public function edit(Jabatan $jabatan)
     {
-        return view('admin.jabatan.edit', compact('jabatan'));
+        return view('admin.dashboard', compact('jabatan'));
     }
 
     public function update(Request $request, Jabatan $jabatan)
@@ -34,13 +35,13 @@ class JabatanController extends Controller
 
         $jabatan->update($validated);
 
-        return redirect()->route('admin.pemerintahan.index')->with('success', 'Jabatan berhasil diperbarui.');
+        return redirect()->route('admin.dashboard')->with('success', 'Jabatan berhasil diperbarui.');
     }
 
     public function destroy(Jabatan $jabatan)
     {
         $jabatan->delete();
 
-        return redirect()->route('admin.pemerintahan.index')->with('success', 'Jabatan berhasil dihapus.');
+        return redirect()->route('admin.dashboard')->with('success', 'Jabatan berhasil dihapus.');
     }
 }

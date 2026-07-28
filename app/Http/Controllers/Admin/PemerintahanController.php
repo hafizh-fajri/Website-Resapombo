@@ -13,6 +13,6 @@ class PemerintahanController extends Controller
         $jabatan = Jabatan::orderBy('tingkat')->get();
         $perangkat = Perangkat::with('jabatan')->latest()->get();
 
-        return view('admin.pemerintahan.index', compact('jabatan', 'perangkat'));
+        return view('admin.dashboard', compact('jabatan', 'perangkat'));
     }
 }

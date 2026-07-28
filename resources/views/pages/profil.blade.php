@@ -78,7 +78,7 @@
                 <h3>Dokumen Publik</h3>
                 @forelse ($dokumen as $item)
                     <div style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                        <a href="{{ asset('storage/' . $item->file) }}" target="_blank">
+                        <a href="{{ asset($item->file) }}" target="_blank">
                             📄 {{ $item->nama }}
                         </a>
                     </div>
@@ -97,7 +97,7 @@
             @forelse ($kepalaDesa as $item)
                 <div class="kepala-desa-card">
                     @if ($item->foto)
-                        <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->nama }}">
+                        <img src="{{ asset($item->foto) }}" alt="{{ $item->nama }}">
                     @else
                         <div class="kepala-desa-placeholder">Tidak ada foto</div>
                     @endif

@@ -11,17 +11,29 @@ class ArtikelController extends Controller
     public function index(Request $request)
     {
         $kategoriId = $request->query('kategori');
+        $search = $request->query('search'); // Menangkap input pencarian
 
+        // Mulai query dengan eager loading
         $query = Artikel::with('kategori')->latest('tanggal');
 
+        // Filter berdasarkan kategori jika ada
         if ($kategoriId) {
             $query->where('kategori_berita_id', $kategoriId);
         }
 
-        $artikel = $query->get();
+        // Filter pencarian berdasarkan judul atau isi artikel
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('judul', 'like', "%{$search}%")
+                  ->orWhere('isi', 'like', "%{$search}%");
+            });
+        }
+
+        $berita = $query->get();
+        $beritaTerbaru = Artikel::with('kategori')->latest('tanggal')->take(3)->get();
         $kategori = KategoriBerita::orderBy('nama')->get();
 
-        return view('pages.berita', compact('artikel', 'kategori', 'kategoriId'));
+        return view('pages.berita', compact('berita', 'beritaTerbaru', 'kategori', 'kategoriId', 'search'));
     }
 
     public function show(Artikel $artikel)

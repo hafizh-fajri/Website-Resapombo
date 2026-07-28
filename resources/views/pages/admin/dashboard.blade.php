@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin - Desa Resapombo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script> 
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body class="bg-gray-100 font-sans text-gray-800 antialiased overflow-hidden">
 
     <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside id="sidebar" class="bg-[#166534] text-white w-64 flex-shrink-0 hidden md:flex flex-col transition-all duration-300 relative z-50">
+        <aside id="sidebar"
+            class="bg-[#166534] text-white w-64 flex-shrink-0 hidden md:flex flex-col transition-all duration-300 relative z-30">
             <div class="h-16 flex items-center justify-center border-b border-[#14532d]">
                 <h2 class="text-xl font-bold">Admin Resapombo</h2>
             </div>
-            
+
             <nav class="flex-1 overflow-y-auto py-4">
                 <ul class="space-y-1">
-                    <!-- Nav Items dengan fungsi onclick -->
-                    <li><a href="#" onclick="switchPage('dashboard', this)" class="menu-item flex items-center px-6 py-3 bg-[#14532d] border-l-4 border-white transition"><i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i> Dashboard</a></li>
-                    <li><a href="#" onclick="switchPage('home', this)" class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i data-lucide="home" class="w-5 h-5 mr-3"></i> Home / Landing</a></li>
-                    <li><a href="#" onclick="switchPage('profil', this)" class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i data-lucide="info" class="w-5 h-5 mr-3"></i> Profil Desa</a></li>
-                    <li><a href="#" onclick="switchPage('potensi', this)" class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i data-lucide="sprout" class="w-5 h-5 mr-3"></i> Potensi</a></li>
-                    <li><a href="#" onclick="switchPage('pemerintahan', this)" class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i data-lucide="building" class="w-5 h-5 mr-3"></i> Pemerintahan</a></li>
-                    <li><a href="#" onclick="switchPage('bumdes', this)" class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i data-lucide="shopping-bag" class="w-5 h-5 mr-3"></i> BUMDes</a></li>
-                    <li><a href="#" onclick="switchPage('berita', this)" class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i data-lucide="newspaper" class="w-5 h-5 mr-3"></i> Berita & Artikel</a></li>
-                    <li><a href="#" onclick="switchPage('faq', this)" class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i data-lucide="help-circle" class="w-5 h-5 mr-3"></i> FAQ</a></li>
+                    <li><a href="#" onclick="switchPage('dashboard', this)"
+                            class="menu-item flex items-center px-6 py-3 bg-[#14532d] border-l-4 border-white transition"><i
+                                data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i> Dashboard</a></li>
+                    <li><a href="#" onclick="switchPage('home', this)"
+                            class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i
+                                data-lucide="home" class="w-5 h-5 mr-3"></i> Home / Landing</a></li>
+                    <li><a href="#" onclick="switchPage('profil', this)"
+                            class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i
+                                data-lucide="info" class="w-5 h-5 mr-3"></i> Profil Desa</a></li>
+                    <li><a href="#" onclick="switchPage('potensi', this)"
+                            class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i
+                                data-lucide="sprout" class="w-5 h-5 mr-3"></i> Potensi</a></li>
+                    <li><a href="#" onclick="switchPage('pemerintahan', this)"
+                            class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i
+                                data-lucide="building" class="w-5 h-5 mr-3"></i> Pemerintahan</a></li>
+                    <li><a href="#" onclick="switchPage('bumdes', this)"
+                            class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i
+                                data-lucide="shopping-bag" class="w-5 h-5 mr-3"></i> BUMDes</a></li>
+                    <li><a href="#" onclick="switchPage('berita', this)"
+                            class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i
+                                data-lucide="newspaper" class="w-5 h-5 mr-3"></i> Berita & Artikel</a></li>
+                    <li><a href="#" onclick="switchPage('faq', this)"
+                            class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i
+                                data-lucide="help-circle" class="w-5 h-5 mr-3"></i> FAQ</a></li>
                 </ul>
             </nav>
         </aside>
@@ -35,23 +53,26 @@
         <div class="flex-1 flex flex-col overflow-hidden">
             <!-- Header -->
             <header class="h-16 bg-white shadow-sm flex items-center justify-between px-6 z-10">
-                <button id="mobile-menu-btn" class="md:hidden text-gray-500 hover:text-[#166534] focus:outline-none">
+                <button id="mobile-menu-btn" onclick="toggleMobileSidebar()" class="md:hidden text-gray-500 hover:text-[#166534] focus:outline-none">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
-                
+
                 <div class="flex-1"></div>
 
                 <div class="flex items-center">
                     <span class="text-sm font-medium text-gray-700 mr-4">Halo, Admin</span>
-                    <a href="/logout" class="text-sm text-red-600 hover:text-red-800 font-semibold flex items-center">
-                        <i data-lucide="log-out" class="w-4 h-4 mr-1"></i> Logout
-                    </a>
+                    <form action="{{ route('admin.logout') }}" method="POST" class="inline">
+                        @csrf
+                        <button type="submit" class="text-sm text-red-600 hover:text-red-800 font-semibold flex items-center">
+                            <i data-lucide="log-out" class="w-4 h-4 mr-1"></i> Logout
+                        </button>
+                    </form>
                 </div>
             </header>
 
             <!-- Main Workspace -->
             <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6 relative">
-                
+
                 <!-- Halaman 1: Dashboard -->
                 <div id="dashboard" class="page-content block">
                     <h1 class="text-2xl font-semibold text-gray-900 mb-6">Selamat Datang di Dashboard</h1>
@@ -73,31 +94,60 @@
 
                 <!-- Halaman 2: Home / Landing -->
                 <div id="home" class="page-content hidden">
-                    <div class="flex justify-between items-center mb-6">
-                        <div>
-                            <h1 class="text-2xl font-semibold text-gray-900">Kelola Beranda (Landing Page)</h1>
-                            <p class="text-sm text-gray-500 mt-1">Edit teks hero banner dan statistik penduduk.</p>
+                    <form action="{{ route('admin.informasi.update') }}" method="POST">
+                        @csrf
+                        @method('PUT')
+
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                            <div>
+                                <h1 class="text-2xl font-semibold text-gray-900">Kelola Beranda (Landing Page)</h1>
+                                <p class="text-sm text-gray-500 mt-1">Edit teks hero banner dan statistik penduduk.</p>
+                            </div>
+                            <button type="submit"
+                                class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
+                                <i data-lucide="save" class="w-4 h-4 mr-2"></i> Simpan Perubahan
+                            </button>
                         </div>
-                        <button class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
-                            <i data-lucide="save" class="w-4 h-4 mr-2"></i> Simpan Perubahan
-                        </button>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
-                        <h3 class="font-semibold text-lg mb-4 border-b pb-2">Hero Section</h3>
-                        <label class="block mb-2 text-sm font-medium">Judul Utama</label>
-                        <input type="text" class="w-full border rounded-lg p-2 mb-4" value="Selamat Datang di Desa Resapombo">
-                        <label class="block mb-2 text-sm font-medium">Sub Judul</label>
-                        <textarea class="w-full border rounded-lg p-2" rows="3">Mewujudkan desa yang mandiri, sejahtera, dan berbudaya...</textarea>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6">
-                        <h3 class="font-semibold text-lg mb-4 border-b pb-2">Data Statistik</h3>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div><label class="text-sm">Penduduk</label><input type="text" class="w-full border rounded-lg p-2" value="5.420"></div>
-                            <div><label class="text-sm">Luas Wilayah</label><input type="text" class="w-full border rounded-lg p-2" value="850 ha"></div>
-                            <div><label class="text-sm">Dusun</label><input type="text" class="w-full border rounded-lg p-2" value="6"></div>
-                            <div><label class="text-sm">RT/RW</label><input type="text" class="w-full border rounded-lg p-2" value="850"></div>
+
+                        
+
+                        <!-- Data Statistik -->
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="font-semibold text-lg mb-4 border-b pb-2 text-gray-800">Data Statistik</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+                                <div>
+                                    <label for="penduduk" class="block text-sm font-medium text-gray-700 mb-1">Penduduk</label>
+                                    <input type="text" id="penduduk" name="jumlah_penduduk"
+                                        class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-[#166534] focus:border-transparent outline-none transition"
+                                        value="{{ old('jumlah_penduduk', $informasi->jumlah_penduduk ?? '5.420') }}" required>
+                                </div>
+                                <div>
+                                    <label for="luas_wilayah" class="block text-sm font-medium text-gray-700 mb-1">Luas Wilayah</label>
+                                    <input type="text" id="luas_wilayah" name="luas_wilayah"
+                                        class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-[#166534] focus:border-transparent outline-none transition"
+                                        value="{{ old('luas_wilayah', $informasi->luas_wilayah ?? '-') }}" required>
+                                </div>
+                                <div>
+                                    <label for="dusun" class="block text-sm font-medium text-gray-700 mb-1">Dusun</label>
+                                    <input type="text" id="dusun" name="jumlah_dusun"
+                                        class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-[#166534] focus:border-transparent outline-none transition"
+                                        value="{{ old('jumlah_dusun', $informasi->jumlah_dusun ?? '-') }}" required>
+                                </div>
+                                <div>
+                                    <label for="rt" class="block text-sm font-medium text-gray-700 mb-1">RT</label>
+                                    <input type="text" id="rt" name="jumlah_rt"
+                                        class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-[#166534] focus:border-transparent outline-none transition"
+                                        value="{{ old('jumlah_rt', $informasi->jumlah_rt ?? '-') }}" required>
+                                </div>
+                                <div>
+                                    <label for="rw" class="block text-sm font-medium text-gray-700 mb-1">RW</label>
+                                    <input type="text" id="rw" name="jumlah_rw"
+                                        class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-[#166534] focus:border-transparent outline-none transition"
+                                        value="{{ old('jumlah_rw', $informasi->jumlah_rw ?? '-') }}" required>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
                 <!-- Halaman 3: Profil Desa -->
@@ -105,342 +155,567 @@
                     <div class="flex justify-between items-center mb-6">
                         <div>
                             <h1 class="text-2xl font-semibold text-gray-900">Kelola Profil Desa</h1>
-                            <p class="text-sm text-gray-500 mt-1">Edit Sejarah, Visi, Misi, Peta Wilayah, dan Dokumen Desa.</p>
+                            <p class="text-sm text-gray-500 mt-1">Edit Visi, Misi, Dokumen Desa, dan Riwayat Kepala Desa.</p>
                         </div>
-                        <button class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
-                            <i data-lucide="save" class="w-4 h-4 mr-2"></i> Simpan Perubahan
-                        </button>
                     </div>
-                    
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        
-                        <!-- SEJARAH SINGKAT -->
-                        <div class="bg-white rounded-lg shadow-sm p-6">
-                            <h3 class="font-semibold text-lg mb-4 border-b pb-2 flex items-center">
-                                <i data-lucide="book-open" class="w-5 h-5 mr-2 text-gray-600"></i> Sejarah Singkat
-                            </h3>
-                            <textarea class="w-full border rounded-lg p-3 h-40 focus:ring-2 focus:ring-green-500 outline-none">Desa Resapombo adalah sebuah desa agraris yang terletak di dataran tinggi...</textarea>
-                        </div>
 
-                        <!-- VISI & MISI -->
+                    @if (session('success'))
+                        <div class="mb-6 p-4 text-sm text-green-800 rounded-lg bg-green-50 border border-green-200 flex items-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-2"></i>
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                        <!-- KARTU 1: VISI & MISI -->
                         <div class="bg-white rounded-lg shadow-sm p-6">
                             <h3 class="font-semibold text-lg mb-4 border-b pb-2 flex items-center">
                                 <i data-lucide="target" class="w-5 h-5 mr-2 text-gray-600"></i> Visi & Misi
                             </h3>
-                            
-                            <!-- Input Visi -->
-                            <div class="mb-5">
-                                <label class="block mb-2 text-sm font-medium text-gray-700">Visi</label>
-                                <textarea class="w-full border rounded-lg p-3 h-20 focus:ring-2 focus:ring-green-500 outline-none">Mewujudkan Desa Resapombo yang Mandiri, Sejahtera, dan Berbudaya melalui Tata Kelola Pemerintahan yang Transparan dan Pemanfaatan Potensi Lokal.</textarea>
-                            </div>
-                            
-                            <!-- Input Misi -->
-                            <div>
-                                <label class="block mb-2 text-sm font-medium text-gray-700">Misi</label>
-                                <div class="space-y-3 mb-4" id="misi-container">
-                                    
-                                    <!-- Item Misi 1 -->
-                                    <div class="flex gap-3 items-start border p-3 rounded-lg bg-gray-50">
-                                        <div class="flex-1 space-y-2">
-                                            <input type="text" class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-green-500 outline-none" value="Pelayanan Prima Terpadu" placeholder="Judul Misi">
-                                            <textarea class="w-full border rounded-md p-2 text-sm h-16 focus:ring-2 focus:ring-green-500 outline-none" placeholder="Deskripsi Misi">Meningkatkan kualitas infrastruktur dasar yang mendukung konektivitas dan pergerakan ekonomi warga.</textarea>
-                                        </div>
-                                        <button class="text-red-500 hover:text-red-700 p-2 transition" title="Hapus Misi">
-                                            <i data-lucide="trash-2" class="w-5 h-5"></i>
-                                        </button>
-                                    </div>
 
-                                    <!-- Item Misi 2 -->
-                                    <div class="flex gap-3 items-start border p-3 rounded-lg bg-gray-50">
-                                        <div class="flex-1 space-y-2">
-                                            <input type="text" class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-green-500 outline-none" value="Pemberdayaan Ekonomi" placeholder="Judul Misi">
-                                            <textarea class="w-full border rounded-md p-2 text-sm h-16 focus:ring-2 focus:ring-green-500 outline-none" placeholder="Deskripsi Misi">Mendorong pertumbuhan UMKM dan optimalisasi BUMDes berbasis potensi pertanian dan wisata lokal.</textarea>
-                                        </div>
-                                        <button class="text-red-500 hover:text-red-700 p-2 transition" title="Hapus Misi">
-                                            <i data-lucide="trash-2" class="w-5 h-5"></i>
-                                        </button>
-                                    </div>
-
+                            <form action="{{ route('admin.profil.visi.update') }}" method="POST" class="mb-8">
+                                @csrf
+                                @method('PUT')
+                                <div class="mb-2">
+                                    <label class="block mb-2 text-sm font-medium text-gray-700">Visi Desa</label>
+                                    <textarea name="isi"
+                                        class="w-full border rounded-lg p-3 h-20 focus:ring-2 focus:ring-green-500 outline-none">{{ old('isi', $visi->isi ?? '') }}</textarea>
+                                    @error('isi')
+                                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                    @enderror
                                 </div>
-                                <!-- Tombol Tambah Misi -->
-                                <button class="text-sm text-[#166534] font-medium flex items-center hover:underline">
-                                    <i data-lucide="plus-circle" class="w-4 h-4 mr-1"></i> Tambah Misi Baru
+                                <button type="submit"
+                                    class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg text-sm shadow-sm transition flex items-center">
+                                    <i data-lucide="save" class="w-4 h-4 mr-2"></i> Simpan Visi
                                 </button>
+                            </form>
+
+                            <label class="block mb-2 text-sm font-medium text-gray-700">Misi Desa</label>
+                            <form action="{{ route('admin.profil.misi.store') }}" method="POST"
+                                class="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-4">
+                                @csrf
+                                <h4 class="text-sm font-medium text-gray-800 mb-3">Tambah Misi Baru</h4>
+                                <div class="space-y-3">
+                                    <div>
+                                        <input type="text" name="judul" value="{{ old('judul') }}"
+                                            class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-green-500 outline-none"
+                                            placeholder="Judul Misi">
+                                        @error('judul') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                                    </div>
+                                    <div>
+                                        <textarea name="deskripsi"
+                                            class="w-full border rounded-md p-2 text-sm h-16 focus:ring-2 focus:ring-green-500 outline-none"
+                                            placeholder="Deskripsi Misi">{{ old('deskripsi') }}</textarea>
+                                        @error('deskripsi') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                                    </div>
+                                    <button type="submit"
+                                        class="text-sm text-[#166534] font-medium flex items-center hover:underline">
+                                        <i data-lucide="plus-circle" class="w-4 h-4 mr-1"></i> Tambah Misi
+                                    </button>
+                                </div>
+                            </form>
+
+                            <div class="space-y-3" id="misi-container">
+                                @forelse ($misi as $item)
+                                    <div class="flex gap-3 items-start border p-3 rounded-lg bg-white hover:bg-gray-50 transition">
+                                        <div class="flex-1 space-y-1">
+                                            <p class="font-semibold text-sm text-gray-900">{{ $item->judul }}</p>
+                                            <p class="text-sm text-gray-600">{{ $item->deskripsi }}</p>
+                                        </div>
+                                        <form action="{{ route('admin.profil.misi.destroy', $item->id) }}" method="POST"
+                                            onsubmit="return confirm('Yakin mau hapus misi ini?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="text-red-500 hover:text-red-700 p-2 transition rounded-md hover:bg-red-50"
+                                                title="Hapus Misi">
+                                                <i data-lucide="trash-2" class="w-5 h-5"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                @empty
+                                    <p class="text-sm text-gray-500 italic text-center p-4 border rounded-lg bg-gray-50">
+                                        Belum ada misi yang ditambahkan.</p>
+                                @endforelse
                             </div>
                         </div>
 
-                        <!-- UBAH FOTO PETA -->
-                        <div class="bg-white rounded-lg shadow-sm p-6">
-                            <h3 class="font-semibold text-lg mb-4 border-b pb-2 flex items-center">
-                                <i data-lucide="map" class="w-5 h-5 mr-2 text-gray-600"></i> Peta Wilayah
-                            </h3>
-                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 flex flex-col items-center justify-center text-center bg-gray-50">
-                                <!-- Preview Peta Saat Ini -->
-                                <img src="/path-to-your-map-image.jpg" alt="Peta Desa Saat Ini" class="w-full max-h-48 object-cover rounded mb-4 shadow-sm border">
-                                
-                                <i data-lucide="upload-cloud" class="w-8 h-8 text-gray-400 mb-2"></i>
-                                <p class="text-sm text-gray-600 mb-4">Tarik & lepas file gambar peta di sini, atau klik tombol di bawah.</p>
-                                <input type="file" id="upload-peta" class="hidden" accept="image/*">
-                                <label for="upload-peta" class="bg-white border hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-md cursor-pointer text-sm font-medium transition shadow-sm">
-                                    Pilih File Gambar
-                                </label>
-                                <p class="text-xs text-gray-400 mt-2">Format: JPG, PNG. Maksimal 2MB.</p>
-                            </div>
-                        </div>
-
-                        <!-- DOKUMEN PUBLIK (PDF) -->
+                        <!-- KARTU 2: DOKUMEN PUBLIK (PDF) -->
                         <div class="bg-white rounded-lg shadow-sm p-6">
                             <h3 class="font-semibold text-lg mb-4 border-b pb-2 flex items-center">
                                 <i data-lucide="file-text" class="w-5 h-5 mr-2 text-gray-600"></i> Dokumen Publik
                             </h3>
-                            
-                            <!-- Form Tambah Dokumen -->
-                            <div class="bg-green-50 p-4 rounded-lg border border-green-100 mb-5">
+
+                            <form action="{{ route('admin.profil.dokumen.store') }}" method="POST"
+                                enctype="multipart/form-data"
+                                class="bg-green-50 p-4 rounded-lg border border-green-100 mb-5">
+                                @csrf
                                 <h4 class="text-sm font-medium text-green-900 mb-3">Upload Dokumen Baru</h4>
                                 <div class="space-y-3">
-                                    <input type="text" class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-green-500 outline-none" placeholder="Nama Dokumen (Contoh: RPJMDes 2024)">
+                                    <div>
+                                        <input type="text" name="nama" value="{{ old('nama') }}"
+                                            class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-green-500 outline-none"
+                                            placeholder="Nama Dokumen (Contoh: RPJMDes 2024)">
+                                        @error('nama') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                                    </div>
+
                                     <div class="flex flex-col sm:flex-row items-center gap-2">
-                                        <input type="file" class="w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-white file:text-green-700 file:border file:border-gray-200 hover:file:bg-gray-50" accept=".pdf">
-                                        <button class="w-full sm:w-auto bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-md text-sm whitespace-nowrap transition flex items-center justify-center">
-                                            <i data-lucide="plus" class="w-4 h-4 mr-1"></i> Tambah
+                                        <input type="file" name="file" accept="application/pdf"
+                                            class="w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-white file:text-green-700 file:border file:border-gray-200 hover:file:bg-gray-50">
+                                        <button type="submit"
+                                            class="w-full sm:w-auto bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-md text-sm whitespace-nowrap transition flex items-center justify-center">
+                                            <i data-lucide="upload" class="w-4 h-4 mr-1"></i> Upload
                                         </button>
                                     </div>
+                                    @error('file') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                                 </div>
-                            </div>
+                            </form>
 
-                            <!-- List Dokumen Aktif -->
                             <div>
                                 <h4 class="text-sm font-medium text-gray-700 mb-3">Dokumen Tersedia</h4>
                                 <div class="space-y-2">
-                                    
-                                    <!-- Item Dokumen 1 -->
-                                    <div class="flex justify-between items-center p-3 border rounded-lg hover:bg-gray-50 transition bg-white">
-                                        <div class="flex items-center gap-3">
-                                            <div class="bg-red-50 p-2 rounded-md text-red-600 border border-red-100">
-                                                <i data-lucide="file-type-2" class="w-5 h-5"></i>
+                                    @forelse ($dokumen as $item)
+                                        <div class="flex justify-between items-center p-3 border rounded-lg hover:bg-gray-50 transition bg-white">
+                                            <div class="flex items-center gap-3">
+                                                <div class="bg-red-50 p-2 rounded-md text-red-600 border border-red-100">
+                                                    <i data-lucide="file-type-2" class="w-5 h-5"></i>
+                                                </div>
+                                                <div>
+                                                    <a href="{{ route('admin.profil.dokumen.lihat', $item->id) }}"
+                                                        target="_blank"
+                                                        class="text-sm font-medium text-gray-800 hover:text-green-700 hover:underline">
+                                                        {{ $item->nama }}
+                                                    </a>
+                                                    <p class="text-xs text-gray-500">Berkas PDF</p>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <p class="text-sm font-medium text-gray-800">Profil Desa Lengkap</p>
-                                                <p class="text-xs text-gray-500">PDF • 2.4 MB</p>
-                                            </div>
+                                            <form action="{{ route('admin.profil.dokumen.destroy', $item->id) }}"
+                                                method="POST" onsubmit="return confirm('Yakin mau hapus dokumen ini?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit"
+                                                    class="text-red-500 hover:text-red-700 p-2 transition bg-white rounded-md hover:bg-red-50"
+                                                    title="Hapus Dokumen">
+                                                    <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                                </button>
+                                            </form>
                                         </div>
-                                        <button class="text-red-500 hover:text-red-700 p-2 transition bg-white rounded-md hover:bg-red-50" title="Hapus Dokumen">
-                                            <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                        </button>
-                                    </div>
-
-                                    <!-- Item Dokumen 2 -->
-                                    <div class="flex justify-between items-center p-3 border rounded-lg hover:bg-gray-50 transition bg-white">
-                                        <div class="flex items-center gap-3">
-                                            <div class="bg-red-50 p-2 rounded-md text-red-600 border border-red-100">
-                                                <i data-lucide="file-type-2" class="w-5 h-5"></i>
-                                            </div>
-                                            <div>
-                                                <p class="text-sm font-medium text-gray-800">Peraturan Desa 2024</p>
-                                                <p class="text-xs text-gray-500">PDF • 1.1 MB</p>
-                                            </div>
-                                        </div>
-                                        <button class="text-red-500 hover:text-red-700 p-2 transition bg-white rounded-md hover:bg-red-50" title="Hapus Dokumen">
-                                            <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                        </button>
-                                    </div>
-
+                                    @empty
+                                        <p class="text-sm text-gray-500 italic text-center p-4 border rounded-lg bg-gray-50">
+                                            Belum ada dokumen publik.</p>
+                                    @endforelse
                                 </div>
                             </div>
                         </div>
+                    </div>
 
+                    <!-- KARTU 3: RIWAYAT KEPALA DESA -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 mt-6">
+                        <h3 class="font-semibold text-lg mb-4 border-b pb-2 flex items-center">
+                            <i data-lucide="users" class="w-5 h-5 mr-2 text-gray-600"></i> Riwayat Kepala Desa
+                        </h3>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="col-span-1">
+                                <form action="{{ route('admin.profil.kepala-desa.store') }}" method="POST"
+                                    enctype="multipart/form-data" class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                                    @csrf
+                                    <h4 class="text-sm font-medium text-blue-900 mb-3">Tambah Data Kades</h4>
+                                    <div class="space-y-3">
+                                        <div>
+                                            <label class="block mb-1 text-xs font-medium text-gray-700">Nama Lengkap</label>
+                                            <input type="text" name="nama" value="{{ old('nama') }}"
+                                                class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                                            @error('nama') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                                        </div>
+                                        <div>
+                                            <label class="block mb-1 text-xs font-medium text-gray-700">Masa Jabatan (cth: 1945 - 1967)</label>
+                                            <input type="text" name="masa_jabatan" value="{{ old('masa_jabatan') }}"
+                                                class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                                            @error('masa_jabatan') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                                        </div>
+                                        <div>
+                                            <label class="block mb-1 text-xs font-medium text-gray-700">Foto Profil</label>
+                                            <input type="file" name="foto" accept="image/*"
+                                                class="w-full text-sm text-gray-600 file:mr-4 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-white file:text-blue-700 file:border file:border-gray-200 hover:file:bg-gray-50">
+                                            @error('foto') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                                        </div>
+                                        <button type="submit"
+                                            class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm transition flex items-center justify-center mt-2">
+                                            <i data-lucide="plus" class="w-4 h-4 mr-1"></i> Tambah Data
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="col-span-1 lg:col-span-2">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    @forelse ($kepalaDesa as $item)
+                                        <div class="flex gap-4 items-center p-4 border rounded-lg hover:bg-gray-50 transition bg-white shadow-sm">
+                                            <div class="w-16 h-16 rounded-full overflow-hidden bg-gray-100 border border-gray-200 flex-shrink-0 flex justify-center items-center">
+                                                @if ($item->foto)
+                                                    <img src="{{ asset($item->foto) }}" alt="{{ $item->nama }}"
+                                                        class="w-full h-full object-cover">
+                                                @else
+                                                    <i data-lucide="user" class="w-8 h-8 text-gray-400"></i>
+                                                @endif
+                                            </div>
+                                            <div class="flex-1">
+                                                <p class="text-sm font-semibold text-gray-900">{{ $item->nama }}</p>
+                                                <p class="text-xs text-gray-600 mb-2">Periode: {{ $item->masa_jabatan }}</p>
+                                                <form action="{{ route('admin.profil.kepala-desa.destroy', $item->id) }}"
+                                                    method="POST" onsubmit="return confirm('Yakin mau hapus riwayat kepala desa ini?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit"
+                                                        class="text-xs text-red-500 hover:text-red-700 font-medium flex items-center bg-red-50 hover:bg-red-100 px-2 py-1 rounded transition">
+                                                        <i data-lucide="trash-2" class="w-3 h-3 mr-1"></i> Hapus
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    @empty
+                                        <div class="col-span-full p-6 text-center text-sm text-gray-500 border border-dashed rounded-lg bg-gray-50">
+                                            Belum ada riwayat kepala desa yang ditambahkan.
+                                        </div>
+                                    @endforelse
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Halaman 4: Potensi -->
                 <div id="potensi" class="page-content hidden">
-                    <!-- Header Halaman -->
-                    <div class="flex justify-between items-center mb-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
                         <div>
                             <h1 class="text-2xl font-semibold text-gray-900">Kelola Potensi Desa</h1>
-                            <p class="text-sm text-gray-500 mt-1">Atur kategori potensi (Pertanian, Pariwisata, UMKM) dan statistik Fakta Singkat.</p>
+                            <p class="text-sm text-gray-500 mt-1">Atur kategori potensi dan statistik Fakta Singkat.</p>
                         </div>
-                        <button class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
+                        <button onclick="openModal('addModal')"
+                            class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
                             <i data-lucide="plus" class="w-4 h-4 mr-2"></i> Tambah Potensi Baru
                         </button>
                     </div>
 
+                    @if (session('success'))
+                        <div class="mb-6 p-4 text-sm text-green-800 rounded-lg bg-green-50 border border-green-200 flex items-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-2"></i>
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if ($errors->any())
+                        <div class="mb-6 p-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200">
+                            <div class="flex items-center mb-2 font-semibold">
+                                <i data-lucide="alert-circle" class="w-5 h-5 mr-2"></i> Terdapat Kesalahan:
+                            </div>
+                            <ul class="list-disc pl-9 space-y-1">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        
-                        <!-- KOLOM KIRI & TENGAH: DAFTAR POTENSI DESA (2/3 Lebar) -->
                         <div class="lg:col-span-2 bg-white rounded-lg shadow-sm p-6">
                             <h3 class="font-semibold text-lg mb-4 border-b pb-2 flex items-center justify-between">
                                 <span class="flex items-center">
                                     <i data-lucide="grid" class="w-5 h-5 mr-2 text-gray-600"></i> Daftar Potensi Desa
                                 </span>
                             </h3>
-                            
+
                             <div class="overflow-x-auto">
                                 <table class="min-w-full divide-y divide-gray-200">
                                     <thead class="bg-gray-50">
                                         <tr>
-                                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Nama Potensi</th>
+                                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Gambar</th>
+                                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Info Potensi</th>
                                             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Kategori</th>
                                             <th class="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody class="divide-y divide-gray-200 text-sm">
-                                        <tr>
-                                            <td class="px-4 py-3 font-medium text-gray-800">Pertanian Organik</td>
-                                            <td class="px-4 py-3">
-                                                <span class="bg-green-100 text-green-800 text-xs px-2.5 py-1 rounded-full font-medium">Pertanian</span>
-                                            </td>
-                                            <td class="px-4 py-3 text-right space-x-2">
-                                                <button class="text-blue-600 hover:text-blue-800 p-1 transition" title="Edit">
-                                                    <i data-lucide="edit-3" class="w-4 h-4 inline"></i>
-                                                </button>
-                                                <button class="text-red-600 hover:text-red-800 p-1 transition" title="Hapus">
-                                                    <i data-lucide="trash-2" class="w-4 h-4 inline"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3 font-medium text-gray-800">Wisata Alam Pegunungan</td>
-                                            <td class="px-4 py-3">
-                                                <span class="bg-amber-100 text-amber-800 text-xs px-2.5 py-1 rounded-full font-medium">Pariwisata</span>
-                                            </td>
-                                            <td class="px-4 py-3 text-right space-x-2">
-                                                <button class="text-blue-600 hover:text-blue-800 p-1 transition" title="Edit">
-                                                    <i data-lucide="edit-3" class="w-4 h-4 inline"></i>
-                                                </button>
-                                                <button class="text-red-600 hover:text-red-800 p-1 transition" title="Hapus">
-                                                    <i data-lucide="trash-2" class="w-4 h-4 inline"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3 font-medium text-gray-800">Kerajinan Tangan & Olahan Pangan</td>
-                                            <td class="px-4 py-3">
-                                                <span class="bg-purple-100 text-purple-800 text-xs px-2.5 py-1 rounded-full font-medium">UMKM Lokal</span>
-                                            </td>
-                                            <td class="px-4 py-3 text-right space-x-2">
-                                                <button class="text-blue-600 hover:text-blue-800 p-1 transition" title="Edit">
-                                                    <i data-lucide="edit-3" class="w-4 h-4 inline"></i>
-                                                </button>
-                                                <button class="text-red-600 hover:text-red-800 p-1 transition" title="Hapus">
-                                                    <i data-lucide="trash-2" class="w-4 h-4 inline"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
+                                        @forelse ($potensi as $item)
+                                            <tr class="hover:bg-gray-50 transition">
+                                                <td class="px-4 py-3">
+                                                    @if ($item->gambar)
+                                                        <img src="{{ asset($item->gambar) }}" alt="{{ $item->nama }}" class="w-14 h-14 object-cover rounded-md border">
+                                                    @else
+                                                        <div class="w-14 h-14 bg-gray-100 rounded-md border flex items-center justify-center text-gray-400">
+                                                            <i data-lucide="image" class="w-6 h-6"></i>
+                                                        </div>
+                                                    @endif
+                                                </td>
+                                                <td class="px-4 py-3">
+                                                    <p class="font-medium text-gray-900">{{ $item->nama }}</p>
+                                                    <p class="text-xs text-gray-500 mt-1 max-w-xs truncate" title="{{ $item->deskripsi }}">
+                                                        {{ Str::limit($item->deskripsi, 50) }}
+                                                    </p>
+                                                </td>
+                                                <td class="px-4 py-3">
+                                                    @php
+                                                        $color = match ($item->kategori) {
+                                                            'Pertanian' => 'bg-green-100 text-green-800',
+                                                            'Pariwisata' => 'bg-amber-100 text-amber-800',
+                                                            'UMKM' => 'bg-purple-100 text-purple-800',
+                                                            'Peternakan' => 'bg-orange-100 text-orange-800',
+                                                            'Perkebunan' => 'bg-lime-100 text-lime-800',
+                                                            default => 'bg-gray-100 text-gray-800'
+                                                        };
+                                                    @endphp
+                                                    <span class="{{ $color }} text-xs px-2.5 py-1 rounded-full font-medium whitespace-nowrap">
+                                                        {{ $item->kategori ?? '-' }}
+                                                    </span>
+                                                </td>
+                                                <td class="px-4 py-3 text-right space-x-2 whitespace-nowrap">
+                                                    <button onclick="openModal('editModal{{ $item->id }}')" class="text-blue-600 hover:text-blue-800 hover:bg-blue-50 p-1.5 rounded transition" title="Edit">
+                                                        <i data-lucide="edit-3" class="w-4 h-4 inline"></i>
+                                                    </button>
+                                                    <form action="{{ route('admin.potensi.destroy', $item->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Yakin mau hapus potensi ini?')">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="text-red-600 hover:text-red-800 hover:bg-red-50 p-1.5 rounded transition" title="Hapus">
+                                                            <i data-lucide="trash-2" class="w-4 h-4 inline"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="4" class="px-4 py-8 text-center text-gray-500 text-sm italic bg-gray-50">
+                                                    Belum ada data potensi desa. Klik "Tambah Potensi Baru" untuk memulai.
+                                                </td>
+                                            </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
                             </div>
                         </div>
 
-                        <!-- KOLOM KANAN: KELOLA FAKTA SINGKAT (1/3 Lebar) -->
-                        <div class="bg-white rounded-lg shadow-sm p-6">
-                            <h3 class="font-semibold text-lg mb-4 border-b pb-2 flex items-center justify-between">
-                                <span class="flex items-center">
-                                    <i data-lucide="bar-chart-2" class="w-5 h-5 mr-2 text-gray-600"></i> Fakta Singkat
-                                </span>
-                            </h3>
+                        <div>
+                            <div class="bg-white rounded-lg shadow-sm p-6 h-fit">
+                                <h3 class="font-semibold text-lg mb-4 border-b pb-2 flex items-center justify-between">
+                                    <span class="flex items-center">
+                                        <i data-lucide="bar-chart-2" class="w-5 h-5 mr-2 text-gray-600"></i> Fakta Singkat
+                                    </span>
+                                </h3>
 
-                            <!-- Form Tambah Fakta Baru -->
-                            <div class="bg-gray-50 p-3 rounded-lg border mb-5">
-                                <h4 class="text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">Tambah Poin Baru</h4>
-                                <div class="space-y-2">
-                                    <input type="text" class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-green-500 outline-none" placeholder="Label (contoh: Luas Lahan Subur)">
-                                    <input type="text" class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-green-500 outline-none" placeholder="Nilai (contoh: 50 Ha)">
-                                    <button class="w-full bg-[#166534] hover:bg-[#14532d] text-white py-2 rounded-md text-sm font-medium transition flex items-center justify-center">
-                                        <i data-lucide="plus-circle" class="w-4 h-4 mr-1"></i> Tambah Fakta
+                                <form action="{{ route('admin1.fakta-singkat.update') }}" method="POST">
+                                    @csrf
+                                    <div class="space-y-3">
+                                        <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Atur Data Statistik</h4>
+                                        <div class="border rounded-lg p-3 bg-white hover:border-gray-300 transition shadow-sm space-y-2">
+                                            <div>
+                                                <label class="text-xs text-gray-500 block mb-1">Luas Lahan Baku (Ha)</label>
+                                                <input type="number" step="0.01" name="luas_lahan_baku" class="w-full font-bold text-gray-900 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none transition" value="{{ old('luas_lahan_baku', $fakta->luas_lahan_baku ?? 0) }}">
+                                            </div>
+                                        </div>
+                                        <div class="border rounded-lg p-3 bg-white hover:border-gray-300 transition shadow-sm space-y-2">
+                                            <div>
+                                                <label class="text-xs text-gray-500 block mb-1">Jumlah Kelompok Tani</label>
+                                                <input type="number" name="kelompok_tani" class="w-full font-bold text-gray-900 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none transition" value="{{ old('kelompok_tani', $fakta->kelompok_tani ?? 0) }}">
+                                            </div>
+                                        </div>
+                                        <div class="border rounded-lg p-3 bg-white hover:border-gray-300 transition shadow-sm space-y-2">
+                                            <div>
+                                                <label class="text-xs text-gray-500 block mb-1">Produksi Padi (Ton)</label>
+                                                <input type="number" step="0.01" name="produksi_padi" class="w-full font-bold text-gray-900 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none transition" value="{{ old('produksi_padi', $fakta->produksi_padi ?? 0) }}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="w-full mt-4 bg-gray-900 hover:bg-black text-white py-2 rounded-md text-sm transition flex items-center justify-center">
+                                        <i data-lucide="save" class="w-4 h-4 mr-1.5"></i> Simpan Fakta Singkat
                                     </button>
-                                </div>
+                                </form>
                             </div>
-
-                            <!-- List Item Fakta Singkat (Read, Edit, Delete) -->
-                            <div class="space-y-3">
-                                <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Daftar Poin Aktif</h4>
-
-                                <!-- Item 1 -->
-                                <div class="border rounded-lg p-3 bg-white hover:border-gray-300 transition shadow-sm space-y-2">
-                                    <div class="flex justify-between items-start">
-                                        <div class="flex-1 mr-2">
-                                            <label class="text-xs text-gray-400 block mb-1">Label / Nama Fakta</label>
-                                            <input type="text" class="w-full font-medium text-gray-800 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none" value="Luas Lahan Subur">
-                                        </div>
-                                        <button class="text-red-500 hover:text-red-700 p-1 transition" title="Hapus Poin">
-                                            <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <label class="text-xs text-gray-400 block mb-1">Nilai / Angka</label>
-                                        <input type="text" class="w-full font-bold text-gray-900 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none" value="50 Ha">
-                                    </div>
-                                </div>
-
-                                <!-- Item 2 -->
-                                <div class="border rounded-lg p-3 bg-white hover:border-gray-300 transition shadow-sm space-y-2">
-                                    <div class="flex justify-between items-start">
-                                        <div class="flex-1 mr-2">
-                                            <label class="text-xs text-gray-400 block mb-1">Label / Nama Fakta</label>
-                                            <input type="text" class="w-full font-medium text-gray-800 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none" value="Kelompok Tani">
-                                        </div>
-                                        <button class="text-red-500 hover:text-red-700 p-1 transition" title="Hapus Poin">
-                                            <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <label class="text-xs text-gray-400 block mb-1">Nilai / Angka</label>
-                                        <input type="text" class="w-full font-bold text-gray-900 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none" value="8 Kelompok">
-                                    </div>
-                                </div>
-
-                                <!-- Item 3 -->
-                                <div class="border rounded-lg p-3 bg-white hover:border-gray-300 transition shadow-sm space-y-2">
-                                    <div class="flex justify-between items-start">
-                                        <div class="flex-1 mr-2">
-                                            <label class="text-xs text-gray-400 block mb-1">Label / Nama Fakta</label>
-                                            <input type="text" class="w-full font-medium text-gray-800 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none" value="Produksi Padi/Thn">
-                                        </div>
-                                        <button class="text-red-500 hover:text-red-700 p-1 transition" title="Hapus Poin">
-                                            <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <label class="text-xs text-gray-400 block mb-1">Nilai / Angka</label>
-                                        <input type="text" class="w-full font-bold text-gray-900 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none" value="+ 900 Ton">
-                                    </div>
-                                </div>
-
-                            </div>
-                            
-                            <!-- Tombol Simpan Perubahan Fakta Singkat -->
-                            <button class="w-full mt-4 bg-gray-900 hover:bg-black text-white py-2 rounded-md text-sm transition flex items-center justify-center">
-                                <i data-lucide="save" class="w-4 h-4 mr-1.5"></i> Simpan Fakta Singkat
-                            </button>
                         </div>
-
                     </div>
                 </div>
 
-                <!-- Halaman 5: Pemerintahan -->
+                <!-- Halaman Pemerintahan -->
                 <div id="pemerintahan" class="page-content hidden">
                     <div class="flex justify-between items-center mb-6">
                         <div>
                             <h1 class="text-2xl font-semibold text-gray-900">Kelola Pemerintahan</h1>
                             <p class="text-sm text-gray-500 mt-1">Edit struktur organisasi, Kepala Desa, dan Perangkat Desa.</p>
                         </div>
-                        <button class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
+                        <button onclick="openModal('addPerangkatModal')" class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
                             <i data-lucide="plus" class="w-4 h-4 mr-2"></i> Tambah Perangkat
                         </button>
                     </div>
-                    <!-- Form Kepala Desa -->
-                    <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
-                        <h3 class="font-semibold text-lg mb-4 border-b pb-2">Kepala Desa Aktif</h3>
-                        <div class="flex items-center gap-4">
-                            <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
-                                <i data-lucide="user" class="text-gray-400 w-12 h-12"></i>
+
+                    @if (session('success'))
+                        <div class="mb-4 p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg flex items-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-2"></i>
+                            <span class="text-sm font-medium">{{ session('success') }}</span>
+                        </div>
+                    @endif
+
+                    @if ($errors->any())
+                        <div class="mb-4 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <i data-lucide="alert-circle" class="w-5 h-5 mr-2"></i>
+                                <span class="text-sm font-bold">Terjadi Kesalahan:</span>
                             </div>
-                            <div class="flex-1">
-                                <label class="text-sm">Nama Lengkap</label>
-                                <input type="text" class="w-full border rounded p-2 mb-2" value="Bapak Budi Santoso, S.E.">
-                                <label class="text-sm">Periode</label>
-                                <input type="text" class="w-full border rounded p-2" value="2021 - 2027">
+                            <ul class="list-disc pl-9 text-sm">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    @php
+                        $kades = $perangkat->firstWhere('jabatan.tingkat', 1);
+                    @endphp
+
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 mb-6">
+                        <h3 class="font-semibold text-lg mb-4 border-b border-gray-100 pb-2">Kepala Desa Aktif</h3>
+                        @if($kades)
+                            <div class="flex items-center gap-6">
+                                <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden border-2 border-[#166534]">
+                                    @if($kades->foto)
+                                        <img src="{{ asset($kades->foto) }}" alt="Foto Kades" class="w-full h-full object-cover">
+                                    @else
+                                        <i data-lucide="user" class="text-gray-400 w-12 h-12"></i>
+                                    @endif
+                                </div>
+                                <div class="flex-1 space-y-3">
+                                    <div>
+                                        <label class="text-xs text-gray-500 font-bold uppercase tracking-wider">Nama Lengkap</label>
+                                        <div class="text-lg font-semibold text-gray-900 mt-1">{{ $kades->nama }}</div>
+                                    </div>
+                                    <div class="flex gap-8">
+                                        <div>
+                                            <label class="text-xs text-gray-500 font-bold uppercase tracking-wider">Jabatan</label>
+                                            <div class="text-sm text-gray-700 mt-1">{{ $kades->jabatan->nama ?? '-' }}</div>
+                                        </div>
+                                        <div>
+                                            <label class="text-xs text-gray-500 font-bold uppercase tracking-wider">No. WhatsApp</label>
+                                            <div class="text-sm text-gray-700 mt-1">{{ $kades->no_wa ?? '-' }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            <p class="text-sm text-gray-500 italic">Data Kepala Desa belum ada. Silakan tambahkan perangkat dengan Tingkat Jabatan 1.</p>
+                        @endif
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div class="lg:col-span-1 bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+                            <h3 class="font-semibold text-lg mb-4 border-b border-gray-100 pb-2">Kelola Jabatan</h3>
+
+                            <form action="{{ route('admin.jabatan.store') }}" method="POST" class="mb-6 space-y-3">
+                                @csrf
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Nama Jabatan</label>
+                                    <input type="text" name="nama" placeholder="Cth: Kepala Dusun" class="w-full border border-gray-300 rounded-md p-2 text-sm focus:ring-2 focus:ring-[#166534] outline-none" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Tingkat (1 = Tertinggi)</label>
+                                    <input type="number" name="tingkat" min="1" placeholder="Cth: 2" class="w-full border border-gray-300 rounded-md p-2 text-sm focus:ring-2 focus:ring-[#166534] outline-none" required>
+                                </div>
+                                <button type="submit" class="w-full bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-lg text-sm shadow-sm transition">Tambah Jabatan</button>
+                            </form>
+
+                            <div class="overflow-x-auto rounded-lg border border-gray-200">
+                                <table class="w-full text-sm text-left text-gray-600">
+                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b border-gray-200">
+                                        <tr>
+                                            <th class="px-4 py-3 text-center w-12">Tk.</th>
+                                            <th class="px-4 py-3">Nama Jabatan</th>
+                                            <th class="px-4 py-3 text-center">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse ($jabatan as $item)
+                                            <tr class="border-b border-gray-100 hover:bg-gray-50 transition">
+                                                <td class="px-4 py-3 text-center font-medium">{{ $item->tingkat }}</td>
+                                                <td class="px-4 py-3">{{ $item->nama }}</td>
+                                                <td class="px-4 py-3 text-center">
+                                                    <form action="{{ route('admin.jabatan.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin mau hapus jabatan ini? Semua perangkat dengan jabatan ini juga akan terhapus!')">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="text-red-500 hover:text-red-700 transition" title="Hapus">
+                                                            <i data-lucide="trash-2" class="w-4 h-4 inline"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="3" class="px-4 py-6 text-center text-sm text-gray-400 italic">Belum ada data jabatan.</td>
+                                            </tr>
+                                        @endforelse
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-2 bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+                            <h3 class="font-semibold text-lg mb-4 border-b border-gray-100 pb-2">Daftar Perangkat Desa</h3>
+
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm text-left text-gray-600">
+                                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-y border-gray-200">
+                                        <tr>
+                                            <th class="px-4 py-3 w-16">Foto</th>
+                                            <th class="px-4 py-3">Nama</th>
+                                            <th class="px-4 py-3">Jabatan</th>
+                                            <th class="px-4 py-3">No WA</th>
+                                            <th class="px-4 py-3">Detail</th>
+                                            <th class="px-4 py-3 text-center">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @forelse ($perangkat as $item)
+                                            <tr class="border-b border-gray-100 hover:bg-gray-50 transition">
+                                                <td class="px-4 py-3">
+                                                    <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
+                                                        @if ($item->foto)
+                                                            <img src="{{ asset($item->foto) }}" class="w-full h-full object-cover">
+                                                        @else
+                                                            <div class="w-full h-full flex items-center justify-center text-gray-400">
+                                                                <i data-lucide="user" class="w-5 h-5"></i>
+                                                            </div>
+                                                        @endif
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-3 font-medium text-gray-900">{{ $item->nama }}</td>
+                                                <td class="px-4 py-3">
+                                                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                                                        {{ $item->jabatan->nama ?? '-' }}
+                                                    </span>
+                                                </td>
+                                                <td class="px-4 py-3">{{ $item->no_wa ?? '-' }}</td>
+                                                <td class="px-4 py-3 max-w-xs truncate" title="{{ $item->kata_sambutan }}">
+                                                    {{ $item->kata_sambutan ?? '-' }}
+                                                </td>
+                                                <td class="px-4 py-3 text-center space-x-2">
+                                                    <button onclick="openModal('editPerangkatModal{{ $item->id }}')" class="text-blue-600 hover:text-blue-800 transition" title="Edit">
+                                                        <i data-lucide="edit" class="w-4 h-4 inline"></i>
+                                                    </button>
+                                                    <form action="{{ route('admin.perangkat.destroy', $item->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Yakin mau hapus data ini?')">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="text-red-500 hover:text-red-700 transition" title="Hapus">
+                                                            <i data-lucide="trash-2" class="w-4 h-4 inline"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="6" class="px-4 py-8 text-center text-sm text-gray-400 italic">Belum ada data perangkat desa.</td>
+                                            </tr>
+                                        @endforelse
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -453,34 +728,164 @@
                             <h1 class="text-2xl font-semibold text-gray-900">Kelola BUMDes</h1>
                             <p class="text-sm text-gray-500 mt-1">Atur Unit Usaha dan Info Kemitraan BUMDes Maju Resapombo.</p>
                         </div>
-                        <button class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
-                            <i data-lucide="plus" class="w-4 h-4 mr-2"></i> Tambah Unit Usaha
+                        <button onclick="openModal('tambahUnitUsahaModal')" class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
+                            <i data-lucide="plus" class="w-4 h-4 mr-2"></i> Tambah BUMDes
                         </button>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- Card Unit Usaha -->
-                        <div class="bg-white rounded-lg shadow-sm border p-4">
-                            <h4 class="font-bold mb-1">Unit Toko Desa</h4>
-                            <p class="text-sm text-gray-500 mb-3">Penyediaan Kebutuhan Pokok</p>
-                            <div class="flex justify-between border-t pt-3">
-                                <button class="text-blue-600 text-sm">Edit</button>
-                                <button class="text-red-600 text-sm">Hapus</button>
+
+                    @if (session('success'))
+                        <div class="mb-6 p-4 text-sm text-green-800 bg-green-100 rounded-lg border border-green-200">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if ($errors->any())
+                        <div class="mb-6 p-4 text-sm text-red-800 bg-red-100 rounded-lg border border-red-200">
+                            <ul class="list-disc pl-5 space-y-1">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
+                        <div class="lg:col-span-3">
+                            <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-left text-sm text-gray-600">
+                                        <thead class="bg-gray-50 text-gray-900 border-b border-gray-100">
+                                            <tr>
+                                                <th class="p-4 font-semibold whitespace-nowrap">Gambar</th>
+                                                <th class="p-4 font-semibold whitespace-nowrap">Nama</th>
+                                                <th class="p-4 font-semibold">Deskripsi</th>
+                                                <th class="p-4 font-semibold text-center whitespace-nowrap">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-100">
+                                            @forelse ($bumdes as $item)
+                                                <tr class="hover:bg-gray-50 transition">
+                                                    <td class="p-4">
+                                                        @if ($item->gambar)
+                                                            <img src="{{ asset($item->gambar) }}" alt="{{ $item->nama }}" class="w-16 h-16 object-cover rounded-md border border-gray-200 shadow-sm">
+                                                        @else
+                                                            <div class="w-16 h-16 bg-gray-100 rounded-md border border-gray-200 flex items-center justify-center text-gray-400 text-xs italic">-</div>
+                                                        @endif
+                                                    </td>
+                                                    <td class="p-4 font-medium text-gray-900 whitespace-nowrap">{{ $item->nama }}</td>
+                                                    <td class="p-4 text-xs leading-relaxed text-gray-500">{{ Str::limit($item->deskripsi, 50) }}</td>
+                                                    <td class="p-4 flex items-center justify-center space-x-3 mt-3">
+                                                        <button type="button" onclick="openModal('editBumdesModal{{ $item->id }}')" class="text-blue-600 hover:text-blue-800 font-medium text-xs transition">
+                                                            Edit
+                                                        </button>
+                                                        <form action="{{ route('admin.bumdes.destroy', $item->id) }}" method="POST" class="inline-block m-0 p-0" onsubmit="return confirm('Yakin mau hapus data ini?')">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="text-red-600 hover:text-red-800 font-medium text-xs transition">Hapus</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @empty
+                                                <tr>
+                                                    <td colspan="4" class="p-8 text-center text-gray-500 text-sm">Belum ada data BUMDes.</td>
+                                                </tr>
+                                            @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
+                        </div>
+
+                        <div class="lg:col-span-2 bg-white rounded-lg shadow-sm border border-gray-100 p-6 h-fit">
+                            <h3 class="font-semibold text-lg mb-4 border-b pb-2 flex items-center justify-between">
+                                <span class="flex items-center">
+                                    <i data-lucide="phone" class="w-5 h-5 mr-2 text-gray-600"></i> Kontak BUMDes
+                                </span>
+                            </h3>
+
+                            <form action="{{ route('admin.bumdes.kontak.update') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                @method('PUT')
+                                <div class="space-y-4">
+                                    <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Atur narahubung & Profil</h4>
+                                    <div class="border rounded-lg p-3 bg-white hover:border-gray-300 transition shadow-sm space-y-2">
+                                        <div>
+                                            <label class="text-xs text-gray-500 block mb-1">Gunakan format wa.me/62xxxxxxxxx</label>
+                                            <input type="text" name="no_wa" class="w-full font-bold text-gray-900 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none transition" value="{{ old('no_wa', $kontak->no_wa ?? '') }}" placeholder="Contoh: wa.me/6281234567890">
+                                        </div>
+                                    </div>
+
+                                    <div class="border rounded-lg p-3 bg-white hover:border-gray-300 transition shadow-sm space-y-2">
+                                        <div>
+                                            <label class="text-xs text-gray-500 block mb-1">File Profil BUMDes (PDF)</label>
+                                            <input type="file" name="file_profil" accept="application/pdf" class="w-full text-sm text-gray-900 border border-gray-300 rounded cursor-pointer bg-gray-50 focus:outline-none file:mr-4 file:py-1 file:px-4 file:rounded-l file:border-0 file:text-sm file:font-semibold file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200">
+                                            @if(isset($kontak) && $kontak->file_profil)
+                                                <p class="text-xs text-green-600 mt-2 flex items-center">
+                                                    <i data-lucide="check-circle" class="w-3 h-3 mr-1 inline"></i>
+                                                    <a href="{{ asset($kontak->file_profil) }}" target="_blank" class="hover:underline">Lihat file profil saat ini</a>
+                                                </p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="w-full mt-6 bg-gray-900 hover:bg-black text-white py-2.5 rounded-md text-sm font-medium transition flex items-center justify-center">
+                                    <i data-lucide="save" class="w-4 h-4 mr-2"></i> Simpan Kontak BUMDes
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
 
-                <!-- Halaman 7: Berita & Artikel (Asli dari User) -->
+                <!-- Halaman 7: Berita -->
                 <div id="berita" class="page-content hidden">
+                    @if (session('success'))
+                        <div class="mb-4 bg-green-100 text-[#166534] px-4 py-2 rounded-lg text-sm">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
                     <div class="flex justify-between items-center mb-6">
                         <div>
                             <h1 class="text-2xl font-semibold text-gray-900">Kelola Berita & Artikel</h1>
                             <p class="text-sm text-gray-500 mt-1">Atur konten untuk halaman Berita di website utama.</p>
                         </div>
-                        <button class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
+                        <button type="button" onclick="openModal('modalCreateBerita')"
+                            class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
                             <i data-lucide="plus" class="w-4 h-4 mr-2"></i> Tambah Berita
                         </button>
                     </div>
+
+                    <!-- Kategori Berita -->
+                    <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+                        <h3 class="text-sm font-semibold text-gray-700 mb-3">Kategori Berita</h3>
+                        <form action="{{ route('admin.kategori-berita.store') }}" method="POST" class="flex gap-2 mb-3">
+                            @csrf
+                            <input type="text" name="nama" placeholder="Nama kategori baru, contoh: Pembangunan" class="flex-1 border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <button type="submit" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg text-sm">Tambah</button>
+                        </form>
+                        @error('nama')
+                            <p class="text-red-600 text-xs mb-2">{{ $message }}</p>
+                        @enderror
+                        <div class="flex flex-wrap gap-2">
+                            @forelse ($kategoriBerita as $kat)
+                                <div class="border border-gray-300 rounded-full pl-3 pr-1 py-1 flex items-center gap-2 text-sm">
+                                    {{ $kat->nama }}
+                                    <form action="{{ route('admin.kategori-berita.destroy', $kat->id) }}" method="POST" onsubmit="return confirm('Hapus kategori ini? Artikel dengan kategori ini akan jadi tanpa kategori.')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-500 hover:text-red-700 rounded-full w-5 h-5 flex items-center justify-center">
+                                            <i data-lucide="x" class="w-3 h-3"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            @empty
+                                <p class="text-sm text-gray-400">Belum ada kategori.</p>
+                            @endforelse
+                        </div>
+                    </div>
+
+                    <!-- Tabel Berita -->
                     <div class="bg-white rounded-lg shadow-sm overflow-hidden">
                         <div class="overflow-x-auto">
                             <table class="min-w-full divide-y divide-gray-200">
@@ -489,55 +894,219 @@
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Judul Artikel</th>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
                                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
-                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tipe</th>
                                         <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <div class="text-sm font-medium text-gray-900">Peresmian Fasilitas Irigasi Baru</div>
-                                            <div class="text-sm text-gray-500">Oleh: Tim Redaksi Desa</div>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Pembangunan</span>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15 Oktober 2024</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-[#166534]">Published</span>
-                                        </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <a href="#" class="text-indigo-600 hover:text-indigo-900 mr-3">Edit</a>
-                                            <a href="#" class="text-red-600 hover:text-red-900">Hapus</a>
-                                        </td>
-                                    </tr>
+                                    @forelse ($artikel as $item)
+                                        @php
+                                            $artikelJs = [
+                                                'id' => $item->id,
+                                                'judul' => $item->judul,
+                                                'kategori_berita_id' => $item->kategori_berita_id,
+                                                'tanggal' => $item->tanggal ? $item->tanggal->format('Y-m-d') : '',
+                                                'penulis' => $item->penulis,
+                                                'sinopsis' => $item->sinopsis,
+                                                'isi' => $item->isi,
+                                                'link_eksternal' => $item->link_eksternal,
+                                                'gambar' => $item->gambar ? asset($item->gambar) : null,
+                                            ];
+                                        @endphp
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="text-sm font-medium text-gray-900">{{ $item->judul }}</div>
+                                                <div class="text-sm text-gray-500">Oleh: {{ $item->penulis }}</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">{{ $item->kategori->nama ?? 'Tanpa Kategori' }}</span>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                {{ $item->tanggal ? $item->tanggal->format('d-m-Y') : '-' }}
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-[#166534]">{{ $item->link_eksternal ? 'Link Eksternal' : 'Tulisan Sendiri' }}</span>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <button type="button" class="text-indigo-600 hover:text-indigo-900 mr-3" data-artikel='@json($artikelJs)' onclick="openEditBerita(this)">Edit</button>
+                                                <form action="{{ route('admin.artikel.destroy', $item->id) }}" method="POST" class="inline" onsubmit="return confirm('Yakin mau hapus berita ini?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="text-red-600 hover:text-red-900">Hapus</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="5" class="px-6 py-4 text-center text-sm text-gray-400">Belum ada berita.</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
 
-                <!-- Halaman 8: FAQ -->
+                <!-- Halaman 8: FAQ / Layanan Desa -->
                 <div id="faq" class="page-content hidden">
+                    @if (session('success'))
+                        <div class="mb-4 bg-green-100 text-[#166534] px-4 py-2 rounded-lg text-sm">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
                     <div class="flex justify-between items-center mb-6">
                         <div>
-                            <h1 class="text-2xl font-semibold text-gray-900">Kelola Tanya Jawab (FAQ)</h1>
-                            <p class="text-sm text-gray-500 mt-1">Daftar pertanyaan yang sering diajukan oleh masyarakat.</p>
+                            <h1 class="text-2xl font-semibold text-gray-900">Kelola Layanan Desa</h1>
+                            <p class="text-sm text-gray-500 mt-1">Atur daftar layanan, kategori, kontak, dan jam operasional.</p>
                         </div>
-                        <button class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
-                            <i data-lucide="plus" class="w-4 h-4 mr-2"></i> Tambah FAQ
+                        <button type="button" onclick="openModal('modalCreateLayanan')"
+                            class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg flex items-center text-sm shadow-sm transition">
+                            <i data-lucide="plus" class="w-4 h-4 mr-2"></i> Tambah Layanan
                         </button>
                     </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6">
-                        <div class="border border-gray-200 rounded p-4 mb-4">
-                            <div class="flex justify-between items-center mb-2">
-                                <h4 class="font-semibold">Apa saja persyaratan untuk membuat Surat Keterangan Usaha (SKU)?</h4>
-                                <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Administrasi</span>
-                            </div>
-                            <p class="text-gray-500 text-sm mb-4">Membawa fotokopi KTP, KK, dan surat pengantar dari RT/RW setempat...</p>
-                            <div class="flex justify-end gap-3 border-t pt-2">
-                                <button class="text-blue-600 text-sm">Edit</button>
-                                <button class="text-red-600 text-sm">Hapus</button>
+
+                    <!-- Kategori Layanan -->
+                    <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+                        <h3 class="text-sm font-semibold text-gray-700 mb-3">Kategori Layanan</h3>
+                        <form action="{{ route('admin.layanan.kategori.store') }}" method="POST" class="flex gap-2 mb-3">
+                            @csrf
+                            <input type="text" name="nama" placeholder="Nama kategori baru, contoh: Administrasi" class="flex-1 border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <button type="submit" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg text-sm">Tambah</button>
+                        </form>
+                        @error('nama')
+                            <p class="text-red-600 text-xs mb-2">{{ $message }}</p>
+                        @enderror
+
+                        <div class="flex flex-wrap gap-2">
+                            @forelse ($kategori as $kat)
+                                <div class="border border-gray-300 rounded-full pl-3 pr-1 py-1 flex items-center gap-2 text-sm">
+                                    {{ $kat->nama }}
+                                    <form action="{{ route('admin.layanan.kategori.destroy', $kat->id) }}" method="POST" onsubmit="return confirm('Hapus kategori ini? Layanan dengan kategori ini akan jadi tanpa kategori.')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-500 hover:text-red-700 rounded-full w-5 h-5 flex items-center justify-center">
+                                            <i data-lucide="x" class="w-3 h-3"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            @empty
+                                <p class="text-sm text-gray-400">Belum ada kategori.</p>
+                            @endforelse
+                        </div>
+                    </div>
+
+                    <!-- Daftar Layanan -->
+                    <div class="bg-white rounded-lg shadow-sm overflow-hidden mb-6">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Layanan</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">PDF Formulir</th>
+                                        <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    @forelse ($layanan as $item)
+                                        @php
+                                            $layananJs = [
+                                                'id' => $item->id,
+                                                'nama' => $item->nama,
+                                                'kategori_layanan_id' => $item->kategori_layanan_id,
+                                                'langkah' => $item->langkah,
+                                                'file_pdf' => $item->file_pdf ? asset($item->file_pdf) : null,
+                                            ];
+                                        @endphp
+                                        <tr>
+                                            <td class="px-6 py-4">
+                                                <div class="text-sm font-medium text-gray-900">{{ $item->nama }}</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">{{ $item->kategori->nama ?? 'Tanpa Kategori' }}</span>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                                @if ($item->file_pdf)
+                                                    <a href="{{ asset($item->file_pdf) }}" target="_blank" class="text-[#166534] hover:underline">Lihat PDF</a>
+                                                @else
+                                                    <span class="text-gray-400">-</span>
+                                                @endif
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <button type="button" class="text-indigo-600 hover:text-indigo-900 mr-3" data-layanan='@json($layananJs)' onclick="openEditLayanan(this)">Edit</button>
+                                                <form action="{{ route('admin.layanan.destroy', $item->id) }}" method="POST" class="inline" onsubmit="return confirm('Yakin mau hapus layanan ini?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="text-red-600 hover:text-red-900">Hapus</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="4" class="px-6 py-4 text-center text-sm text-gray-400">Belum ada layanan.</td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="font-semibold text-lg mb-4 border-b pb-2 flex items-center">
+                                <i data-lucide="phone" class="w-5 h-5 mr-2 text-gray-600"></i> Kontak Layanan
+                            </h3>
+                            <form action="{{ route('admin.layanan.kontak.update') }}" method="POST" class="space-y-4">
+                                @csrf
+                                @method('PUT')
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Nomor WhatsApp</label>
+                                    <input type="text" name="no_wa" value="{{ old('no_wa', $kontak->no_wa ?? '') }}" placeholder="Contoh: 6281234567890" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" name="email" value="{{ old('email', $kontak->email ?? '') }}" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                                </div>
+                                @if ($errors->any())
+                                    <ul class="text-red-600 text-xs list-disc pl-4">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                                <button type="submit" class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg text-sm shadow-sm transition">Simpan Kontak</button>
+                            </form>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="font-semibold text-lg mb-4 border-b pb-2 flex items-center">
+                                <i data-lucide="clock" class="w-5 h-5 mr-2 text-gray-600"></i> Jam Operasional
+                            </h3>
+
+                            <form action="{{ route('admin.layanan.jam.store') }}" method="POST" class="flex gap-2 mb-4">
+                                @csrf
+                                <input type="text" name="hari" placeholder="Contoh: Senin - Kamis" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                                <input type="text" name="jam" placeholder="Contoh: 08:00 - 15:00" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                                <button type="submit" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-lg text-sm whitespace-nowrap">Tambah</button>
+                            </form>
+
+                            <div class="divide-y divide-gray-100">
+                                @forelse ($jamOperasional as $item)
+                                    <div class="flex items-center justify-between py-2 text-sm">
+                                        <span class="text-gray-700">{{ $item->hari }}</span>
+                                        <span class="text-gray-500">{{ $item->jam }}</span>
+                                        <form action="{{ route('admin.layanan.jam.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Hapus baris ini?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-red-500 hover:text-red-700">
+                                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                @empty
+                                    <p class="text-sm text-gray-400 py-2">Belum ada jam operasional.</p>
+                                @endforelse
                             </div>
                         </div>
                     </div>
@@ -547,61 +1116,669 @@
         </div>
     </div>
 
-    <!-- Script Interaktivitas -->
-    <script>
-        // Inisialisasi ikon Lucide
-        lucide.createIcons();
+    <!-- ========================================================================= -->
+    <!-- WADAH SELURUH MODAL OVERLAY (DILETAKKAN DI LUAR PAGE-CONTENT TERSEMBUNYI) -->
+    <!-- ========================================================================= -->
 
-        // Fungsi Switch Halaman (Tab/SPA)
-        function switchPage(pageId, clickedMenu) {
-            // 1. Sembunyikan semua konten halaman
+    <!-- Modal 1: Tambah Potensi -->
+    <div id="addModal" class="modal-backdrop fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="modal-box bg-white rounded-xl shadow-xl w-full max-w-lg mx-4 overflow-hidden transform scale-95 transition-transform duration-300">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-100">
+                <h2 class="text-lg font-semibold text-gray-900">Tambah Potensi Desa</h2>
+                <button type="button" onclick="closeModal('addModal')" class="text-gray-400 hover:text-gray-600 transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <form action="{{ route('admin.potensi.store') }}" method="POST" enctype="multipart/form-data" class="p-6">
+                @csrf
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Nama Potensi</label>
+                        <input type="text" name="nama" value="{{ old('nama') }}" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none" placeholder="Cth: Pertanian Organik" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Kategori</label>
+                        <select name="kategori" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none" required>
+                            <option value="">-- Pilih Kategori --</option>
+                            <option value="Pertanian" {{ old('kategori') == 'Pertanian' ? 'selected' : '' }}>Pertanian</option>
+                            <option value="Perkebunan" {{ old('kategori') == 'Perkebunan' ? 'selected' : '' }}>Perkebunan</option>
+                            <option value="Peternakan" {{ old('kategori') == 'Peternakan' ? 'selected' : '' }}>Peternakan</option>
+                            <option value="Pariwisata" {{ old('kategori') == 'Pariwisata' ? 'selected' : '' }}>Pariwisata</option>
+                            <option value="UMKM" {{ old('kategori') == 'UMKM' ? 'selected' : '' }}>UMKM</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Deskripsi</label>
+                        <textarea name="deskripsi" rows="3" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none" placeholder="Jelaskan potensi desa ini...">{{ old('deskripsi') }}</textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Upload Gambar</label>
+                        <input type="file" name="gambar" accept="image/*" class="w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-green-50 file:text-green-700 hover:file:bg-green-100 border border-gray-300 rounded-md p-1 cursor-pointer">
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-end space-x-3">
+                    <button type="button" onclick="closeModal('addModal')" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm hover:bg-gray-50 transition">Batal</button>
+                    <button type="submit" class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg text-sm shadow-sm transition">Simpan Potensi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modals Edit Potensi Loop -->
+    @foreach ($potensi as $item)
+        <div id="editModal{{ $item->id }}" class="modal-backdrop fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 transition-opacity duration-300">
+            <div class="modal-box bg-white rounded-xl shadow-xl w-full max-w-lg mx-4 overflow-hidden transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center px-6 py-4 border-b border-gray-100">
+                    <h2 class="text-lg font-semibold text-gray-900">Edit Potensi Desa</h2>
+                    <button type="button" onclick="closeModal('editModal{{ $item->id }}')" class="text-gray-400 hover:text-gray-600 transition">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <form action="{{ route('admin.potensi.update', $item->id) }}" method="POST" enctype="multipart/form-data" class="p-6">
+                    @csrf
+                    @method('PUT')
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nama Potensi</label>
+                            <input type="text" name="nama" value="{{ old('nama', $item->nama) }}" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Kategori</label>
+                            <select name="kategori" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none" required>
+                                <option value="">-- Pilih Kategori --</option>
+                                @foreach (['Pertanian', 'Perkebunan', 'Peternakan', 'Pariwisata', 'UMKM'] as $kat)
+                                    <option value="{{ $kat }}" {{ old('kategori', $item->kategori) == $kat ? 'selected' : '' }}>{{ $kat }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Deskripsi</label>
+                            <textarea name="deskripsi" rows="3" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none">{{ old('deskripsi', $item->deskripsi) }}</textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Gambar Saat Ini</label>
+                            @if ($item->gambar)
+                                <img src="{{ asset($item->gambar) }}" class="w-24 h-24 object-cover rounded-md border mb-3">
+                            @else
+                                <p class="text-xs text-gray-500 italic mb-3">Belum ada gambar.</p>
+                            @endif
+                            <label class="block text-xs font-medium text-gray-700 mb-1">Ganti Gambar (Opsional)</label>
+                            <input type="file" name="gambar" accept="image/*" class="w-full text-xs text-gray-600 file:mr-4 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 border border-gray-300 rounded bg-white cursor-pointer">
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-end space-x-3">
+                        <button type="button" onclick="closeModal('editModal{{ $item->id }}')" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm hover:bg-gray-50 transition">Batal</button>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm shadow-sm transition">Update Potensi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    @endforeach
+
+    <!-- Modal Tambah Perangkat -->
+    <div id="addPerangkatModal" class="modal-backdrop fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="modal-box bg-white rounded-xl shadow-xl w-full max-w-lg mx-4 overflow-hidden transform scale-95 transition-transform duration-300 max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-100 shrink-0">
+                <h2 class="text-lg font-semibold text-gray-900">Tambah Perangkat Desa</h2>
+                <button type="button" onclick="closeModal('addPerangkatModal')" class="text-gray-400 hover:text-gray-600 transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="overflow-y-auto flex-1 p-6">
+                @if ($jabatan->isEmpty())
+                    <div class="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm mb-4">
+                        <i data-lucide="alert-triangle" class="w-4 h-4 inline mr-1"></i> Tambahkan <b>Jabatan</b> terlebih dahulu sebelum menambah Perangkat.
+                    </div>
+                @else
+                    <form action="{{ route('admin.perangkat.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                                <input type="text" name="nama" value="{{ old('nama') }}" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-[#166534] outline-none" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Jabatan</label>
+                                <select name="jabatan_id" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-[#166534] outline-none" required>
+                                    <option value="">-- Pilih Jabatan --</option>
+                                    @foreach ($jabatan as $jab)
+                                        <option value="{{ $jab->id }}" {{ old('jabatan_id') == $jab->id ? 'selected' : '' }}>{{ $jab->nama }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">No. WhatsApp</label>
+                                <input type="text" name="no_wa" value="{{ old('no_wa') }}" placeholder="Cth: 6281234567890" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-[#166534] outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-gray-700 mb-1">
+                                    1. Untuk kepala desa bisa diisikan dengan kata sambutan<br />
+                                    2. Untuk perangkat desa lainnya bisa diisikan dengan detail jabatan contoh: kaur administrasi
+                                </label>
+                                <textarea name="kata_sambutan" rows="3" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-[#166534] outline-none" placeholder="Opsional...">{{ old('kata_sambutan') }}</textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Upload Foto</label>
+                                <input type="file" name="foto" accept="image/*" class="w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-green-50 file:text-[#166534] hover:file:bg-green-100 border border-gray-300 rounded-md p-1 cursor-pointer">
+                            </div>
+                        </div>
+                        <div class="mt-8 flex justify-end space-x-3">
+                            <button type="button" onclick="closeModal('addPerangkatModal')" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm hover:bg-gray-50 transition">Batal</button>
+                            <button type="submit" class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg text-sm shadow-sm transition">Simpan Perangkat</button>
+                        </div>
+                    </form>
+                @endif
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals Edit Perangkat Loop -->
+    @foreach ($perangkat as $item)
+        <div id="editPerangkatModal{{ $item->id }}" class="modal-backdrop fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 transition-opacity duration-300">
+            <div class="modal-box bg-white rounded-xl shadow-xl w-full max-w-lg mx-4 overflow-hidden transform scale-95 transition-transform duration-300 max-h-[90vh] flex flex-col">
+                <div class="flex justify-between items-center px-6 py-4 border-b border-gray-100 shrink-0">
+                    <h2 class="text-lg font-semibold text-gray-900">Edit Perangkat Desa</h2>
+                    <button type="button" onclick="closeModal('editPerangkatModal{{ $item->id }}')" class="text-gray-400 hover:text-gray-600 transition">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <div class="overflow-y-auto flex-1 p-6">
+                    <form action="{{ route('admin.perangkat.update', $item->id) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                                <input type="text" name="nama" value="{{ old('nama', $item->nama) }}" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Jabatan</label>
+                                <select name="jabatan_id" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none" required>
+                                    @foreach ($jabatan as $jab)
+                                        <option value="{{ $jab->id }}" {{ old('jabatan_id', $item->jabatan_id) == $jab->id ? 'selected' : '' }}>
+                                            {{ $jab->nama }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">No. WhatsApp</label>
+                                <input type="text" name="no_wa" value="{{ old('no_wa', $item->no_wa) }}" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Kata Sambutan / Detail</label>
+                                <textarea name="kata_sambutan" rows="3" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none">{{ old('kata_sambutan', $item->kata_sambutan) }}</textarea>
+                            </div>
+                            <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Foto Saat Ini</label>
+                                @if ($item->foto)
+                                    <img src="{{ asset($item->foto) }}" class="w-20 h-20 object-cover rounded-md border mb-3">
+                                @else
+                                    <p class="text-xs text-gray-500 italic mb-3">Belum ada foto.</p>
+                                @endif
+                                <label class="block text-xs font-medium text-gray-700 mb-1">Ganti Foto (Opsional)</label>
+                                <input type="file" name="foto" accept="image/*" class="w-full text-xs text-gray-600 file:mr-4 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 border border-gray-300 rounded bg-white cursor-pointer">
+                            </div>
+                        </div>
+                        <div class="mt-6 flex justify-end space-x-3">
+                            <button type="button" onclick="closeModal('editPerangkatModal{{ $item->id }}')" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm hover:bg-gray-50 transition">Batal</button>
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm shadow-sm transition">Update Perangkat</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
+    <!-- Modal Tambah BUMDes -->
+    <div id="tambahUnitUsahaModal" class="modal-backdrop fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 transition-opacity duration-300">
+        <div class="modal-box bg-white rounded-xl shadow-xl w-full max-w-lg mx-4 overflow-hidden transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-100 sticky top-0 bg-white z-10">
+                <h2 class="text-lg font-semibold text-gray-900">Tambah BUMDes</h2>
+                <button type="button" onclick="closeModal('tambahUnitUsahaModal')" class="text-gray-400 hover:text-gray-600 transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <form action="{{ route('admin.bumdes.store') }}" method="POST" enctype="multipart/form-data" class="p-6">
+                @csrf
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
+                        <input type="text" name="nama" value="{{ old('nama') }}" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Kategori</label>
+                        <select name="kategori" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none" required>
+                            <option value="Unit Usaha" {{ old('kategori') == 'Unit Usaha' ? 'selected' : '' }}>Unit Usaha</option>
+                            <option value="Mitra Lokal" {{ old('kategori') == 'Mitra Lokal' ? 'selected' : '' }}>Mitra Lokal</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Deskripsi</label>
+                        <textarea name="deskripsi" rows="4" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none">{{ old('deskripsi') }}</textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Gambar</label>
+                        <input type="file" name="gambar" class="w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-green-50 file:text-green-700 hover:file:bg-green-100 border border-gray-300 rounded-md p-1 cursor-pointer">
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-end space-x-3">
+                    <button type="button" onclick="closeModal('tambahUnitUsahaModal')" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm hover:bg-gray-50 transition">Batal</button>
+                    <button type="submit" class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg text-sm shadow-sm transition">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modals Edit BUMDes Loop -->
+    @foreach ($bumdes as $item)
+        <div id="editBumdesModal{{ $item->id }}" class="modal-backdrop fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 transition-opacity duration-300">
+            <div class="modal-box bg-white rounded-xl shadow-xl w-full max-w-lg mx-4 overflow-hidden transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center px-6 py-4 border-b border-gray-100 sticky top-0 bg-white z-10">
+                    <h2 class="text-lg font-semibold text-gray-900">Edit BUMDes</h2>
+                    <button type="button" onclick="closeModal('editBumdesModal{{ $item->id }}')" class="text-gray-400 hover:text-gray-600 transition">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <form action="{{ route('admin.bumdes.update', $item->id) }}" method="POST" enctype="multipart/form-data" class="p-6">
+                    @csrf
+                    @method('PUT')
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nama</label>
+                            <input type="text" name="nama" value="{{ old('nama', $item->nama) }}" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Kategori</label>
+                            <select name="kategori" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                                <option value="Unit Usaha" {{ old('kategori', $item->kategori) == 'Unit Usaha' ? 'selected' : '' }}>Unit Usaha</option>
+                                <option value="Mitra Lokal" {{ old('kategori', $item->kategori) == 'Mitra Lokal' ? 'selected' : '' }}>Mitra Lokal</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Deskripsi</label>
+                            <textarea name="deskripsi" rows="4" class="w-full border border-gray-300 rounded-md p-2.5 text-sm focus:ring-2 focus:ring-blue-500 outline-none">{{ old('deskripsi', $item->deskripsi) }}</textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Gambar Saat Ini</label>
+                            @if ($item->gambar)
+                                <img src="{{ asset($item->gambar) }}" class="w-24 h-24 object-cover rounded-md border mb-3 shadow-sm">
+                            @else
+                                <p class="text-xs text-gray-500 italic mb-3">Belum ada gambar</p>
+                            @endif
+                            <label class="block text-xs font-medium text-gray-700 mb-1">Ganti Gambar (Opsional)</label>
+                            <input type="file" name="gambar" class="w-full text-xs text-gray-600 file:mr-4 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 border border-gray-300 rounded bg-white cursor-pointer">
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-end space-x-3">
+                        <button type="button" onclick="closeModal('editBumdesModal{{ $item->id }}')" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm hover:bg-gray-50 transition">Batal</button>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm shadow-sm transition">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    @endforeach
+
+    <!-- Modal Tambah Berita -->
+    <div id="modalCreateBerita" class="modal-backdrop fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50 p-4 opacity-0 transition-opacity duration-300">
+        <div class="modal-box bg-white rounded-lg shadow-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+            <div class="flex justify-between items-center px-6 py-4 border-b">
+                <h2 class="text-lg font-semibold text-gray-900">Tambah Berita</h2>
+                <button type="button" onclick="closeModal('modalCreateBerita')" class="text-gray-400 hover:text-gray-600">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <form action="{{ route('admin.artikel.store') }}" method="POST" enctype="multipart/form-data" class="px-6 py-4 space-y-4">
+                @csrf
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Judul Berita</label>
+                    <input type="text" name="judul" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Kategori</label>
+                        <select name="kategori_berita_id" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                            <option value="">-- Tanpa Kategori --</option>
+                            @foreach ($kategoriBerita as $kat)
+                                <option value="{{ $kat->id }}">{{ $kat->nama }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal</label>
+                        <input type="date" name="tanggal" value="{{ date('Y-m-d') }}" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Penulis</label>
+                    <input type="text" name="penulis" value="Tim Redaksi Desa" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Sinopsis</label>
+                    <textarea name="sinopsis" rows="2" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Gambar</label>
+                    <input type="file" name="gambar" class="w-full text-sm">
+                </div>
+                <hr>
+                <p class="text-xs text-gray-500">Pilih salah satu: tulis isi berita sendiri, ATAU isi link berita dari sumber lain.</p>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Isi Berita</label>
+                    <textarea name="isi" rows="5" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Link Berita Eksternal</label>
+                    <input type="url" name="link_eksternal" placeholder="https://..." class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                </div>
+                @if ($errors->any())
+                    <ul class="text-red-600 text-xs list-disc pl-4">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+                <div class="flex justify-end gap-2 pt-2 border-t">
+                    <button type="button" onclick="closeModal('modalCreateBerita')" class="px-4 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100">Batal</button>
+                    <button type="submit" class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg text-sm">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Edit Berita -->
+    <div id="modalEditBerita" class="modal-backdrop fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50 p-4 opacity-0 transition-opacity duration-300">
+        <div class="modal-box bg-white rounded-lg shadow-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+            <div class="flex justify-between items-center px-6 py-4 border-b">
+                <h2 class="text-lg font-semibold text-gray-900">Edit Berita</h2>
+                <button type="button" onclick="closeModal('modalEditBerita')" class="text-gray-400 hover:text-gray-600">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <form id="formEditBerita" action="" method="POST" enctype="multipart/form-data" class="px-6 py-4 space-y-4">
+                @csrf
+                @method('PUT')
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Judul Berita</label>
+                    <input type="text" name="judul" id="edit_judul" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Kategori</label>
+                        <select name="kategori_berita_id" id="edit_kategori" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                            <option value="">-- Tanpa Kategori --</option>
+                            @foreach ($kategoriBerita as $kat)
+                                <option value="{{ $kat->id }}">{{ $kat->nama }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal</label>
+                        <input type="date" name="tanggal" id="edit_tanggal" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Penulis</label>
+                    <input type="text" name="penulis" id="edit_penulis" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Sinopsis</label>
+                    <textarea name="sinopsis" id="edit_sinopsis" rows="2" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Gambar Saat Ini</label>
+                    <img id="edit_gambar_preview" src="" class="w-24 rounded-lg mb-2 hidden">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Ganti Gambar (opsional)</label>
+                    <input type="file" name="gambar" class="w-full text-sm">
+                </div>
+                <hr>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Isi Berita</label>
+                    <textarea name="isi" id="edit_isi" rows="5" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Link Berita Eksternal</label>
+                    <input type="url" name="link_eksternal" id="edit_link" placeholder="https://..." class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                </div>
+                @if ($errors->any())
+                    <ul class="text-red-600 text-xs list-disc pl-4">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+                <div class="flex justify-end gap-2 pt-2 border-t">
+                    <button type="button" onclick="closeModal('modalEditBerita')" class="px-4 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100">Batal</button>
+                    <button type="submit" class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg text-sm">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Tambah Layanan -->
+    <div id="modalCreateLayanan" class="modal-backdrop fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50 p-4 opacity-0 transition-opacity duration-300">
+        <div class="modal-box bg-white rounded-lg shadow-lg w-full max-w-xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+            <div class="flex justify-between items-center px-6 py-4 border-b">
+                <h2 class="text-lg font-semibold text-gray-900">Tambah Layanan</h2>
+                <button type="button" onclick="closeModal('modalCreateLayanan')" class="text-gray-400 hover:text-gray-600">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <form action="{{ route('admin.layanan.store') }}" method="POST" enctype="multipart/form-data" class="px-6 py-4 space-y-4">
+                @csrf
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nama Layanan</label>
+                    <input type="text" name="nama" placeholder="Contoh: Pembuatan Surat Keterangan Usaha" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Kategori</label>
+                    <select name="kategori_layanan_id" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                        <option value="">-- Tanpa Kategori --</option>
+                        @foreach ($kategori as $kat)
+                            <option value="{{ $kat->id }}">{{ $kat->nama }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Langkah-langkah (1 langkah per baris)</label>
+                    <textarea name="langkah" rows="6" placeholder="Datang ke kantor desa&#10;Isi formulir permohonan&#10;Tunggu proses verifikasi" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">File PDF Formulir (opsional)</label>
+                    <input type="file" name="file_pdf" accept="application/pdf" class="w-full text-sm">
+                </div>
+                @if ($errors->any())
+                    <ul class="text-red-600 text-xs list-disc pl-4">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+                <div class="flex justify-end gap-2 pt-2 border-t">
+                    <button type="button" onclick="closeModal('modalCreateLayanan')" class="px-4 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100">Batal</button>
+                    <button type="submit" class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg text-sm">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Edit Layanan -->
+    <div id="modalEditLayanan" class="modal-backdrop fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50 p-4 opacity-0 transition-opacity duration-300">
+        <div class="modal-box bg-white rounded-lg shadow-lg w-full max-w-xl max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+            <div class="flex justify-between items-center px-6 py-4 border-b">
+                <h2 class="text-lg font-semibold text-gray-900">Edit Layanan</h2>
+                <button type="button" onclick="closeModal('modalEditLayanan')" class="text-gray-400 hover:text-gray-600">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <form id="formEditLayanan" action="" method="POST" enctype="multipart/form-data" class="px-6 py-4 space-y-4">
+                @csrf
+                @method('PUT')
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nama Layanan</label>
+                    <input type="text" name="nama" id="edit_layanan_nama" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Kategori</label>
+                    <select name="kategori_layanan_id" id="edit_layanan_kategori" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                        <option value="">-- Tanpa Kategori --</option>
+                        @foreach ($kategori as $kat)
+                            <option value="{{ $kat->id }}">{{ $kat->nama }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Langkah-langkah (1 langkah per baris)</label>
+                    <textarea name="langkah" id="edit_layanan_langkah" rows="6" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">File PDF Formulir (opsional)</label>
+                    <input type="file" name="file_pdf" accept="application/pdf" class="w-full text-sm">
+                </div>
+                @if ($errors->any())
+                    <ul class="text-red-600 text-xs list-disc pl-4">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+                <div class="flex justify-end gap-2 pt-2 border-t">
+                    <button type="button" onclick="closeModal('modalEditLayanan')" class="px-4 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100">Batal</button>
+                    <button type="submit" class="bg-[#166534] hover:bg-[#14532d] text-white px-4 py-2 rounded-lg text-sm">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- JAVASCRIPT LOGIC DENGAN PENGELOLAAN MODAL & ROUTE KONTROL DENGAN OPTIMAL -->
+    <!-- ========================================================================= -->
+    <script>
+        // Inisialisasi Lucide Icons
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        // 1. Fungsionalitas Navigasi Halaman
+        function switchPage(pageId, element) {
+            // Sembunyikan semua halaman
             const pages = document.querySelectorAll('.page-content');
             pages.forEach(page => {
-                page.classList.remove('block');
                 page.classList.add('hidden');
+                page.classList.remove('block');
             });
 
-            // 2. Tampilkan halaman yang dipilih
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) {
-                targetPage.classList.remove('hidden');
-                targetPage.classList.add('block');
+            // Tampilkan halaman aktif
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.classList.remove('hidden');
+                activePage.classList.add('block');
             }
 
-            // 3. Hapus status 'Aktif' dari semua menu di sidebar
+            // Reset style navigasi menu
             const menuItems = document.querySelectorAll('.menu-item');
-            menuItems.forEach(menu => {
-                menu.classList.remove('bg-[#14532d]', 'border-white');
-                menu.classList.add('hover:bg-[#14532d]', 'border-transparent');
+            menuItems.forEach(item => {
+                item.classList.remove('bg-[#14532d]', 'border-white');
+                item.classList.add('border-transparent');
             });
 
-            // 4. Tambahkan status 'Aktif' pada menu yang diklik
-            if (clickedMenu) {
-                clickedMenu.classList.remove('hover:bg-[#14532d]', 'border-transparent');
-                clickedMenu.classList.add('bg-[#14532d]', 'border-white');
-            }
-
-            // Tutup sidebar di mode mobile saat menu diklik
-            if (window.innerWidth < 768 && !sidebar.classList.contains('hidden')) {
-                toggleMobileMenu();
+            // Atur style menu yang aktif
+            if (element) {
+                element.classList.add('bg-[#14532d]', 'border-white');
+                element.classList.remove('border-transparent');
             }
         }
 
-        // Toggle Sidebar untuk Mobile Responsiveness
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const sidebar = document.getElementById('sidebar');
+        // 2. Fungsionalitas Buka-Tutup Modal Bebas Tumpang Tindih
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
 
-        function toggleMobileMenu() {
-            if (sidebar.classList.contains('hidden')) {
-                sidebar.classList.remove('hidden');
-                sidebar.classList.add('absolute', 'z-50', 'h-full');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Animasi masuk halus
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                const box = modal.querySelector('.modal-box');
+                if (box) {
+                    box.classList.remove('scale-95');
+                    box.classList.add('scale-100');
+                }
+            }, 10);
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+
+            modal.classList.add('opacity-0');
+            const box = modal.querySelector('.modal-box');
+            if (box) {
+                box.classList.remove('scale-100');
+                box.classList.add('scale-95');
+            }
+
+            // Sembunyikan sepenuhnya setelah animasi selesai
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
+        // Tutup modal saat area luar (backdrop) diklik
+        document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+            backdrop.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal(this.id);
+                }
+            });
+        });
+
+        // 3. Fungsionalitas Modal Edit Berita
+        function openEditBerita(btn) {
+            const data = JSON.parse(btn.getAttribute('data-artikel'));
+            const form = document.getElementById('formEditBerita');
+            
+            form.action = `/admin/artikel/${data.id}`;
+            document.getElementById('edit_judul').value = data.judul || '';
+            document.getElementById('edit_kategori').value = data.kategori_berita_id || '';
+            document.getElementById('edit_tanggal').value = data.tanggal || '';
+            document.getElementById('edit_penulis').value = data.penulis || '';
+            document.getElementById('edit_sinopsis').value = data.sinopsis || '';
+            document.getElementById('edit_isi').value = data.isi || '';
+            document.getElementById('edit_link').value = data.link_eksternal || '';
+
+            const imgPreview = document.getElementById('edit_gambar_preview');
+            if (data.gambar) {
+                imgPreview.src = data.gambar;
+                imgPreview.classList.remove('hidden');
             } else {
-                sidebar.classList.add('hidden');
-                sidebar.classList.remove('absolute', 'z-50', 'h-full');
+                imgPreview.classList.add('hidden');
             }
+
+            openModal('modalEditBerita');
         }
 
-        mobileBtn.addEventListener('click', toggleMobileMenu);
+        // 4. Fungsionalitas Modal Edit Layanan
+        function openEditLayanan(btn) {
+            const data = JSON.parse(btn.getAttribute('data-layanan'));
+            const form = document.getElementById('formEditLayanan');
+            
+            form.action = `/admin/layanan/${data.id}`;
+            document.getElementById('edit_layanan_nama').value = data.nama || '';
+            document.getElementById('edit_layanan_kategori').value = data.kategori_layanan_id || '';
+            document.getElementById('edit_layanan_langkah').value = data.langkah || '';
+
+            openModal('modalEditLayanan');
+        }
+
+        // 5. Toggle Mobile Sidebar
+        function toggleMobileSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+        }
     </script>
 </body>
+
 </html>

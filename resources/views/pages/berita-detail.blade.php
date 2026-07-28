@@ -14,7 +14,7 @@
         <p class="berita-meta">📅 {{ $artikel->tanggal->format('d F Y') }} • Oleh: {{ $artikel->penulis }}</p>
 
         @if ($artikel->gambar)
-            <img src="{{ asset('storage/' . $artikel->gambar) }}" alt="{{ $artikel->judul }}" style="width: 100%; border-radius: 8px; margin: 20px 0;">
+            <img src="{{ asset($artikel->gambar) }}" alt="{{ $artikel->judul }}" style="width: 100%; border-radius: 8px; margin: 20px 0;">
         @endif
 
         <div class="berita-isi">

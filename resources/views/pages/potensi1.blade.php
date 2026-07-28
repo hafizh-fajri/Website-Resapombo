@@ -114,8 +114,8 @@
         </div>
 
         <div class="text-center mt-10">
-            <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-green-700 hover:bg-green-800 transition-colors shadow-md">
-                Lihat Seluruh Potensi Desa 
+            <a href="{{ route('kekayaan') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-green-700 hover:bg-green-800 transition-colors shadow-md">
+                Lihat Seluruh Kekayaan Desa 
                 <svg class="ml-2 -mr-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
         </div>
@@ -170,15 +170,15 @@
                     <div class="space-y-4">
                         <div class="flex justify-between items-center border-b border-gray-100 pb-4">
                             <span class="text-gray-500">Luas Lahan Baku</span>
-                            <span class="font-bold text-gray-900">50 Ha</span>
+                            <span class="font-bold text-gray-900">{{ $fakta->luas_lahan_baku }} Ha</span>
                         </div>
                         <div class="flex justify-between items-center border-b border-gray-100 pb-4">
                             <span class="text-gray-500">Kelompok Tani</span>
-                            <span class="font-bold text-gray-900">8 Kelompok</span>
+                            <span class="font-bold text-gray-900">{{ $fakta->kelompok_tani }} Kelompok</span>
                         </div>
                         <div class="flex justify-between items-center">
-                            <span class="text-gray-500">Produksi Padi/Thn</span>
-                            <span class="font-bold text-gray-900">+ 900 Ton</span>
+                            <span class="text-gray-500">Hasil Peternakan/Thn</span>
+                            <span class="font-bold text-gray-900">{{ $fakta->produksi_padi }} ton</span>
                         </div>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
                 <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
                     <h4 class="text-xl font-bold text-gray-900 mb-3">Tertarik Kemitraan?</h4>
                     <p class="text-gray-600 mb-6 text-sm">Pemerintah Desa terbuka untuk kerjasama investasi dan kemitraan pemasaran hasil bumi.</p>
-                    <a href="#" class="flex justify-center items-center w-full px-4 py-3 border border-transparent font-medium rounded-xl text-white bg-green-700 hover:bg-green-800 transition-colors shadow-sm">
+                    <a href="{{ url("mailto:ptr330rachman@gmail.com") }}" class="flex justify-center items-center w-full px-4 py-3 border border-transparent font-medium rounded-xl text-white bg-green-700 hover:bg-green-800 transition-colors shadow-sm">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         Hubungi BUMDes
                     </a>

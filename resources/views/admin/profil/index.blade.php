@@ -125,7 +125,7 @@
         @forelse ($dokumen as $item)
             <tr>
                 <td>{{ $item->nama }}</td>
-                <td><a href="{{ asset('storage/' . $item->file) }}" target="_blank">Lihat PDF</a></td>
+                <td><a href="{{ route('admin.profil.dokumen.lihat', $item->id) }}" target="_blank">Buka Dokumen PDF</a></td>
                 <td>
                     <form action="{{ route('admin.profil.dokumen.destroy', $item->id) }}" method="POST" style="display: inline;" onsubmit="return confirm('Yakin mau hapus dokumen ini?')">
                         @csrf
