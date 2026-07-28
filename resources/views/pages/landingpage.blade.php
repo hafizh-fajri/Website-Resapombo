@@ -193,7 +193,7 @@
             </div>
 
             <div class="text-center mt-10">
-                <a href="#" class="inline-flex items-center bg-brand-green hover:bg-green-800 text-white font-medium py-3 px-8 rounded-full transition">
+                <a href="{{ route('potensi') }}" class="inline-flex items-center bg-brand-green hover:bg-green-800 text-white font-medium py-3 px-8 rounded-full transition">
                     Lihat Seluruh Potensi Desa <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
             </div>

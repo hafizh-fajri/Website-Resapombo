@@ -53,28 +53,32 @@ class LayananController extends Controller
     }
 
     public function storeLayanan(Request $request)
-    {
-        $validated = $request->validate([
-            'nama' => 'required|string|max:255',
-            'kategori_layanan_id' => 'nullable|exists:kategori_layanans,id',
-            'langkah' => 'nullable|string',
-            'file_pdf' => 'nullable|mimes:pdf|max:5120',
-        ]);
+{
+    $validated = $request->validate([
+        'nama' => 'required|string|max:255',
+        'kategori_layanan_id' => 'nullable|exists:kategori_layanans,id',
+        'langkah' => 'nullable|string',
+    ]);
 
-        if ($request->hasFile('file_pdf')) {
-            $validated['file_pdf'] = $request->file('file_pdf')->store('layanan-pdf', 'public');
-        }
-
-        Layanan::create($validated);
-
-        return redirect()->route('admin.layanan.index')->with('success', 'Layanan berhasil ditambahkan.');
+    if ($request->hasFile('file_pdf')) {
+        $file = $request->file('file_pdf');
+        
+        // Membuat nama file yang unik agar tidak tertimpa jika ada file bernama sama
+        $fileName = time() . '_' . $file->getClientOriginalName();
+        
+        // Memindahkan file langsung ke folder public/uploads/documents
+        $file->move(public_path('uploads/documents'), $fileName);
+        
+        // Menyimpan path relatif ke dalam database agar mudah dipanggil di Blade
+        $validated['file_pdf'] = 'uploads/documents/' . $fileName;
     }
 
-    public function editLayanan(Layanan $layanan)
-    {
-        $kategori = KategoriLayanan::orderBy('nama')->get();
-        return view('admin.layanan.edit', compact('layanan', 'kategori'));
-    }
+    Layanan::create($validated);
+
+    return redirect()->route('admin.dashboard')->with('success', 'Layanan berhasil ditambahkan.');
+}
+
+    
 
     public function updateLayanan(Request $request, Layanan $layanan)
     {
@@ -82,23 +86,31 @@ class LayananController extends Controller
             'nama' => 'required|string|max:255',
             'kategori_layanan_id' => 'nullable|exists:kategori_layanans,id',
             'langkah' => 'nullable|string',
-            'file_pdf' => 'nullable|mimes:pdf|max:5120',
         ]);
 
         if ($request->hasFile('file_pdf')) {
-            $validated['file_pdf'] = $request->file('file_pdf')->store('layanan-pdf', 'public');
+            $file = $request->file('file_pdf');
+            
+            // Membuat nama file yang unik agar tidak tertimpa jika ada file bernama sama
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            
+            // Memindahkan file langsung ke folder public/uploads/documents
+            $file->move(public_path('uploads/documents'), $fileName);
+            
+            // Menyimpan path relatif ke dalam database agar mudah dipanggil di Blade
+            $validated['file_pdf'] = 'uploads/documents/' . $fileName;
         }
 
         $layanan->update($validated);
 
-        return redirect()->route('admin.layanan.index')->with('success', 'Layanan berhasil diperbarui.');
+        return redirect()->route('admin.dashboard')->with('success', 'Layanan berhasil diperbarui.');
     }
 
     public function destroyLayanan(Layanan $layanan)
     {
         $layanan->delete();
 
-        return redirect()->route('admin.layanan.index')->with('success', 'Layanan berhasil dihapus.');
+        return redirect()->route('admin.dashboard')->with('success', 'Layanan berhasil dihapus.');
     }
 
     // ==== KONTAK ====
@@ -111,7 +123,7 @@ class LayananController extends Controller
 
         KontakLayanan::first()->update($validated);
 
-        return redirect()->route('admin.layanan.index')->with('success', 'Kontak berhasil diperbarui.');
+        return redirect()->route('admin.dashboard')->with('success', 'Kontak berhasil diperbarui.');
     }
 
     // ==== JAM OPERASIONAL ====
@@ -124,13 +136,13 @@ class LayananController extends Controller
 
         JamOperasional::create($validated);
 
-        return redirect()->route('admin.layanan.index')->with('success', 'Jam operasional berhasil ditambahkan.');
+        return redirect()->route('admin.dashboard')->with('success', 'Jam operasional berhasil ditambahkan.');
     }
 
     public function destroyJam(JamOperasional $jam)
     {
         $jam->delete();
 
-        return redirect()->route('admin.layanan.index')->with('success', 'Jam operasional berhasil dihapus.');
+        return redirect()->route('admin.dashboard')->with('success', 'Jam operasional berhasil dihapus.');
     }
 }

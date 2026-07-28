@@ -22,6 +22,7 @@ class BumdesController extends Controller
             'nama' => 'required|string|max:255',
             'kategori' => 'required|in:Unit Usaha,Mitra Lokal',
             'deskripsi' => 'required|string',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
 
         if ($request->hasFile('gambar')) {
@@ -56,6 +57,7 @@ class BumdesController extends Controller
             'nama' => 'required|string|max:255',
             'kategori' => 'required|in:Unit Usaha,Mitra Lokal',
             'deskripsi' => 'required|string',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif', // Validasi untuk gambar, opsional    
         ]);
 
         if ($request->hasFile('gambar')) {
@@ -90,9 +92,9 @@ class BumdesController extends Controller
     {
         // 1. Validasi input
         $request->validate([
-            'kontak_bumdes' => 'required|string|max:255',
+            'no_wa' => 'required|string|max:255',
             // Ubah menjadi nullable agar pengguna bisa update nomor WA saja tanpa harus upload ulang PDF
-            'file' => 'nullable|mimes:pdf|max:5120', 
+            'file_profil' => 'nullable|mimes:pdf', 
         ]);
 
         // 2. Ambil data pertama (asumsi hanya ada 1 baris pengaturan untuk Kontak BUMDes)
@@ -103,11 +105,11 @@ class BumdesController extends Controller
         }
 
         // 3. Update nomor WA
-        $kbumdes->no_wa = $request->kontak_bumdes;
+        $kbumdes->no_wa = $request->no_wa;
 
         // 4. Proses jika ada file baru yang diunggah
-        if ($request->hasFile('file')) {
-            $file = $request->file('file');
+        if ($request->hasFile('file_profil')) {
+            $file = $request->file('file_profil');
             
             $nama_file = time() . '_' . $file->getClientOriginalName();
             $tujuan_upload = public_path('uploads/documents');
@@ -134,7 +136,7 @@ class BumdesController extends Controller
     public function updateKontak(Request $request)
     {
         $validated = $request->validate([
-            'no_wa' => 'nullable|string|max:20',
+            '' => 'nullable|string|max:20',
             'file_profil' => 'nullable|mimes:pdf|max:5120',
         ]);
 

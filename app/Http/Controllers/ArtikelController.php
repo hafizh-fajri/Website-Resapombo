@@ -36,11 +36,10 @@ class ArtikelController extends Controller
         return view('pages.berita', compact('berita', 'beritaTerbaru', 'kategori', 'kategoriId', 'search'));
     }
 
-    public function show(Artikel $artikel)
+    public function show($id)
     {
-        if ($artikel->link_eksternal) {
-            return redirect()->away($artikel->link_eksternal);
-        }
+        // Cari berita berdasarkan ID
+        $artikel = Artikel::findOrFail($id);
 
         return view('pages.berita-detail', compact('artikel'));
     }

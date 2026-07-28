@@ -27,7 +27,6 @@ class DashboardController extends Controller
     
     public function index()
     {
-
         $hartikels = Artikel::latest('tanggal')->take(3)->get();
         $informasi = InformasiDesa::first();
 
@@ -51,10 +50,10 @@ class DashboardController extends Controller
         $dokumen = Dokumen::latest()->get();
         $kepalaDesa = KepalaDesa::oldest()->get();
         $potensi = Potensi::latest()->get();
-        $potensi = Potensi::all();
-        $fakta = FaktaSingkat::first(); // Ambil data fakta singkat
-        $KontakBumdes = KontakBumdes::first(); // Ambil data kontak bumdes
-        $perangkat = Perangkat::all(); // Ambil data perangkat
+        // $potensi = Potensi::all(); // Baris duplikat ini bisa dihapus agar bersih
+        $fakta = FaktaSingkat::first(); 
+        $KontakBumdes = KontakBumdes::first(); 
+        $perangkat = Perangkat::all(); 
         $jabatan = Jabatan::all();
         $bumdes = Bumdes::all();
         $kategoriBerita = KategoriBerita::orderBy('nama')->get();
@@ -69,9 +68,20 @@ class DashboardController extends Controller
 
         $jamOperasional = JamOperasional::orderBy('id')->get();
 
+        // ==========================================
+        // VARIABEL TAMBAHAN UNTUK STATISTIK DASHBOARD
+        // ==========================================
+        $totalBerita = Artikel::count();
+        $totalPotensi = Potensi::count();
+        $totalFaq = Layanan::count(); // Mengambil jumlah total pertanyaan/layanan FAQ
 
-
-        return view('pages.admin.dashboard', compact('visi', 'misi', 'dokumen', 'kepalaDesa', 'potensi', 'fakta', 'KontakBumdes', 'perangkat', 'jabatan', 'bumdes', 'kategoriBerita', 'artikel', 'kategori', 'layanan', 'kontak', 'jamOperasional', 'hartikels', 'informasi'));
+        return view('pages.admin.dashboard', compact(
+            'visi', 'misi', 'dokumen', 'kepalaDesa', 'potensi', 'fakta', 
+            'KontakBumdes', 'perangkat', 'jabatan', 'bumdes', 'kategoriBerita', 
+            'artikel', 'kategori', 'layanan', 'kontak', 'jamOperasional', 
+            'hartikels', 'informasi', 
+            'totalBerita', 'totalPotensi', 'totalFaq' // Masukkan variabel baru ke sini
+        ));
     }
     public function updateInformasi(Request $request)
     {

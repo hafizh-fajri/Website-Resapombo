@@ -19,6 +19,7 @@ Route::get('/berita/{artikel}', [ArtikelController::class, 'show'])->name('berit
 Route::get('/potensi', [PotensiDesaController::class, 'index'])->name('potensi');
 Route::get('/pemerintahan', [PemerintahanController::class, 'index'])->name('pemerintahan');
 Route::get('/layanan', [LayananController::class, 'index'])->name('layanan');
+Route::get('/berita/{id}', [BeritaController::class, 'detail'])->name('berita.detail');
 
 Route::get('/admin1/login', [PageController::class, 'adminlogin'])->name('admin1.login');
 Route::get('/admin1/dashboard', [PageController::class, 'admindashboard'])->name('admin1.dashboard');

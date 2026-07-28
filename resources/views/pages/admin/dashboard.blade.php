@@ -30,12 +30,12 @@
                     <li><a href="#" onclick="switchPage('profil', this)"
                             class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i
                                 data-lucide="info" class="w-5 h-5 mr-3"></i> Profil Desa</a></li>
-                    <li><a href="#" onclick="switchPage('potensi', this)"
-                            class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i
-                                data-lucide="sprout" class="w-5 h-5 mr-3"></i> Potensi</a></li>
                     <li><a href="#" onclick="switchPage('pemerintahan', this)"
                             class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i
                                 data-lucide="building" class="w-5 h-5 mr-3"></i> Pemerintahan</a></li>
+                    <li><a href="#" onclick="switchPage('potensi', this)"
+                            class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i
+                                data-lucide="sprout" class="w-5 h-5 mr-3"></i> Potensi</a></li>
                     <li><a href="#" onclick="switchPage('bumdes', this)"
                             class="menu-item flex items-center px-6 py-3 hover:bg-[#14532d] border-l-4 border-transparent transition"><i
                                 data-lucide="shopping-bag" class="w-5 h-5 mr-3"></i> BUMDes</a></li>
@@ -79,15 +79,15 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#166534]">
                             <h3 class="text-gray-500 text-sm">Total Berita</h3>
-                            <p class="text-3xl font-bold text-gray-800 mt-2">24</p>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">{{ $totalBerita }}</p>
                         </div>
                         <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
                             <h3 class="text-gray-500 text-sm">Total Potensi Desa</h3>
-                            <p class="text-3xl font-bold text-gray-800 mt-2">8</p>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">{{ $totalPotensi }}</p>
                         </div>
                         <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-yellow-500">
                             <h3 class="text-gray-500 text-sm">Pertanyaan FAQ</h3>
-                            <p class="text-3xl font-bold text-gray-800 mt-2">15</p>
+                            <p class="text-3xl font-bold text-gray-800 mt-2">{{ $totalFaq }}</p>
                         </div>
                     </div>
                 </div>
@@ -503,8 +503,9 @@
                                     </span>
                                 </h3>
 
-                                <form action="{{ route('admin1.fakta-singkat.update') }}" method="POST">
+                                <form action="{{ route('admin.fakta.update') }}" method="POST">
                                     @csrf
+                                    @method('PUT')
                                     <div class="space-y-3">
                                         <h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Atur Data Statistik</h4>
                                         <div class="border rounded-lg p-3 bg-white hover:border-gray-300 transition shadow-sm space-y-2">
@@ -811,7 +812,7 @@
                                     <div class="border rounded-lg p-3 bg-white hover:border-gray-300 transition shadow-sm space-y-2">
                                         <div>
                                             <label class="text-xs text-gray-500 block mb-1">Gunakan format wa.me/62xxxxxxxxx</label>
-                                            <input type="text" name="no_wa" class="w-full font-bold text-gray-900 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none transition" value="{{ old('no_wa', $kontak->no_wa ?? '') }}" placeholder="Contoh: wa.me/6281234567890">
+                                            <input type="text" name="no_wa" class="w-full font-bold text-gray-900 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none transition" value="{{ old('no_wa', $KontakBumdes->no_wa ?? '') }}" placeholder="Contoh: wa.me/6281234567890">
                                         </div>
                                     </div>
 
@@ -819,10 +820,10 @@
                                         <div>
                                             <label class="text-xs text-gray-500 block mb-1">File Profil BUMDes (PDF)</label>
                                             <input type="file" name="file_profil" accept="application/pdf" class="w-full text-sm text-gray-900 border border-gray-300 rounded cursor-pointer bg-gray-50 focus:outline-none file:mr-4 file:py-1 file:px-4 file:rounded-l file:border-0 file:text-sm file:font-semibold file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200">
-                                            @if(isset($kontak) && $kontak->file_profil)
+                                            @if(isset($KontakBumdes) && $KontakBumdes->file_profil)
                                                 <p class="text-xs text-green-600 mt-2 flex items-center">
                                                     <i data-lucide="check-circle" class="w-3 h-3 mr-1 inline"></i>
-                                                    <a href="{{ asset($kontak->file_profil) }}" target="_blank" class="hover:underline">Lihat file profil saat ini</a>
+                                                    <a href="{{ asset($KontakBumdes->file_profil) }}" target="_blank" class="hover:underline">Lihat file profil saat ini</a>
                                                 </p>
                                             @endif
                                         </div>

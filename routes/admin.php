@@ -26,7 +26,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::delete('/kategori-berita/{kategori}', [ArtikelController::class, 'destroyKategori'])->name('kategori-berita.destroy');
         Route::put('/informasi-desa', [DashboardController::class, 'updateInformasi'])->name('informasi.update');
         Route::resource('potensi', PotensiController::class);
-        Route::put('/fakta-singkat', [DashboardController::class, 'updateFakta'])->name('fakta.update');
+        Route::put('/fakta-singkat', [PotensiController::class, 'fsupdate'])->name('fakta.update');
         Route::prefix('profil')->name('profil.')->group(function () {
             Route::get('/', [ProfilController::class, 'index'])->name('index');
             Route::put('/visi', [ProfilController::class, 'updateVisi'])->name('visi.update');
@@ -41,7 +41,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         });
         Route::resource('jabatan', JabatanController::class);
         Route::resource('perangkat', PerangkatController::class);
-        Route::put('/bumdes-kontak', [BumdesController::class, 'updateKontak'])->name('bumdes.kontak.update');
+        Route::put('/bumdes-kontak', [BumdesController::class, 'kbupdate'])->name('bumdes.kontak.update');
         Route::prefix('layanan')->name('layanan.')->group(function () {
             Route::get('/', [LayananController::class, 'index'])->name('index');
 

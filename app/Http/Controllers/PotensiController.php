@@ -10,13 +10,33 @@ class PotensiController extends Controller
     public function index(Request $request)
     {
         $kategori = $request->query('kategori');
+        $search = $request->query('search');
 
-        $potensi = Potensi::when($kategori, function ($query) use ($kategori) {
-                return $query->where('kategori', $kategori);
-            })
-            ->latest()
-            ->get();
+        $query = Potensi::query();
 
-        return view('pages.kekayaan', compact('potensi', 'kategori'));
+        // 1. Filter Berdasarkan Kategori (Jika ada dan bukan 'Semua')
+        if ($kategori && $kategori !== 'Semua') {
+            $query->where('kategori', $kategori);
+        }
+
+        // 2. Filter Pencarian per Kata
+        if ($search) {
+            // Memecah kata berdasarkan spasi
+            $words = explode(' ', $search);
+            
+            $query->where(function ($q) use ($words) {
+                foreach ($words as $word) {
+                    // Setiap kata harus cocok di judul ATAU deskripsi
+                    $q->where(function ($subQ) use ($word) {
+                        $subQ->where('nama', 'like', '%' . $word . '%')
+                             ->orWhere('deskripsi', 'like', '%' . $word . '%');
+                    });
+                }
+            });
+        }
+
+        $potensi = $query->latest()->get();
+
+        return view('pages.kekayaan', compact('potensi', 'kategori', 'search'));
     }
 }

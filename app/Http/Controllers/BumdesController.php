@@ -23,13 +23,16 @@ class BumdesController extends Controller
                   ->orWhere('deskripsi', 'like', "%{$search}%");
         }
 
-        // Ambil data hasil query
+        // Ambil data hasil query pencarian
         $bumdes = $query->get();
+        
+        // Ambil kontak bumdes
         $kontak = KontakBumdes::first();
 
-        // Data tambahan untuk hero section (Sesuaikan dengan logic Anda)
-        $totalUnitUsaha = Bumdes::count();
-        $totalMitra = 50; // Contoh angka statis atau bisa pakai count() dari model Mitra
+        // Mengambil jumlah data spesifik berdasarkan isi kolom 'kategori'
+        // Pastikan penulisan string sesuai dengan value di database
+        $totalUnitUsaha = Bumdes::where('kategori', 'Unit Usaha')->count();
+        $totalMitra     = Bumdes::where('kategori', 'Mitra Lokal')->count();
 
         return view('pages.bumdes', compact('bumdes', 'totalUnitUsaha', 'totalMitra', 'kontak'));
     }

@@ -30,12 +30,34 @@
             grid-template-rows: 0fr;
             transition: grid-template-rows 0.3s ease-out;
         }
-        .faq-content-wrapper.open { grid-template-rows: 1fr; }
-        .faq-content-inner { overflow: hidden; }
-        .chevron-icon { transition: transform 0.3s ease; }
-        .chevron-icon.open { transform: rotate(180deg); }
-        .active-category-desktop { background-color: #EAF3EB; border-left: 4px solid #114D2A; font-weight: 600; }
-        .active-category-mobile { background-color: #EAF3EB; border-color: #114D2A; font-weight: 600; }
+
+        .faq-content-wrapper.open {
+            grid-template-rows: 1fr;
+        }
+
+        .faq-content-inner {
+            overflow: hidden;
+        }
+
+        .chevron-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .chevron-icon.open {
+            transform: rotate(180deg);
+        }
+
+        .active-category-desktop {
+            background-color: #EAF3EB;
+            border-left: 4px solid #114D2A;
+            font-weight: 600;
+        }
+
+        .active-category-mobile {
+            background-color: #EAF3EB;
+            border-color: #114D2A;
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -47,36 +69,34 @@
 
         <!-- Header & Search Bar -->
         <div class="text-left md:text-center mt-12 mb-8 md:my-12">
-            <div class="inline-flex items-center px-4 py-1 bg-green-50 border border-green-200 text-green-700 text-xs font-bold tracking-wide rounded-full mb-4 uppercase">
+            <div
+                class="inline-flex items-center px-4 py-1 bg-green-50 border border-green-200 text-green-700 text-xs font-bold tracking-wide rounded-full mb-4 uppercase">
                 Website Desa Resapombo
             </div>
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tanya Jawab (FAQ)</h1>
             <p class="text-base text-gray-500 max-w-2xl mx-0 md:mx-auto leading-relaxed">
-                Temukan jawaban dari berbagai pertanyaan umum mengenai administrasi, layanan desa, dan informasi kependudukan di Desa Resapombo.
+                Temukan jawaban dari berbagai pertanyaan umum mengenai administrasi, layanan desa, dan informasi
+                kependudukan di Desa Resapombo.
             </p>
         </div>
 
         <div class="relative max-w-3xl mx-auto mb-16">
             <!-- Search Input Wrapper (Diubah menjadi form) -->
-            <form action="{{ url()->current() }}" method="GET" class="flex items-center bg-white border border-gray-300 rounded-full p-1.5 shadow-sm focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
+            <form action="{{ url()->current() }}" method="GET"
+                class="flex items-center bg-white border border-gray-300 rounded-full p-1.5 shadow-sm focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
                 <div class="pl-4 pr-2 text-gray-400">
                     <i class="fas fa-search"></i>
                 </div>
                 <!-- Menambahkan name="search" dan value agar teks tidak hilang saat disubmit -->
                 <input type="text" name="search" value="{{ $search }}" placeholder="Ketik pertanyaan Anda di sini..."
                     class="w-full px-2 py-3 bg-transparent outline-none text-gray-700 placeholder-gray-400">
-                <button type="submit" class="bg-primary text-white font-medium px-8 py-3 rounded-full hover:bg-primaryHover transition-colors flex-shrink-0">
+                <button type="submit"
+                    class="bg-primary text-white font-medium px-8 py-3 rounded-full hover:bg-primaryHover transition-colors flex-shrink-0">
                     Cari
                 </button>
             </form>
 
-            <!-- Pencarian Populer (Diubah menjadi link agar bisa diklik) -->
-            <div class="flex items-center justify-center flex-wrap gap-2 mt-5 text-sm">
-                <span class="text-gray-500 mr-2">Pencarian Populer :</span>
-                <a href="{{ url()->current() }}?search=Pembuatan+KTP" class="bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Pembuatan KTP</a>
-                <a href="{{ url()->current() }}?search=Surat+Pindah" class="bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Surat Pindah</a>
-                <a href="{{ url()->current() }}?search=Bantuan+Sosial" class="bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Bantuan Sosial</a>
-            </div>
+
         </div>
 
         <!-- Area Konten Utama -->
@@ -84,21 +104,23 @@
 
             @php
                 // Menghitung total seluruh layanan yang sesuai dengan pencarian
-                $totalLayanan = $kategori->sum(function($kat) {
+                $totalLayanan = $kategori->sum(function ($kat) {
                     return $kat->layanan->count();
                 });
             @endphp
 
             <!-- Sidebar Kategori -->
-            <aside class="md:col-span-3 flex flex-wrap justify-start gap-2 md:block md:space-y-2 text-center md:text-left">
+            <aside
+                class="md:col-span-3 flex flex-wrap justify-start gap-2 md:block md:space-y-2 text-center md:text-left">
                 <h2 class="md:hidden text-lg font-bold mb-2 w-full text-left">Kategori Topik</h2>
                 <h2 class="hidden md:block text-xl font-bold mb-6 text-gray-900">Kategori Topik</h2>
 
                 <!-- Tampilkan Sidebar hanya jika ada layanan yang ditemukan -->
                 @if($totalLayanan > 0)
+                    <!-- Kategori Default (Semua) -->
                     <a href="#" data-category="all"
-                        class="inline-flex items-center px-4 py-2.5 bg-gray-100 border border-gray-300 rounded-lg whitespace-nowrap category-link hover:bg-gray-200 transition-colors active-category-mobile md:active-category-desktop md:flex md:pl-6 md:py-3.5 md:gap-3">
-                        <i class="fas fa-th-large text-primary mr-2 md:mr-0"></i> <span>Semua</span>
+                        class="category-link active inline-flex items-center pl-5 pr-4 py-2.5 rounded-lg overflow-hidden whitespace-nowrap transition-all duration-300 md:flex md:pl-6 md:py-3.5 md:gap-3 bg-[#EAF3EB] text-[#114D2A] font-bold shadow-[inset_4px_0_0_0_#114D2A]">
+                        <i class="fas fa-th-large mr-2 md:mr-0"></i> <span>Semua</span>
                     </a>
 
                     <!-- Looping Kategori dari Database -->
@@ -106,8 +128,8 @@
                         <!-- Hanya tampilkan kategori di sidebar jika kategori tersebut memiliki layanan hasil filter -->
                         @if($item->layanan->count() > 0)
                             <a href="#" data-category="{{ Str::slug($item->nama) }}"
-                                class="shadow-[inset_8px_0_0_0_#114D2A] inline-flex items-center pl-5 pr-4 py-2.5 bg-gray-100 rounded-lg overflow-hidden whitespace-nowrap category-link hover:bg-gray-200 transition-colors md:flex md:pl-6 md:py-3.5 md:gap-3">
-                                <i class="fas fa-file text-primary mr-2 md:mr-0"></i> {{ $item->nama }}
+                                class="category-link inline-flex items-center pl-5 pr-4 py-2.5 rounded-lg overflow-hidden whitespace-nowrap transition-all duration-300 md:flex md:pl-6 md:py-3.5 md:gap-3 bg-gray-50 text-gray-600 hover:bg-gray-200 hover:text-gray-900">
+                                <i class="fas fa-file mr-2 md:mr-0"></i> <span>{{ $item->nama }}</span>
                             </a>
                         @endif
                     @endforeach
@@ -119,11 +141,13 @@
 
                 <!-- Alert Hasil Pencarian -->
                 @if($search)
-                    <div class="p-4 bg-lightGreenBg rounded-xl border border-primary/20 flex justify-between items-center mb-2">
+                    <div
+                        class="p-4 bg-lightGreenBg rounded-xl border border-primary/20 flex justify-between items-center mb-2">
                         <p class="text-gray-800 font-medium">
                             Menampilkan hasil pencarian untuk: <span class="font-bold text-primary">"{{ $search }}"</span>
                         </p>
-                        <a href="{{ url()->current() }}" class="text-sm font-semibold text-red-600 hover:text-red-700 underline shrink-0 ml-4">
+                        <a href="{{ url()->current() }}"
+                            class="text-sm font-semibold text-red-600 hover:text-red-700 underline shrink-0 ml-4">
                             Batalkan
                         </a>
                     </div>
@@ -134,7 +158,8 @@
                     <div class="text-center py-16 bg-gray-50 border border-gray-200 rounded-2xl">
                         <div class="text-gray-400 mb-3"><i class="fas fa-search-minus text-4xl"></i></div>
                         <h3 class="text-lg font-semibold text-gray-700">Pertanyaan tidak ditemukan</h3>
-                        <p class="text-gray-500 mt-1">Kami tidak menemukan FAQ yang cocok dengan kata kunci "{{ $search }}".</p>
+                        <p class="text-gray-500 mt-1">Kami tidak menemukan FAQ yang cocok dengan kata kunci "{{ $search }}".
+                        </p>
                     </div>
                 @else
                     <!-- Looping Section Kategori -->
@@ -145,15 +170,18 @@
                                 <h2 class="text-xl font-bold mb-4 text-gray-900 mt-8 md:mt-0">{{ $item->nama }}</h2>
 
                                 @foreach($item->layanan as $layananItem)
-                                    <div class="bg-gray-50/50 border border-gray-200 rounded-xl overflow-hidden transition-colors duration-300">
-                                        <button class="faq-btn flex items-center justify-between w-full p-5 text-left focus:outline-none bg-gray-50 hover:bg-gray-100 transition-colors">
+                                    <div
+                                        class="bg-gray-50/50 border border-gray-200 rounded-xl overflow-hidden transition-colors duration-300">
+                                        <button
+                                            class="faq-btn flex items-center justify-between w-full p-5 text-left focus:outline-none bg-gray-50 hover:bg-gray-100 transition-colors">
                                             <span class="font-medium text-gray-800 text-sm md:text-base">{{ $layananItem->nama }}</span>
                                             <i class="fas fa-chevron-down text-gray-400 chevron-icon text-sm ml-4"></i>
                                         </button>
                                         <div class="faq-content-wrapper">
                                             <div class="faq-content-inner">
-                                                <p class="p-5 pt-2 text-gray-600 text-sm leading-relaxed border-t border-gray-200/50 mt-1">
-                                                    {{ $layananItem->langkah }}
+                                                <p
+                                                    class="p-5 pt-2 text-gray-600 text-sm leading-relaxed border-t border-gray-200/50 mt-1">
+                                                    {!! nl2br(e($layananItem->langkah)) !!}
                                                 </p>
                                             </div>
                                         </div>
@@ -171,13 +199,14 @@
                 <!-- Kontak Bantuan (Contoh memanggil variabel $kontak jika ada) -->
                 <div class="bg-gray-50 p-6 border border-gray-200 rounded-2xl text-center">
                     <h3 class="text-lg font-bold mb-2 text-gray-900">Masih memiliki pertanyaan?</h3>
-                    <p class="text-gray-500 mb-6 text-sm">Jika Anda tidak menemukan jawaban yang dicari, tim pelayanan desa kami siap membantu Anda.</p>
+                    <p class="text-gray-500 mb-6 text-sm">Jika Anda tidak menemukan jawaban yang dicari, tim pelayanan
+                        desa kami siap membantu Anda.</p>
                     <div class="space-y-3">
-                        <a href="{{ $kontak ? 'https://wa.me/'.$kontak->whatsapp : '#' }}" target="_blank"
+                        <a href="{{ $kontak ? 'https://wa.me/' . $kontak->no_wa : '#' }}" target="_blank"
                             class="flex items-center justify-center gap-2 bg-primary text-white font-medium w-full py-3 rounded-full hover:bg-primaryHover transition-colors text-sm">
                             <i class="fab fa-whatsapp text-lg"></i> Hubungi via WhatsApp
                         </a>
-                        <a href="{{ $kontak ? 'mailto:'.$kontak->email : '#' }}"
+                        <a href="{{ $kontak ? 'mailto:' . $kontak->email : '#' }}"
                             class="flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 font-medium w-full py-3 rounded-full hover:bg-gray-50 transition-colors text-sm">
                             <i class="far fa-envelope text-lg"></i> Kirim Email
                         </a>
@@ -188,20 +217,32 @@
                 <div class="bg-gray-50 p-6 border border-gray-200 rounded-2xl">
                     <h4 class="font-bold text-sm uppercase tracking-wider mb-5 text-gray-900">JAM OPERASIONAL</h4>
                     <div class="space-y-3 text-sm">
-                        <!-- Jika Anda memiliki looping JamOperasional, bisa Anda ubah di sini. 
-                             Namun ini menggunakan template static yang Anda sediakan -->
-                        <div class="flex justify-between items-center pb-2 border-b border-gray-200/60">
-                            <span class="text-gray-600">Senin - Kamis</span>
-                            <span class="font-medium text-gray-900">08:00 - 15:00</span>
-                        </div>
-                        <div class="flex justify-between items-center pb-2 border-b border-gray-200/60">
-                            <span class="text-gray-600">Jumat</span>
-                            <span class="font-medium text-gray-900">08:00 - 11:30</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Sabtu - Minggu</span>
-                            <span class="font-semibold text-red-600 text-xs bg-red-100 px-3 py-1 rounded-full">Tutup</span>
-                        </div>
+
+                        <!-- Looping data Jam Operasional -->
+                        @forelse($jamOperasional as $ops)
+                            <!-- $loop->last memastikan item paling bawah tidak memiliki border garis -->
+                            <div
+                                class="flex justify-between items-center {{ !$loop->last ? 'pb-2 border-b border-gray-200/60' : '' }}">
+
+                                <!-- Class capitalize digunakan agar "senin - kamis" otomatis menjadi "Senin - Kamis" -->
+                                <span class="text-gray-600 capitalize">{{ $ops->hari }}</span>
+
+                                <!-- Logika: Jika isi kolom jam adalah 'libur' atau 'tutup', tampilkan badge merah -->
+                                @if(strtolower(trim($ops->jam)) === 'libur' || strtolower(trim($ops->jam)) === 'tutup')
+                                    <span class="font-semibold text-red-600 text-xs bg-red-100 px-3 py-1 rounded-full">
+                                        {{ ucfirst($ops->jam) }}
+                                    </span>
+                                @else
+                                    <span class="font-medium text-gray-900">{{ $ops->jam }}</span>
+                                @endif
+
+                            </div>
+                        @empty
+                            <div class="text-gray-500 italic text-center py-2">
+                                Data jam operasional belum diatur.
+                            </div>
+                        @endforelse
+
                     </div>
                 </div>
             </aside>
@@ -215,24 +256,29 @@
         const categoryLinks = document.querySelectorAll('.category-link');
         const faqSections = document.querySelectorAll('.faq-category-section');
 
+        // Daftar class Tailwind untuk status Aktif dan Tidak Aktif
+        const activeClasses = ['bg-[#EAF3EB]', 'text-[#114D2A]', 'font-bold', 'shadow-[inset_4px_0_0_0_#114D2A]', 'active'];
+        const inactiveClasses = ['bg-gray-50', 'text-gray-600', 'hover:bg-gray-200', 'hover:text-gray-900'];
+
         categoryLinks.forEach(link => {
             link.addEventListener('click', function (e) {
                 e.preventDefault();
                 const selectedCategory = this.dataset.category;
 
+                // 1. Reset tampilan semua tombol kategori
                 categoryLinks.forEach(l => {
-                    l.classList.remove('active-category-mobile', 'active-category-desktop');
+                    l.classList.remove(...activeClasses);
+                    l.classList.add(...inactiveClasses);
                 });
 
-                if (window.innerWidth < 768) {
-                    this.classList.add('active-category-mobile');
-                } else {
-                    this.classList.add('active-category-desktop');
-                }
+                // 2. Berikan tampilan aktif pada tombol yang sedang diklik
+                this.classList.remove(...inactiveClasses);
+                this.classList.add(...activeClasses);
 
+                // 3. Logika memunculkan FAQ (Tetap seperti semula)
                 faqSections.forEach(section => {
                     if (selectedCategory === 'all') {
-                        section.style.display = 'block'; 
+                        section.style.display = 'block';
                     } else {
                         if (section.id === `section-${selectedCategory}`) {
                             section.style.display = 'block';
