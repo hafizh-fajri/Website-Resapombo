@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Bumdes;
 use App\Models\KontakBumdes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class BumdesController extends Controller
 {
