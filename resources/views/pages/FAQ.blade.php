@@ -95,8 +95,6 @@
                     Cari
                 </button>
             </form>
-
-
         </div>
 
         <!-- Area Konten Utama -->
@@ -179,10 +177,32 @@
                                         </button>
                                         <div class="faq-content-wrapper">
                                             <div class="faq-content-inner">
+                                                <!-- Langkah-langkah -->
                                                 <p
                                                     class="p-5 pt-2 text-gray-600 text-sm leading-relaxed border-t border-gray-200/50 mt-1">
                                                     {!! nl2br(e($layananItem->langkah)) !!}
                                                 </p>
+                                                
+                                                <!-- MODIFIKASI: Card Tautan File Dokumen -->
+                                                @if($layananItem->file_pdf)
+                                                <div class="px-5 pb-5">
+                                                    <a href="{{ asset($layananItem->file_pdf) }}" target="_blank" 
+                                                       class="flex items-center gap-4 p-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-primary hover:shadow-md transition-all group">
+                                                        <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-lg bg-green-50 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                                            <i class="fas fa-file-download text-lg"></i>
+                                                        </div>
+                                                        <div class="flex-grow">
+                                                            <h4 class="text-sm font-semibold text-gray-800 group-hover:text-primary transition-colors">Dokumen Persyaratan</h4>
+                                                            <p class="text-xs text-gray-500 mt-0.5">Klik untuk melihat atau mengunduh file</p>
+                                                        </div>
+                                                        <div class="text-gray-400 group-hover:text-primary transition-colors">
+                                                            <i class="fas fa-external-link-alt text-sm"></i>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                @endif
+                                                <!-- END MODIFIKASI -->
+
                                             </div>
                                         </div>
                                     </div>

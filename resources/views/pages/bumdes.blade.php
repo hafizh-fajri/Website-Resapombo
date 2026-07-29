@@ -163,7 +163,7 @@
                     </div>
                     @php
                         // Memastikan nomor WA ada (mengambil dari item pertama jika koleksi ada, atau default)
-                        $waNumber = $bumdes->isNotEmpty() && isset($bumdes->first()->kontak) ? $bumdes->first()->kontak : '6281234567890';
+                        $waNumber = $kontak->no_wa ?? '6281234567890';
                     @endphp
                     <a href="https://wa.me/{{ $waNumber }}" target="_blank" class="bg-white text-green-800 font-semibold py-2.5 px-6 rounded-lg text-center text-sm flex items-center justify-center hover:bg-gray-100 transition">
                         Chat Via Whatsapp
@@ -176,7 +176,7 @@
                         <p class="text-gray-500 text-sm leading-relaxed mb-6">Lihat dokumen resmi Profil BUMDes Maju untuk informasi lengkap mengenai legalitas, struktur organisasi, dan laporan tahunan.</p>
                     </div>
                     <!-- Ganti '#' dengan route menuju file PDF/Dokumen profil Anda -->
-                    <a href="#" class="bg-green-800 text-white font-semibold py-2.5 px-6 rounded-lg text-center text-sm flex items-center justify-center hover:bg-green-900 transition">
+                    <a href="{{ asset($kontak->file_profil) }}" class="bg-green-800 text-white font-semibold py-2.5 px-6 rounded-lg text-center text-sm flex items-center justify-center hover:bg-green-900 transition">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                         Lihat Dokumen
                     </a>
