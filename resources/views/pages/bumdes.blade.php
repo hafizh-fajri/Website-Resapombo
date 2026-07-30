@@ -54,10 +54,10 @@
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 leading-snug">Motor Penggerak Ekonomi<br>Desa</h2>
                 <div>
                     <p class="text-gray-600 mb-4 text-sm md:text-base leading-relaxed">
-                        Desa Resapombo adalah sebuah desa agraris yang terletak di dataran tinggi yang subur. Dikenal dengan keramahan warganya dan kekayaan alam yang melimpah, desa ini terus berkembang menjadi desa mandiri yang mempertahankan nilai-nilai gotong royong.
+                        Badan Usaha Milik Desa (BUMDes) Desa Resapombo hadir sebagai pilar utama dalam mengoptimalkan potensi lokal serta memajukan perekonomian warga. Berada di kawasan dataran tinggi yang subur, BUMDes berfokus pada pengelolaan dan pengembangan potensi desa—mulai dari komoditas perkebunan kopi dan cengkeh, pemberdayaan peternakan kambing serta susu segar, hingga penguatan unit usaha jasa dan UMKM desa.
                     </p>
                     <p class="text-gray-600 mb-8 text-sm md:text-base leading-relaxed">
-                        Pemerintah Desa berkomitmen untuk terus meningkatkan pelayanan publik, transparansi informasi, serta mendorong pemberdayaan ekonomi lokal melalui BUMDes dan pengembangan UMKM.
+                        Melalui tata kelola usaha yang transparan, inovatif, dan akuntabel, BUMDes Desa Resapombo berkomitmen untuk menciptakan lapangan kerja baru, meningkatkan pendapatan asli desa (PADes), serta mendorong kesejahteraan masyarakat secara berkelanjutan.
                     </p>
                     <div class="flex gap-8">
                         <div class="text-center">
@@ -165,7 +165,7 @@
                         // Memastikan nomor WA ada (mengambil dari item pertama jika koleksi ada, atau default)
                         $waNumber = $kontak->no_wa ?? '6281234567890';
                     @endphp
-                    <a href="https://wa.me/{{ $waNumber }}" target="_blank" class="bg-white text-green-800 font-semibold py-2.5 px-6 rounded-lg text-center text-sm flex items-center justify-center hover:bg-gray-100 transition">
+                    <a href="https://{{ $waNumber }}" target="_blank" class="bg-white text-green-800 font-semibold py-2.5 px-6 rounded-lg text-center text-sm flex items-center justify-center hover:bg-gray-100 transition">
                         Chat Via Whatsapp
                     </a>
                 </div>

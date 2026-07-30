@@ -222,7 +222,7 @@
                     <p class="text-gray-500 mb-6 text-sm">Jika Anda tidak menemukan jawaban yang dicari, tim pelayanan
                         desa kami siap membantu Anda.</p>
                     <div class="space-y-3">
-                        <a href="{{ $kontak ? 'https://wa.me/' . $kontak->no_wa : '#' }}" target="_blank"
+                        <a href="{{ $kontak ? 'https://' . $kontak->no_wa : '#' }}" target="_blank"
                             class="flex items-center justify-center gap-2 bg-primary text-white font-medium w-full py-3 rounded-full hover:bg-primaryHover transition-colors text-sm">
                             <i class="fab fa-whatsapp text-lg"></i> Hubungi via WhatsApp
                         </a>

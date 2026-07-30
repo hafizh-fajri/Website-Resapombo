@@ -33,8 +33,8 @@
     {{-- SEJARAH & PROFIL SINGKAT (statis) --}}
     <section>
         <h2>Sejarah & Profil Singkat Desa Resapombo</h2>
-        <p>Desa Resapombo adalah sebuah desa agraris yang terletak di dataran tinggi yang subur. Dikenal dengan keramahan warganya dan kekayaan alam yang melimpah, desa ini terus berkembang menjadi desa mandiri yang mempertahankan nilai-nilai gotong royong.</p>
-        <p>Pemerintah Desa berkomitmen untuk terus meningkatkan pelayanan publik, transparansi informasi, serta mendorong pemberdayaan ekonomi lokal melalui BUMDes dan pengembangan UMKM.</p>
+        <p>Desa Resapombo merupakan desa agraris yang terletak di wilayah Kecamatan Doko, Kabupaten Blitar. Berada di kawasan dataran tinggi lereng Gunung Kawi dan Gunung Gogoniti, desa ini dianugerahi tanah yang subur serta pemandangan alam yang asri.</p>
+        <p>Pemerintah Desa Resapombo berkomitmen untuk terus meningkatkan kualitas pelayanan publik, mewujudkan transparansi tata kelola pemerintahan, serta mendorong pemberdayaan ekonomi masyarakat berbasis potensi lokal, khususnya sektor peternakan kambing dan perkebunan cengkeh serta kopi.</p>
 
         <ul>
             <li>✔ Pelayanan Prima Terpadu</li>
