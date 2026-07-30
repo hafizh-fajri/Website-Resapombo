@@ -50,7 +50,7 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <!-- TENTANG BUMDES SECTION -->
         <section class="py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900 leading-snug">Motor Penggerak Ekonomi<br>Desa</h2>
                 <div>
                     <p class="text-gray-600 mb-4 text-sm md:text-base leading-relaxed">
