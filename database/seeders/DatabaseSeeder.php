@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Admin',
                 'email' => 'admin@gmail.com', // tetap diisi walau tidak dipakai login, karena kolom ini wajib ada nilainya
-                'password' => Hash::make('123456'),
+                'password' => Hash::make('resapombojayajayajaya'),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
