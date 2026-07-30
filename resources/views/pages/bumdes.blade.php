@@ -38,7 +38,7 @@
     <x-navbar />
 
     <!-- HERO SECTION -->
-    <section class="relative bg-cover bg-center h-[500px] flex items-center justify-center text-center px-4" style="background-image: url('https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=2000&auto=format&fit=crop');">
+    <section class="relative bg-cover bg-center h-[500px] flex items-center justify-center text-center px-4" style="background-image: url('{{ asset('images/profil/depan-kantor.webp') }}');">
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
         <div class="relative z-10 max-w-2xl text-white">
             <span class="px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-white/20 rounded-full border border-white/50 mb-4 inline-block">Badan Usaha Milik Desa</span>

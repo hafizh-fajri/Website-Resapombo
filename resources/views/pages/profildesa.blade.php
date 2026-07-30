@@ -17,7 +17,7 @@
     <x-navbar />
 
     <header class="pt-16">
-        <div class="relative bg-cover bg-center h-80 lg:h-96" style="background-image: url('https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=2071&auto=format&fit=crop');">
+        <div class="relative bg-cover bg-center h-80 lg:h-96" style="background-image: url('{{ asset('images/profil/depan-kantor.webp') }}');">
             <div class="absolute inset-0 bg-black bg-opacity-40"></div>
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 shadow-sm">Profil Desa</h1>
@@ -34,7 +34,7 @@
                 <section>
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">Sejarah Desa</h2>
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                        <img src="https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?q=80&w=2070&auto=format&fit=crop" alt="Sejarah Desa" class="w-full h-64 object-cover rounded-xl mb-6">
+                        <img src="{{ asset('images/landing/kantor-hero.webp') }}" alt="Sejarah Desa" class="w-full h-64 object-cover rounded-xl mb-6">
                         <p class="text-gray-600 mb-4 leading-relaxed">
                             Sejarah Desa Resapombo berakar dari era kolonialisme. Dahulu, wilayah ini merupakan kawasan hutan belantara yang kemudian dibuka oleh pihak Belanda (di bawah pimpinan Tuan Warcell dan Tuan Essling) untuk dijadikan kawasan perkebunan kopi, karet, teh, dan kakao. Seiring berjalannya waktu, didirikan pula pabrik pengolahan, perkantoran, serta perumahan (loji) bagi para pengelola perkebunan.
                         </p>

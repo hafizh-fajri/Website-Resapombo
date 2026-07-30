@@ -36,7 +36,7 @@
     <header class="pt-16">
     <!-- Menambahkan linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) di depan url(...) untuk menggelapkan gambar -->
     <div class="relative bg-cover bg-center h-80 lg:h-96 flex items-center justify-center"
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1599946347371-68eb71b16afc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');">
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('{{ asset('images/landing/kantor-hero.webp') }}');">
         
         <div class="relative z-10 text-center px-4">
             <span

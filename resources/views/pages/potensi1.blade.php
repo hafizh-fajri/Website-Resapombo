@@ -31,8 +31,8 @@
 
     <!-- ================= HERO SECTION ================= -->
     <!-- Ganti URL background dengan helper Laravel: bg-[url('{{ asset('images/hero.jpg') }}')] -->
-    <div class="relative bg-gray-900 h-[60vh] min-h-[400px] flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=2000&auto=format&fit=crop');">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative bg-gray-700 h-[60vh] min-h-[400px] flex items-center justify-center bg-cover bg-center" style="background-image: url('{{ asset('images/potensi/pertanian-hero.webp') }}');">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
         <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
             <span class="inline-block py-1 px-3 rounded-full bg-white/20 text-white text-xs font-semibold tracking-wider mb-4 border border-white/40">KEKAYAAN ALAM & BUDAYA DESA RESAPOMBO</span>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Potensi Desa</h1>
@@ -55,8 +55,12 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <!-- Pertanian (Kiri, Tinggi) -->
                 <div class="relative rounded-2xl overflow-hidden group h-64 lg:h-auto min-h-[300px]">
-                    <img src="https://images.unsplash.com/photo-1595841696677-6489ff3f8cd1?auto=format&fit=crop&w=800&q=80" alt="Pertanian" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <img src="{{ asset('images/potensi/pertanian.webp') }}" alt="Pertanian" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    
+                    <!-- --- MODIFIKASI: Opasitas Gradien Dikurangi (from-black/80 menjadi from-black/60) --- -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    <!-- --- AKHIR MODIFIKASI --- -->
+                    
                     <div class="absolute bottom-0 left-0 p-6 text-white">
                         <div class="w-10 h-10 bg-black/50 rounded-full flex items-center justify-center mb-3 backdrop-blur-sm">🌱</div>
                         <h3 class="text-2xl font-bold mb-2">Pertanian</h3>
@@ -68,8 +72,12 @@
                 <div class="flex flex-col gap-4">
                     <!-- Perkebunan -->
                     <div class="relative rounded-2xl overflow-hidden group h-48 lg:h-56">
-                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Perkebunan" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <img src="{{ asset('images/potensi/perkebunan.webp') }}" alt="Perkebunan" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        
+                        <!-- --- MODIFIKASI: Opasitas Gradien Dikurangi (from-black/80 menjadi from-black/60) --- -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <!-- --- AKHIR MODIFIKASI --- -->
+                        
                         <div class="absolute bottom-0 left-0 p-5 text-white">
                             <div class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center mb-2 backdrop-blur-sm">☕</div>
                             <h3 class="text-xl font-bold">Perkebunan</h3>
@@ -80,8 +88,12 @@
                     <!-- Row Bawah Kanan -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 h-auto sm:h-48 lg:h-56">
                         <div class="relative rounded-2xl overflow-hidden group h-48 sm:h-full">
-                            <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=400&q=80" alt="Pariwisata" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                            <img src="{{ asset('images/potensi/pariwisata.webp') }}" alt="Pariwisata" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                            
+                            <!-- --- MODIFIKASI: Opasitas Gradien Dikurangi (from-black/80 menjadi from-black/60) --- -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <!-- --- AKHIR MODIFIKASI --- -->
+                            
                             <div class="absolute bottom-0 left-0 p-5 text-white">
                                 <div class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center mb-2 backdrop-blur-sm">🏞️</div>
                                 <h3 class="text-lg font-bold">Pariwisata</h3>
@@ -89,8 +101,12 @@
                             </div>
                         </div>
                         <div class="relative rounded-2xl overflow-hidden group h-48 sm:h-full">
-                            <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=400&q=80" alt="Peternakan" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                            <img src="{{ asset('images/potensi/peternakan.webp') }}" alt="Peternakan" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                            
+                            <!-- --- MODIFIKASI: Opasitas Gradien Dikurangi (from-black/80 menjadi from-black/60) --- -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <!-- --- AKHIR MODIFIKASI --- -->
+                            
                             <div class="absolute bottom-0 left-0 p-5 text-white">
                                 <div class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center mb-2 backdrop-blur-sm">🐄</div>
                                 <h3 class="text-lg font-bold">Peternakan</h3>
@@ -103,8 +119,12 @@
 
             <!-- UMKM Lokal (Bawah Full Width) -->
             <div class="relative rounded-2xl overflow-hidden group h-48 lg:h-64 mt-2">
-                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=80" alt="UMKM Lokal" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+                <img src="{{ asset('images/potensi/umkm.webp') }}" alt="UMKM Lokal" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                
+                <!-- --- MODIFIKASI: Opasitas Gradien Horizontal Dikurangi (from-black/80 via-black/40 menjadi from-black/60 via-black/30) --- -->
+                <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+                <!-- --- AKHIR MODIFIKASI --- -->
+                
                 <div class="absolute bottom-0 left-0 p-6 lg:p-10 text-white flex flex-col justify-end h-full">
                     <div class="w-10 h-10 bg-black/50 rounded-full flex items-center justify-center mb-3 backdrop-blur-sm">🛍️</div>
                     <h3 class="text-2xl font-bold mb-2">UMKM Lokal</h3>
@@ -137,8 +157,8 @@
 
                 <!-- Dual Images -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                    <img src="https://images.unsplash.com/photo-1595841696677-6489ff3f8cd1?auto=format&fit=crop&w=600&q=80" alt="Sawah" class="rounded-xl w-full h-48 object-cover shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=600&q=80" alt="Petani" class="rounded-xl w-full h-48 object-cover shadow-sm">
+                    <img src="{{ asset('images/potensi/pertanian-hero.webp') }}" alt="Sawah" class="rounded-xl w-full h-48 object-cover shadow-sm">
+                    <img src="{{ asset('images/potensi/perkebunan-hero.webp') }}" alt="Petani" class="rounded-xl w-full h-48 object-cover shadow-sm">
                 </div>
 
                 <h4 class="text-xl font-bold text-gray-900 mb-4">Pilar Utama Ekonomi Desa</h4>
