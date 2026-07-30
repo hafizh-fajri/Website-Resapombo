@@ -322,10 +322,7 @@
                         <div class="rounded-2xl overflow-hidden aspect-[4/3] mb-5 relative bg-slate-100">
                             <img src="{{ asset($artikel->gambar) }}" alt="{{ $artikel->judul }}"
                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-                            <span
-                                class="absolute top-3 left-3 bg-[#E7F3EA] text-[#286B39] text-xs font-bold px-3 py-1 rounded-full z-10">
-                                {{ $artikel->kategori_berita_id }}
-                            </span>
+
                         </div>
 
                         {{-- Tanggal --}}

@@ -187,7 +187,7 @@
                     
                     <div class="h-64 p-4 overflow-hidden relative flex items-center justify-center shrink-0">
                         @if($p['foto'])
-                            <img src="{{ $p['foto'] }}" alt="{{ $p['nama'] }}" class="w-full h-full object-cover rounded-xl shadow-sm transition-transform duration-500 group-hover:scale-110">
+                            <img src="{{ $p['foto'] }}" alt="{{ $p['nama'] }}" class="w-full h-full object-cover rounded-xl shadow-sm transition-transform duration-500">
                         @else
                             <div class="w-full h-full flex items-center justify-center text-3xl font-bold text-white bg-gray-300 rounded-xl shadow-sm">
                                 No Photo
