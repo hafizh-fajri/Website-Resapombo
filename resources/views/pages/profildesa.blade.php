@@ -36,10 +36,13 @@
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                         <img src="https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?q=80&w=2070&auto=format&fit=crop" alt="Sejarah Desa" class="w-full h-64 object-cover rounded-xl mb-6">
                         <p class="text-gray-600 mb-4 leading-relaxed">
-                            Desa Resapombo adalah sebuah desa agraris yang terletak di dataran tinggi yang subur. Dikenal dengan keramahan warganya dan kekayaan alam yang melimpah, desa ini terus berkembang menjadi desa mandiri yang mempertahankan nilai-nilai gotong royong.
+                            Sejarah Desa Resapombo berakar dari era kolonialisme. Dahulu, wilayah ini merupakan kawasan hutan belantara yang kemudian dibuka oleh pihak Belanda (di bawah pimpinan Tuan Warcell dan Tuan Essling) untuk dijadikan kawasan perkebunan kopi, karet, teh, dan kakao. Seiring berjalannya waktu, didirikan pula pabrik pengolahan, perkantoran, serta perumahan (loji) bagi para pengelola perkebunan.
+                        </p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Para pekerja pribumi kemudian membentuk tatanan pemukiman di tingkat persil yang dipimpin oleh seorang Polo Kampung bernama Joyo Bung (menjabat 1905–1920). Karena letaknya yang cukup tinggi dan dapat melihat kawasan di sebelah selatan, pemukiman tersebut awalnya dinamakan Nyawangan. Kepemimpinan Polo Kampung dilanjutkan oleh Kasmorejo (1920–1942), Karsonawi (1942–1945), dan Boiman (mulai 1945).
                         </p>
                         <p class="text-gray-600 leading-relaxed">
-                            Pemerintah Desa berkomitmen untuk terus meningkatkan pelayanan publik, transparansi informasi, serta mendorong pemberdayaan ekonomi lokal melalui BUMDes dan pengembangan UMKM.
+                            Pada tahun 1946, melalui Program P4AKS, kawasan Nyawangan ditata ulang dengan membagikan lahan perkebunan menjadi hak garap penduduk serta tanah bengkok bagi pamong desa. Bertepatan pada hari Kamis Kliwon, 17 April 1947 (23 Selo), Nyawangan resmi diubah nama menjadi Desa Resapombo oleh Bpk. Boiman. Nama ini diambil dari fenomena alam wilayah tersebut yang dahulu banyak ditumbuhi rumput resapan dalam areal yang sangat luas (ombo). Status desa berkembang dari Desa Sementara (1947), Desa Darurat (1949–1968), hingga menjadi Desa Resmi pada tahun 1969.
                         </p>
                     </div>
                 </section>

@@ -522,7 +522,7 @@
                                         </div>
                                         <div class="border rounded-lg p-3 bg-white hover:border-gray-300 transition shadow-sm space-y-2">
                                             <div>
-                                                <label class="text-xs text-gray-500 block mb-1">Produksi Padi (Ton)</label>
+                                                <label class="text-xs text-gray-500 block mb-1">Produksi Ternak (Ton)</label>
                                                 <input type="number" step="0.01" name="produksi_padi" class="w-full font-bold text-gray-900 text-sm border-b border-transparent hover:border-gray-300 focus:border-green-500 focus:bg-gray-50 rounded px-1 py-0.5 outline-none transition" value="{{ old('produksi_padi', $fakta->produksi_padi ?? 0) }}">
                                             </div>
                                         </div>

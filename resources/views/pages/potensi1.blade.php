@@ -130,9 +130,9 @@
                 <h3 class="text-green-700 font-bold uppercase tracking-wider text-sm mb-2 flex items-center gap-2">
                     <span class="w-6 h-0.5 bg-green-700"></span> TENTANG DESA
                 </h3>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Pertanian Berkelanjutan Resapombo</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Potensi & Kekayaan Alam Desa Resapombo</h2>
                 <p class="text-gray-600 mb-8 leading-relaxed">
-                    Sektor pertanian merupakan pilar utama perekonomian Desa Resapombo. Dengan luas lahan sawah produktif mencapai lebih dari 150 hektar, masyarakat desa kami berkomitmen untuk mengembangkan sistem pertanian organik yang ramah lingkungan dan berkelanjutan.
+                    Terletak di kawasan dataran tinggi lereng Gunung Kawi dan Gunung Gogoniti, Desa Resapombo dianugerahi kesuburan tanah, udara yang sejuk, serta sumber daya alam yang melimpah. Potensi ekonomi desa berfokus pada dua pilar utama, yaitu Sektor Peternakan Terpadu dan Sektor Pertanian & Perkebunan Berkelanjutan.
                 </p>
 
                 <!-- Dual Images -->
@@ -141,23 +141,23 @@
                     <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=600&q=80" alt="Petani" class="rounded-xl w-full h-48 object-cover shadow-sm">
                 </div>
 
-                <h4 class="text-xl font-bold text-gray-900 mb-4">Komoditas Unggulan</h4>
+                <h4 class="text-xl font-bold text-gray-900 mb-4">Pilar Utama Ekonomi Desa</h4>
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    Kami fokus pada pengembangan komoditas bernilai ekonomi tinggi yang sesuai dengan kondisi agroklimat desa kami. Padi varietas unggul baru (VUB) dan sayuran organik menjadi primadona yang terus kami kembangkan melalui kelompok tani terpadu.
+                    Sektor peternakan menjadi unggulan desa karena dukungan iklim dataran tinggi serta ketersediaan pakan hijau yang melimpah, menjadikannya sangat potensial untuk terus dikembangkan. Sementara itu, sektor pertanian dan perkebunan memanfaatkan luas lahan tegalan yang mencapai lebih dari 52.000 hektar serta lahan sawah produktif, di mana masyarakat desa berkomitmen untuk terus mengembangkan komoditas bernilai ekonomi tinggi yang sesuai dengan kondisi agroklimat setempat.
                 </p>
 
                 <ul class="space-y-4">
                     <li class="flex items-start">
                         <svg class="h-6 w-6 text-green-700 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-gray-600"><strong>Padi Organik:</strong> Dipupuk menggunakan kompos lokal, bebas pestisida kimia, dan memiliki nilai jual yang kompetitif di pasar regional.</span>
+                        <span class="text-gray-600"><strong>Peternakan Kambing Perah & Peranakan:</strong> Mayoritas warga mengelola peternakan kambing, baik untuk budidaya daging maupun produksi susu kambing segar berkualitas tinggi.</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="h-6 w-6 text-green-700 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-gray-600"><strong>Sayuran Dataran Tinggi:</strong> Kubis, wortel, dan kentang yang ditanam dengan sistem rotasi tanam untuk menjaga kesuburan tanah.</span>
+                        <span class="text-gray-600"><strong>Produksi Susu Kambing:</strong> Menjadi salah satu produk komoditas bernilai tinggi yang dikembangkan warga untuk memenuhi kebutuhan pasar lokal hingga kemitraan olahan susu.</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="h-6 w-6 text-green-700 mt-0.5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        <span class="text-gray-600"><strong>Palawija:</strong> Jagung hibrida dan kedelai sebagai tanaman sela penyangga ketahanan pangan.</span>
+                        <span class="text-gray-600"><strong>Pengolahan Pupuk Organik:</strong> Limbah peternakan dimanfaatkan kembali menjadi pupuk kandang organik untuk menopang kesuburan tanah pertanian dan perkebunan warga.</span>
                     </li>
                 </ul>
             </div>
@@ -187,7 +187,7 @@
                 <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
                     <h4 class="text-xl font-bold text-gray-900 mb-3">Tertarik Kemitraan?</h4>
                     <p class="text-gray-600 mb-6 text-sm">Pemerintah Desa terbuka untuk kerjasama investasi dan kemitraan pemasaran hasil bumi.</p>
-                    <a href="{{ url("mailto:ptr330rachman@gmail.com") }}" class="flex justify-center items-center w-full px-4 py-3 border border-transparent font-medium rounded-xl text-white bg-green-700 hover:bg-green-800 transition-colors shadow-sm">
+                    <a href="{{ url("mailto:sembodokrido@gmail.com") }}" class="flex justify-center items-center w-full px-4 py-3 border border-transparent font-medium rounded-xl text-white bg-green-700 hover:bg-green-800 transition-colors shadow-sm">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         Hubungi BUMDes
                     </a>
