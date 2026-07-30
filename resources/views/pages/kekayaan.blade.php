@@ -96,8 +96,8 @@
                     <!-- Thumbnail Container: Fix lebar dan tinggi agar seragam -->
                     <div class="w-full md:w-[340px] h-[220px] shrink-0">
                         {{-- Ganti 'gambar' sesuai nama field foto di database Anda --}}
-                        <img src="{{ $item->gambar ? asset('storage/' . $item->gambar) : 'https://images.unsplash.com/photo-1592982537447-7440770cbfc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' }}"
-                            alt="{{ $item->judul }}" class="w-full h-full object-cover rounded-2xl">
+                        <img src="{{ asset($item->gambar) }}"
+                            alt="{{ $item->nama }}" class="w-full h-full object-cover rounded-2xl">
                     </div>
 
                     <!-- Konten Teks: Disejajarkan ke tengah secara vertikal -->
@@ -113,8 +113,8 @@
 
                         <!-- Judul: Dibatasi maksimal 2 baris -->
                         <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-3 hover:text-green-700 transition-colors cursor-pointer line-clamp-2"
-                            title="{{ $item->judul }}">
-                            {{ $item->judul }}
+                            title="{{ $item->nama }}">
+                            {{ $item->nama }}
                         </h2>
 
                         <!-- Deskripsi: Dibatasi maksimal 2 atau 3 baris agar tinggi card terjaga -->
