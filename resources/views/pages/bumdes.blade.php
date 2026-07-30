@@ -165,7 +165,7 @@
                         // Memastikan nomor WA ada (mengambil dari item pertama jika koleksi ada, atau default)
                         $waNumber = $kontak->no_wa ?? '6281234567890';
                     @endphp
-                    <a href="https://wa.me/{{ $waNumber }}" target="_blank" class="bg-white text-green-800 font-semibold py-2.5 px-6 rounded-lg text-center text-sm flex items-center justify-center hover:bg-gray-100 transition">
+                    <a href="https://{{ $waNumber }}" target="_blank" class="bg-white text-green-800 font-semibold py-2.5 px-6 rounded-lg text-center text-sm flex items-center justify-center hover:bg-gray-100 transition">
                         Chat Via Whatsapp
                     </a>
                 </div>

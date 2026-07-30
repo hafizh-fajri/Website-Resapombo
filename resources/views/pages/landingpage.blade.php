@@ -38,7 +38,7 @@
                 <a href="{{ route("potensi") }}" class="bg-brand-green hover:bg-green-800 text-white font-medium py-3 px-8 rounded-full transition flex items-center justify-center gap-2">
                     Jelajahi Potensi <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
-                <a href="{{ url("https://wa.me/6281330762415") }}" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 border border-white text-white font-medium py-3 px-8 rounded-full transition flex items-center justify-center gap-2">
+                <a href="{{ url("https://wa.me/6285852462997") }}" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 border border-white text-white font-medium py-3 px-8 rounded-full transition flex items-center justify-center gap-2">
                     Hubungi Kami <img src="{{ asset('images/icon/wa.png') }}" alt="Icon" class="w-4 h-4">
                 </a>
             </div>
@@ -97,7 +97,7 @@
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Sejarah & Profil Singkat Desa Resapombo</h2>
                     <p class="text-gray-600 mb-4 leading-relaxed">
-                        Desa Resapombo merupakan desa agraris yang terletak di wilayah Kecamatan Doko, Kabupaten Blitar. Berada di kawasan dataran tinggi lereng Gunung Kawi dan Gunung Gogoniti, desa ini dianugerahi tanah yang subur serta pemandangan alam yang asri. Nama "Resapombo" sendiri diambil dari hamparan "rumput resapan" yang sangat luas ("ombo") yang dahulu membentang dari utara Gunung Gogoniti hingga lereng Gunung Kawi.
+                        Desa Resapombo merupakan desa agraris yang terletak di wilayah Kecamatan Doko, Kabupaten Blitar. Berada di kawasan dataran tinggi lereng Gunung Kawi dan Gunung Gogoniti, desa ini dianugerahi tanah yang subur serta pemandangan alam yang asri.
                     <p class="text-gray-600 mb-8 leading-relaxed">
                         Pemerintah Desa Resapombo berkomitmen untuk terus meningkatkan kualitas pelayanan publik, mewujudkan transparansi tata kelola pemerintahan, serta mendorong pemberdayaan ekonomi masyarakat berbasis potensi lokal, khususnya sektor peternakan kambing dan perkebunan cengkeh serta kopi.
                     </p>
