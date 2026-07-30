@@ -210,7 +210,7 @@
                     <div class="absolute bottom-0 left-0 p-6 md:p-8">
                         <div
                             class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-lg flex items-center justify-center mb-3 text-white">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M20 3c-6 .5-9 1.5-11.5 4C6 9.5 5.5 12.5 7 15c1.5 2.3 4.5 3 7 2 3-1.2 4.5-4 4.5-7.5 0-2.5.5-4.5 1.5-6.5Z"/><path d="M9 15c1.5-3.5 4-6 8.5-8"/><path d="M7 15c-1.5 2-2 4-2 6.5"/></svg>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
                                 </path>
@@ -231,7 +231,7 @@
                     <div class="absolute bottom-0 left-0 p-6">
                         <div
                             class="w-8 h-8 bg-white/20 backdrop-blur-md rounded-lg flex items-center justify-center mb-2 text-white">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><ellipse cx="12" cy="12" rx="8" ry="6" transform="rotate(-35 12 12)"/><path d="M8 15.5c1-3 3-3.5 5-5s3.5-2.5 4.3-5.3"/></svg>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
                                 </path>
@@ -254,7 +254,7 @@
                         <div class="absolute bottom-0 left-0 p-5">
                             <div
                                 class="w-8 h-8 bg-white/20 backdrop-blur-md rounded-lg flex items-center justify-center mb-2 text-white">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M12 3c-4.4 0-8 3.4-8 7.6 0 5.1 6.4 11.6 7.5 12.7a.7.7 0 0 0 1 0C13.6 22.2 20 15.7 20 10.6 20 6.4 16.4 3 12 3Z"/><circle cx="12" cy="10.5" r="3.2"/></svg>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9">
                                     </path>
@@ -273,7 +273,7 @@
                         <div class="absolute bottom-0 left-0 p-5">
                             <div
                                 class="w-8 h-8 bg-white/20 backdrop-blur-md rounded-lg flex items-center justify-center mb-2 text-white">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                                 </svg>

@@ -62,7 +62,7 @@
                     <!-- --- AKHIR MODIFIKASI --- -->
                     
                     <div class="absolute bottom-0 left-0 p-6 text-white">
-                        <div class="w-10 h-10 bg-black/50 rounded-full flex items-center justify-center mb-3 backdrop-blur-sm">🌱</div>
+                        <div class="w-10 h-10 bg-black/50 rounded-full flex items-center justify-center mb-3 backdrop-blur-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M20 3c-6 .5-9 1.5-11.5 4C6 9.5 5.5 12.5 7 15c1.5 2.3 4.5 3 7 2 3-1.2 4.5-4 4.5-7.5 0-2.5.5-4.5 1.5-6.5Z"/><path d="M9 15c1.5-3.5 4-6 8.5-8"/><path d="M7 15c-1.5 2-2 4-2 6.5"/></svg></div>
                         <h3 class="text-2xl font-bold mb-2">Pertanian</h3>
                         <p class="text-sm text-gray-200 line-clamp-2">Tulang punggung ekonomi warga dengan hasil panen melimpah seperti padi, jagung, dan sayuran organik.</p>
                     </div>
@@ -79,7 +79,7 @@
                         <!-- --- AKHIR MODIFIKASI --- -->
                         
                         <div class="absolute bottom-0 left-0 p-5 text-white">
-                            <div class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center mb-2 backdrop-blur-sm">☕</div>
+                            <div class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center mb-2 backdrop-blur-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><ellipse cx="12" cy="12" rx="8" ry="6" transform="rotate(-35 12 12)"/><path d="M8 15.5c1-3 3-3.5 5-5s3.5-2.5 4.3-5.3"/></svg></div>
                             <h3 class="text-xl font-bold">Perkebunan</h3>
                             <p class="text-xs text-gray-200">Wisata Alam & Edukasi</p>
                         </div>
@@ -95,7 +95,7 @@
                             <!-- --- AKHIR MODIFIKASI --- -->
                             
                             <div class="absolute bottom-0 left-0 p-5 text-white">
-                                <div class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center mb-2 backdrop-blur-sm">🏞️</div>
+                                <div class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center mb-2 backdrop-blur-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M12 3c-4.4 0-8 3.4-8 7.6 0 5.1 6.4 11.6 7.5 12.7a.7.7 0 0 0 1 0C13.6 22.2 20 15.7 20 10.6 20 6.4 16.4 3 12 3Z"/><circle cx="12" cy="10.5" r="3.2"/></svg></div>
                                 <h3 class="text-lg font-bold">Pariwisata</h3>
                                 <p class="text-xs text-gray-200">Wisata Alam & Edukasi</p>
                             </div>
@@ -108,7 +108,7 @@
                             <!-- --- AKHIR MODIFIKASI --- -->
                             
                             <div class="absolute bottom-0 left-0 p-5 text-white">
-                                <div class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center mb-2 backdrop-blur-sm">🐄</div>
+                                <div class="w-8 h-8 bg-black/50 rounded-full flex items-center justify-center mb-2 backdrop-blur-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M3 20h6.5"/><path d="M11.5 20H16"/><path d="M18 20c1.5-.5 3-1.5 3-3-1-.2-2-.2-3 0"/><path d="M18 17c1-1 1.5-2.3.5-3.5-1 .2-2 .8-2.5 1.7"/><path d="M16.5 15.2c.7-1.4.5-2.8-.8-3.7-1 .8-1.5 2-1.3 3.2"/><path d="M12.5 8.5c2 0 3.8.8 4.5 2.8"/><path d="M9 7.3c1.3-.6 2.7-.9 4-.8"/><path d="M6.3 8.5c.7-.5 1.5-.9 2.4-1.1"/><path d="M4 10.3c.6-.5 1.3-.9 2-1.2"/><path d="M3.2 13c.7-.6 1.3-1.2 2.3-1.5"/><path d="M3.5 16.5c.5-1 1.3-1.8 2.3-2.3"/><path d="M9 16.8c1.3.3 2.7.2 4-.2"/><path d="M13.7 15c1 .8 2.2 1.2 3.5 1"/><path d="M9.5 12.3c1.2-.2 2.4-.1 3.5.4"/><path d="M6.5 13c.6-.2 1.2-.3 1.8-.3"/></svg></div>
                                 <h3 class="text-lg font-bold">Peternakan</h3>
                                 <p class="text-xs text-gray-200">Sapi Perah & Kambing</p>
                             </div>
@@ -126,7 +126,7 @@
                 <!-- --- AKHIR MODIFIKASI --- -->
                 
                 <div class="absolute bottom-0 left-0 p-6 lg:p-10 text-white flex flex-col justify-end h-full">
-                    <div class="w-10 h-10 bg-black/50 rounded-full flex items-center justify-center mb-3 backdrop-blur-sm">🛍️</div>
+                    <div class="w-10 h-10 bg-black/50 rounded-full flex items-center justify-center mb-3 backdrop-blur-sm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg></div>
                     <h3 class="text-2xl font-bold mb-2">UMKM Lokal</h3>
                     <p class="text-sm text-gray-200">Produksi olahan pangan dan kerajinan tangan khas desa</p>
                 </div>
